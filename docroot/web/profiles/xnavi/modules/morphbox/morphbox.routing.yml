@@ -1,0 +1,6 @@
+morphbox.form:
+    path: '/morphbox/form'
+    defaults:
+        _form: 'Drupal\morphbox\Form\MorphboxForm'
+    requirements:
+        _permission: 'access content'

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * SUBTHEME theme file.
+ */
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function zfdw_b4_preprocess_node(&$variables) {
+  // workaround for index.php on production server
+  if(!isset($variables['zfdw_base_path'])) {
+    $variables['zfdw_base_path'] = str_replace('/index.php', '', \Drupal::urlGenerator()
+      ->generateFromRoute('<front>'));
+  }
+}

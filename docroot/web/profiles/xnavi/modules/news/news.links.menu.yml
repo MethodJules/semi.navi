@@ -1,0 +1,29 @@
+news.admin:
+  title: 'Newsletter konfigurieren'
+  description: 'Newsletter verfügbare Kategorien konfigurieren'
+  route_name: news.newsletter_send_newsletter_administration_form
+  weight: 100
+
+news.dashboard:
+  title: 'Newsletter Dashboard'
+  description: 'Newsletter Dashboard'
+  route_name: news.newsletter_dashboard
+  weight: 101
+
+news.test_mail:
+  title: 'Newsletter Testversand'
+  description: 'Versenden eines Testnewsletters'
+  route_name: news.newsletter_send_newsletter_test_mail_form
+  weight: 102
+
+news.newsletter_preview:
+  title: 'Newsletter Vorschau'
+  description: 'Vorschau des Newsletters'
+  route_name: news.newsletter_preview
+  weight: 103
+
+news.newsletter_order_form:
+  title: 'Newsletter Abonnieren (Formular)'
+  description: 'Formulat zum Abonnieren des Newsletters'
+  route_name: news.newsletter_order
+  weight: 104

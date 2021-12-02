@@ -1,0 +1,9 @@
+xnavi-network:
+    version: 1.x
+    js:
+      js/xnavi_network.js: {}
+      js/d3.min.js: {}
+    dependencies:
+      - core/drupal
+      - core/drupalSettings
+      - core/jquery  

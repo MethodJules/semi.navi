@@ -1,0 +1,6 @@
+name: Meetup
+description: Das Meetup-Modul dient zur Vernetzung von Community-Mitgliedern. Es ermöglicht den Nutzern ihre Teilnahme an Events innerhalb des Portals darzustellen.  
+core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
+package: x.Navi

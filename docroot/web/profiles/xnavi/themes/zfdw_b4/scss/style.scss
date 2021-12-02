@@ -1,0 +1,704 @@
+// Include bootstrap variables definitions overrides.
+@import 'overrides/variables';
+
+// Include parent theme with all things Bootstrap for full override.
+// Relative path to this styles.scss file.
+// Example: @import "../../../../../themes/contrib/bootstrap4/scss/style";
+//@import "[DOCROOT]/themes/contrib/bootstrap4/scss/style";
+@import "../../../contrib/bootstrap4/scss/style";
+
+// OR test new Bootstrap 4.5.0
+//@import "[DOCROOT]/themes/contrib/bootstrap4/scss/style-4-5-0";
+
+// Include custom sub theme.
+@import 'custom/variables';
+
+// Include custom sub theme.
+//@import 'custom/mixins/misc';
+//@import 'custom/misc';
+
+#block-zfdw-b4-main-navigation {
+  border: solid 1px black;
+}
+
+.zsb-container {
+  padding-left: 23px;
+  margin-right: auto;
+  margin-bottom: 0;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.zfdw-container {
+  display: flex;
+  margin-bottom: -35px;
+}
+
+.brand-border {
+  background-color:#0099BE;
+}
+
+.brand-border ul {
+  list-style-type:none;
+  padding-right:7px;
+  line-height:40px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#fff;
+  overflow:hidden
+}
+.brand-border ul li {
+  display:inline;
+  color:#fff
+}
+.brand-border ul li.home {
+  margin-right:5px;
+  margin-left:-8px
+}
+.brand-border ul li.home .icon-home:before {
+  line-height:40px;
+  font-size:16px;
+  vertical-align:middle;
+  content: "\6d";
+  font-family: "unihildesheim" !important;
+}
+.brand-border ul li a {
+  text-decoration:none;
+  color:#fff
+}
+
+@media (min-width:768px) {
+  .brand-border ul li {
+    line-height:50px
+  }
+  .brand-border ul li.first-brand {
+    background-color:#fff;
+    padding-top:20px;
+    padding-bottom:20px;
+    color:#0099BE;
+    position:relative;
+    padding-left:20px
+  }
+
+  .brand-border ul li.first-brand a {
+    color:#0099BE
+  }
+
+  .brand-border ul li.first-brand:after {
+    top:50%;
+    border:solid transparent;
+    content:" ";
+    height:0;
+    width:0;
+    position:absolute;
+    border-color:transparent;
+    border-left-color:#fff;
+    border-width:27px 0 27px 11px;
+    margin-top:-27px;
+    -webkit-transform:rotate(360deg)
+  }
+  .brand-border ul li.first-brand:before {
+    top:50%;
+    left:-1px;
+    border:solid transparent;
+    content:" ";
+    height:0;
+    width:0;
+    position:absolute;
+    border-color:transparent;
+    border-left-color:#0099BE;
+    border-width:27px 0 27px 11px;
+    margin-top:-27px;
+    -webkit-transform:rotate(360deg)
+  }
+}
+
+/* Sidebar first */
+.region-sidebar-first {
+  overflow: auto;
+  margin-right: 2rem;
+
+  .views-row {
+    border-bottom: 1px solid #ebebed;
+  }
+}
+
+main .container-fluid {
+  padding: 30px 15px 50px !important;
+}
+.region-sidebar-first .block {
+  margin: 0 0 30px;
+}
+.region-sidebar-first h2,
+.region-sidebar-first h5 {
+  text-shadow: 0 1px 0 #fff;
+  font-size: 1.071em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.region-sidebar-first .block .content {
+  font-size: 0.914em;
+  line-height: 1.4;
+}
+.region-sidebar-first .form-item {
+  width: 100%;
+  margin-top: 0;
+}
+.region-sidebar-first .view-content .views-row,
+.region-sidebar-first .nav-link {
+  padding: 0.2rem 0;
+}
+
+/* Content padding */
+.region-content {
+  .field {
+    margin-bottom: 1rem;
+  }
+}
+
+/* theme workaround TODO */
+@media (min-width:1530px) {
+  .container-fluid,
+  .zsb-container,
+  .zfdw-container,
+  .region-footer {
+    width: 1500px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+/* Title Landingpage */
+
+#block-zfdw-b4-page-title {
+  display: none;
+}
+
+/* SVG */
+#zfdwmap svg {
+  width: 100%;
+  margin-top: -4em;
+}
+
+/* ZfDW Map */
+
+#lehre, #transfer, #forschung {
+  cursor: pointer;
+}
+
+/* Search result formatting/highlighting */
+/* Fix display only one search result per row */
+.view-id-portalsuche {
+  .view-content {
+    display: inline;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  /* Content type specific icons */
+  .node--type-person .field--name-node-title  a  {
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      padding-right: 0.6rem;
+      content: '\f007';
+    }
+  }
+
+  .node--type-projekt h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f0ae";
+  }
+
+  .node--type-forschungsergebnis h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f471";
+  }
+
+  .node--type-news h2 .field,
+  .node--type-article h2 .field,
+  .node--type-news .field--name-node-title h2,
+  .node--type-article .field--name-node-title h2 {
+    ::before {
+      font-family: "Font Awesome 5 Free";
+      padding-right: 0.6rem;
+      content: "\f1ea";
+    }
+  }
+
+  .node--type-ort h2 .field::before,
+  .node--type-institution h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    padding-right: 0.6rem;
+    content: "\f1ad";
+  }
+
+  .node--type-abschlussarbeit h2 .field::before,
+  .node--type-biblio h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f02d";
+  }
+
+  .node--type-event h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    padding-right: 0.6rem;
+    content: "\f073";
+  }
+
+  .node--type-kooperationspartner h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    padding-right: 0.6rem;
+    content: "\f2b5";
+  }
+
+  .node--type-wissenskarte h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f7a2";
+  }
+
+  .node--type-fachbereich h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f0c0";
+  }
+
+  .node--type-lehrveranstaltung h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f51c";
+  }
+
+  .node--type-page h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f039";
+  }
+
+  .node--type-xnavi-network h2 .field::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 0.6rem;
+    content: "\f542";
+  }
+}
+
+.node--type-news.node--view-mode-search-result,
+.node--type-article.node--view-mode-search-result {
+  .node__content,
+  .group-left,
+  .group-header {
+    display: flex;
+  }
+
+  .field--name-node-post-date,
+  .field--type-image {
+    margin-left: auto;
+  }
+
+
+  .field--name-field-newsbild img,
+  .field--type-image img {
+    margin-left: 0.5em;
+  }
+}
+
+.node--type-person.node--view-mode-search-result {
+  display: flex;
+
+  .image-style-personenbild2 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .group-left {
+    width: auto;
+    margin-right: 0.5em;
+  }
+
+  .group-right {
+    margin-left: auto;
+    min-width: 50px;
+    max-width: 150px;
+  }
+}
+
+.node--view-mode-search-result,
+.view-id-veranstaltungen_zum_digitalen_wandel .node--view-mode-teaser,
+.aggregator-feed article {
+  padding: 1em!important;
+  background-color: $block-background;
+  margin-bottom: 1em!important;
+  overflow: auto;
+}
+
+
+#block-zfdw-b4-views-block-knowledgemap-search-results .views-row {
+  border: solid 0.1px #0099BE;
+  background-color: #ebebed;
+  margin-bottom: 5px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* Navbar Drowdown Toogle Item */
+.dropdown-toggle {
+  &:after {
+    display: none;
+  }
+}
+
+/* Style map legend */
+.map.legend {
+  width: 17em;
+  background: rgba(255,255,255,0.85);
+  border-radius: 5px;
+  padding: 6px;
+
+}
+.map.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+}
+
+.map.legend .project.title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/**
+ * On hover dropdown menu
+ */
+.region-nav-main {
+  z-index: 99;
+  background-color: #fff;
+}
+.region-nav-main .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.region-nav-main .dropdown-menu {
+  top: 95%;
+  max-width: 20rem;
+  width: max-content;
+  right: 0;
+  left: auto;
+}
+
+/**
+ * Navbar overrides
+ */
+@media (min-width: 992px) {
+  .navbar-brand img {
+    height: 120px;
+    padding: 15px;
+  }
+}
+.navbar-brand {
+  background-color: #fff;
+  z-index: 9;
+  margin-left: -15px;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar {
+  z-index: 10;
+}
+
+/* Top info banner */
+.region-banner {
+  display: inline-block;
+  position: absolute;
+}
+.region-banner .field--name-field-image-svg img {
+  margin-top: -56px;
+}
+#block-infobanner .field--name-field-image-svg img {
+  height: 300px;
+  width: auto;
+}
+#block-infobanner .field--name-field-image img {
+  height: 120px;
+  width: auto;
+  margin-top: 15px;
+}
+
+/* ZfDW SVG knowledge map */
+#block-views-block-zfdw-wissenskarte-block-zfdwmap-veranstaltungen,
+#block-views-block-zfdw-wissenskarte-block-zfdwmap-lehrveranstaltungen,
+#block-views-block-zfdw-wissenskarte-block-zfdwmap-kooperationspartner,
+#block-views-block-zfdw-wissenskarte-block-zfdwmap-projekte {
+  display: none;
+}
+
+.zfdwmap-block {
+  border: 2px solid #0099be;
+  padding: 0.5em;
+}
+
+/* Footer style */
+.zfdw-b4-footer {
+  background-color: $footer-background;
+
+  #block-zfdw-b4-fusszeile .navbar-nav {
+    flex-direction: row;
+
+    li {
+      margin-right: 5px;
+      a {
+        border: 1px solid;
+        padding: 5px;
+        display: inline-block;
+        color: $footer-text-color;
+      }
+    }
+  }
+
+  .navbar-nav::after {
+    margin-left: auto;
+    padding: 5px;
+    content: 'Powered by x.Navi';
+    color: $footer-text-color;
+  }
+}
+
+/* View Network Grid styling */
+.view-netzwerk-uebersicht {
+  .svg-container {
+    margin-bottom: 1rem;
+  }
+
+  .field--name-title {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .views-view-grid.cols-2 .views-col {
+    max-width: 50%;
+  }
+}
+
+/*
+ * View neuigkeiten styling
+ */
+.view-id-neuigkeiten {
+  .views-view-grid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .views-col {
+    flex: unset;
+    max-width: 30%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 15px;
+  }
+
+  .views-field-created {
+    float: right;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  .views-field-field-image {
+    margin: 0 0 15px 0;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: auto;
+      max-height: 150px;
+      max-width: 100%;
+    }
+  }
+
+  .views-field-title {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: none;
+    color: $primary;
+    text-decoration: none;
+  }
+
+  .read-more a {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    white-space: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 0;
+    padding: 0.375rem 0.75rem;
+    font-size: 14px;
+    line-height: 1.625;
+    color: $button-text-color;
+    background-color: $primary;
+    border-color: $primary;
+    text-decoration: none;
+  }
+
+  .read-more a:hover{
+    background-color: $button-hover-color;
+    border-color: $button-hover-color;
+  }
+}
+
+/* Leaflet map popup styling */
+.leaflet-popup-content {
+  width: 400px !important;
+  max-height: 550px;
+  overflow-y: auto;
+
+  article > h2 {
+    font-size: larger;
+  }
+}
+
+/* Inhaltstyp Wissenskarte Teaser View */
+.node--type-wissenskarte.node--view-mode-teaser {
+  .field--name-field-wk-bild > * {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+/* Scale knowledge maps to content width */
+#node-wissenskarte-form .js-form-file {
+  height: auto;
+}
+.image-style-wissenkarte,
+.field--type-knowledgemap-field-type img {
+  max-width: 100%;
+  height: auto
+}
+
+/* Inhaltstyp Projekt Logo */
+.node--type-projekt .field--name-field-logo img {
+  float:  right;
+  margin-left: 1em;
+}
+.node--view-mode-search-result h2,
+.aggregator-feed .feed-item-title {
+  font-size: 1.25rem;
+}
+.view-id-veranstaltungen_zum_digitalen_wandel .node--view-mode-teaser h2 {
+  font-size: 1.25rem;
+}
+
+/* Pager click area not for the whole button, not just the link text */
+.pager__item {
+  padding: 0 0;
+  a {
+    display: block;
+    padding: 0.375rem 1rem;
+  }
+}
+li.pager__item {
+  display: inline-block;
+}
+
+.image-style-personenbild2 {
+  border-radius: 50%;
+}
+
+.bef-nested {
+  > ul {
+    list-style: none;
+  }
+
+  label.option {
+    margin-left: 0.5em;
+  }
+}
+
+.chosen-container {
+  height: auto;
+}
+
+.chosen-choices {
+  border: none;
+  background-image: none;
+}
+
+[for="edit-sort-bef-combine"],[for="edit-sort-bef-combine--2"] {
+  display: none;
+}
+
+#edit-bef-sort-options,
+#edit-bef-sort-options--2,
+#edit-reset,
+#edit-reset--2,
+#edit-sort-bef-combine--wrapper legend,
+#edit-sort-bef-combine--2--wrapper legend {
+  display: none;
+  border: none;
+  margin: 0;
+}
+
+.path-portalsuche {
+  #edit-bef-sort-options,
+  #edit-bef-sort-options--2,
+  #edit-reset,
+  #edit-reset--2 {
+    display: unset;
+  }
+}
+
+.region-sidebar-first .block-facets {
+  margin-bottom: 10px;
+}
+
+.gray-light {
+  background: $block-background;
+  padding: 30px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.paragraph--type--bp-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+#block-aggregatorfeed {
+  .item-list {
+    list-style: none;
+
+    li {
+      margin: 0;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid #ebebed;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}

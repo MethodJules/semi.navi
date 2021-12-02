@@ -1,0 +1,22 @@
+name: 'ZfDW B4 Theme'
+type: theme
+description: 'ZfDW B4 Theme subtheme based on Bootstrap 4 theme.'
+core: 8.x
+core_version_requirement: '^8 || ^9'
+'base theme': bootstrap4
+stylesheets-remove:
+  - '@bootstrap4/css/style.css'
+libraries:
+  - zfdw_b4/global-styling
+  - zfdw_b4/fontawesome
+regions:
+  banner: 'Top banner region'
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer

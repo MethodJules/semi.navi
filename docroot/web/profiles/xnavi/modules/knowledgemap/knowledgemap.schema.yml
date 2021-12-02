@@ -1,0 +1,10 @@
+field.widget.settings.knowledgemap_widget:
+  type: mapping
+  label: 'Knowledgemap widget widget settings'
+  mapping:
+    size:
+      type: integer
+      label: 'Size'
+    placeholder:
+      type: textfield
+      label: 'Placeholder'

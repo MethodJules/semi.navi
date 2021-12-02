@@ -1,0 +1,6 @@
+xnavi_bi.admin_settings_form:
+  title: 'x.Navi BI Configuration'
+  route_name: xnavi_bi.admin_settings_form
+  description: 'Admin Form for the BI Module'
+  parent: system.admin_config_system
+  weight: 99

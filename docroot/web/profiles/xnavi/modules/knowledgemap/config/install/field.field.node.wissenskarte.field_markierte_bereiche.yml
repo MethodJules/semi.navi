@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_markierte_bereiche
+    - node.type.wissenskarte
+id: node.wissenskarte.field_markierte_bereiche
+field_name: field_markierte_bereiche
+entity_type: node
+bundle: wissenskarte
+label: 'Markierte Bereiche'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

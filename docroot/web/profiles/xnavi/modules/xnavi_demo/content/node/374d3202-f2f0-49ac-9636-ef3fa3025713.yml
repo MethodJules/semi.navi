@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 374d3202-f2f0-49ac-9636-ef3fa3025713
+  bundle: event
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Kompost-Workshop mot Martina Kolarek'
+  created:
+    -
+      value: 1620393518
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Liebe Gärtnerinnen und Gärtner,\r\ndiesen Samstag veranstalten wir einen 5-stündigen Workshop zum Thema Kompost anlegen.\r\nWir werden im Garten unter der Anleitung von Martina Kolarek (www.die-boden-schafft.de) unseren eigenen Heißkompost herstellen. Wir wollen in Zukunft dann gerne regelmäßig unseren eigenen Heißkompost und somit nährstoffreichen Boden für unseren Garten selbst herstellen können.\r\nWann? - 14 bis 19Uhr\r\nWo? - Urban Garden auf dem HTW Gelände Wilhelminenhof-Campus\r\nMitbringen (wenn möglich)? - Gartenhandschuhe und Gartenschere, Cutter-Messer\r\nBringt auch gern etwas Kleines für ein gemeinsames Essen nach getaner Arbeit mit (wenn möglich vegetarisch oder sogar vegan!)"
+      format: plain_text
+      summary: ''
+  field_zeit:
+    -
+      value: '2021-05-18T12:00:00'

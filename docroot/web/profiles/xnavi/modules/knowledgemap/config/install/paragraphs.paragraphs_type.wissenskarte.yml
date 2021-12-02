@@ -1,0 +1,10 @@
+uuid: 3ee7bb02-8cdd-4b49-a7ab-e47daf7fa50b
+langcode: de
+status: true
+dependencies: {  }
+id: wissenskarte
+label: Wissenskarte
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

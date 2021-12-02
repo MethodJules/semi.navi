@@ -1,0 +1,18 @@
+#newsletter-cta-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#newsletter-cta-block a.btn.inverted {
+    border: 2px solid #FFF;
+    background: #0099be;
+    color: #FFF !important;
+    font-weight: normal;
+}
+
+#block-newsletterctablock>h2 {
+    visibility: hidden;
+}
+

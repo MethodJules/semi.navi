@@ -1,0 +1,19 @@
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zfdw_b4
+id: zfdw_b4_messages
+theme: zfdw_b4
+region: header
+weight: -10
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Status-Nachrichten
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,7 @@
+langcode: de
+status: true
+dependencies: {  }
+id: comment_node_wissenskarte
+label: 'Wissenskarte comment'
+target_entity_type_id: node
+description: null

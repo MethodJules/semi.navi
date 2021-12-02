@@ -1,0 +1,90 @@
+<?php
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ */
+use Drupal\node\NodeInterface;
+
+function news_node_insert(NodeInterface $node) {
+  $type = $node->bundle();
+  $id = $node->id();
+
+  $connection = \Drupal::database();
+
+  $result = $connection->insert('activities')
+                ->fields([
+                    'nid' => $id,
+                    'content_type' => $type,
+                ])
+                ->execute();
+}
+
+/**
+ * Implements hook_mail().
+ */
+function news_mail($key, &$message, $params) {
+  $site_name = \Drupal::config('system.site')->get('name');
+  $site_mail = \Drupal::config('system.site')->get('mail');
+
+  switch($key) {
+    case 'xnavi_news_mail': 
+      $message['headers']['Reply-To'] = $site_mail;
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8;format=flowed;delsp=yes';
+      $message['headers']['From'] = $site_mail . '<' . $site_mail . '>';
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      $message['cta_url'] = $params['cta_url'];
+      $message['cta_text'] = $params['cta_text'];
+      $message['bold_text'] = $params['bold_text'];
+      $message['lower_body'] = $params['lower_body'];
+      $message['sender_name'] = $params['sender_name'];
+      $message['name_recipient'] = $params['name_recipient'];
+      $message['base_path'] = $params['base_path'];
+      $message['order_flag'] = $params['order_flag'];
+      $message['news_items'] = $params['news_items'];
+      $message['token'] = $params['token'];
+
+      //$message['news_events'] = $params['news_events'];
+      break;
+    case 'xnavi_newsletter_order':
+      $message['headers']['Reply-To'] = $site_mail;
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8;format=flowed;delsp=yes';
+      $message['headers']['From'] = $site_mail . '<' . $site_mail . '>';
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      $message['cta_url'] = $params['cta_url'];
+      $message['cta_text'] = $params['cta_text'];
+      $message['bold_text'] = $params['bold_text'];
+      $message['lower_body'] = $params['lower_body'];
+      $message['sender_name'] = $params['sender_name'];
+      $message['name_recipient'] = $params['name_recipient'];
+      $message['base_url'] = $params['base_url'];
+      break;
+    
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function news_theme($existing, $type, $theme, $path) {
+    return [
+      'newsletter_cta_block' => [
+        'variables' => [
+          'text' => null,
+          'image' => null,
+        ]
+        ],
+      'newsletter_preview' => [
+        'variables' => [
+          'message' => array(),
+          'body' => null,
+        ],
+      ],
+      'activity_stream' => [
+        'variables' => [
+          'activities' => array(),
+        ]
+      ], 
+    ]; 
+}

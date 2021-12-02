@@ -1,0 +1,48 @@
+status: true
+id: homepage
+label: Homepage
+module: xnavi_demo
+langcode: en
+routes:
+  - route_name: view.frontpage.page_1
+tips:
+  homepage:
+    id: homepage
+    plugin: text
+    label: 'Hallo und Danke, dass Sie unser x.Navi-Framework nutzen wollen'
+    body: 'Diese Tour wird Ihnen die einzelnen Features von x.Navi zeigen'
+    weight: 1
+  main_content:
+    id: main_content
+    plugin: text
+    label: 'Region für den Hauptinhalt'
+    body: 'Das hier ist die Region für den Hauptinhalt'
+    weight: 2
+    attributes:
+      data-id: region-content
+      data-options: 'tipLocation: left'
+  main_menu:
+    id: main_menu
+    plugin: text
+    label: 'Hauptmenü'
+    body: '<p>Hier ist das Hauptmenü. Das kann von Ihnen beliebig erweitert werden.</p>'
+    weight: 3
+    data-class: menu--main
+  admin_menu:
+    id: admin_menu
+    plugin: text
+    label: 'Administrationsmenü'
+    body: '<p>Hier können administrative Aufgaben geregelt werden.</p>'
+    weight: 4
+    attributes:
+      data-class: toolbar-icon-system-admin-content
+  restart_tour:
+    id: restart_tour
+    plugin: text
+    label: 'Brauchen Sie ein bisschen Zeit, um rumzuschauen?'
+    body: 'Sie können die Tour zu jeder Zeit stoppen und neu starten indem Sie diesen Button klicken.'
+    weight: 5
+    attributes:
+      data-id: toolbar-tab-tour
+      data-options: 'nubPosition: top-right'
+  

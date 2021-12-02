@@ -1,0 +1,11 @@
+meetup:
+ version: 1.x
+ css:
+  theme:
+   css/meetup.css: {}
+ js:
+  js/meetup.js: {}
+ dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

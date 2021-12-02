@@ -1,0 +1,6 @@
+name: Morphologischer Kasten
+description: 'Erstellt einen morphologischen Kasten für Facetten Suche'
+core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
+package: x.Navi Optional

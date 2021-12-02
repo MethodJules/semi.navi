@@ -1,0 +1,37 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - views.view.knowledgemap_search_results
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - zfdw_b4
+id: zfdw_b4_views_block__knowledgemap_search_results
+theme: zfdw_b4
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'views_block:knowledgemap_search_results-knowledgemap_search_results'
+settings:
+  id: 'views_block:knowledgemap_search_results-knowledgemap_search_results'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      wissenskarte: wissenskarte
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/node/*/edit\r\n/node/add/wissenskarte"
+    negate: true
+    context_mapping: {  }

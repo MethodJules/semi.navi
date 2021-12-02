@@ -1,0 +1,9 @@
+cache:
+  page:
+    max_age: 0
+css:
+  preprocess: false
+  gzip: true
+js:
+  preprocess: false
+  gzip: true

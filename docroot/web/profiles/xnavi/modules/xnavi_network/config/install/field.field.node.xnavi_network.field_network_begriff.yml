@@ -1,0 +1,18 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_network_begriff
+    - node.type.xnavi_network
+id: node.xnavi_network.field_network_begriff
+field_name: field_network_begriff
+entity_type: node
+bundle: xnavi_network
+label: Begriff
+description: 'Bitte geben Sie hier den Begriff ein auf welche die Projektbeschreibungen gescannt werden sollen.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

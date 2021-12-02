@@ -1,0 +1,14 @@
+xnavi-bi:
+  version: 1.x
+  js:
+    js/d3.min.js: {}
+    js/c3.min.js: {}
+    js/xnavi_bi.js: {}
+  css:
+    layout:
+      css/c3.css: {}
+      css/xnavi_bi.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery

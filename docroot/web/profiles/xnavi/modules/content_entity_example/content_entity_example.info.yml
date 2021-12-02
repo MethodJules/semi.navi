@@ -1,0 +1,8 @@
+name: Content Entity Example
+type: module
+description: soidsoids
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - drupal:options
+  - drupal:user

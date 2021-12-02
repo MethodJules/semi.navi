@@ -1,0 +1,27 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tag_combined
+    - node.type.wissenskarte
+id: node.wissenskarte.field_tag_combined
+field_name: field_tag_combined
+entity_type: node
+bundle: wissenskarte
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles: null
+field_type: entity_reference

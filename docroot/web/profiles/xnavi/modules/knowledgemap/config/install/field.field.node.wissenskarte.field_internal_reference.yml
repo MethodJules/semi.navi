@@ -1,0 +1,27 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_reference
+    - node.type.wissenskarte
+id: node.wissenskarte.field_internal_reference
+field_name: field_internal_reference
+entity_type: node
+bundle: wissenskarte
+label: 'Internal Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles: null
+field_type: entity_reference

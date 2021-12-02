@@ -1,0 +1,55 @@
+meetup.content:
+    path: '/meetup/content'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::content'
+    requirements:
+        _permission: 'access content'
+
+meetup.participation:
+    path: '/meetup/participation/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::participation'
+    requirements:
+        _permission: 'access content'
+
+meetup.participation_update:
+    path: '/meetup/participation_update/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::participation_update'
+    requirements:
+        _permission: 'access content'
+
+meetup.no_participation:
+    path: '/meetup/no_participation/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::no_participation'
+    requirements:
+        _permission: 'access content'
+
+meetup.interest:
+    path: '/meetup/interest/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::interest'
+    requirements:
+        _permission: 'access content'
+
+meetup.interest_update:
+    path: '/meetup/interest_update/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::interest_update'
+    requirements:
+        _permission: 'access content'
+
+meetup.no_interest:
+    path: '/meetup/no_interest/{nid}'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::no_interest'
+    requirements:
+        _permission: 'access content'
+
+meetup.anonymous_user:
+    path: '/meetup/anonymous_user'
+    defaults:
+        _controller: 'Drupal\meetup\Controller\MeetupController::anonymous_user'
+    requirements:
+        _access: 'TRUE'

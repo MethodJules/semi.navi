@@ -1,0 +1,21 @@
+id: newsletter
+module: news
+label: newsletter
+langcode: de
+routes:
+  - route_name: news.newsletter_send_newsletter_administration_form
+tips:
+  newsletter-introduction:
+    id: newsletter_introduction
+    plugin: text
+    label: Einführung Newsletter Modul
+    body: "Dies ist die Einführung in das Newsletter Modul"
+    weight: 1
+  newsletter-configuration:
+    id: newsletter_configuration
+    plugin: text
+    label: Newsletter Konfiguration
+    body: "Hier wird festgelegt, dass "
+    weight: 2
+    attributes:
+      data-id: newsletter-administration-form

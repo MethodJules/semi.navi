@@ -1,0 +1,43 @@
+<?php
+
+/**
+* Implements hook_schema().
+*/
+
+function meetup_schema() {
+
+    $schema['meetup'] = [
+        'description' => 'Meetup Table',
+        'fields' => [
+            'meetup_id' => [
+                'description' => 'The meetup id',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'uid' => [
+                'description' => 'The user id',
+                'type' => 'int',
+                'not null' => TRUE
+            ],
+            'nid' => [
+                'description' => 'The nid of the event',
+                'type' => 'int',
+                'not null' => TRUE
+            ],
+            'participation' => [
+                'description' => 'Flag if user participates on an event',
+                'type' => 'int',
+                'not null' => TRUE
+            ],
+            'interest' => [
+                'description' => 'Flag if user is interested on an event',
+                'type' => 'int',
+                'not null' => TRUE
+            ],
+        ],
+        'primary key' => ['meetup_id'],
+    ];
+
+    return $schema;
+}
