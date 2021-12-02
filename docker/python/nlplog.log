@@ -1,0 +1,1590 @@
+2020-03-20 21:18:25: Starting NLP Task
+2020-03-20 21:18:25: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-03-20 21:18:25: Remaining Nodes: 9
+2020-03-20 21:18:25: Node ID: 1; Title: Julien Hofer
+2020-03-21 18:45:57: Starting NLP Task
+2020-03-21 18:45:57: Remaining Nodes: 9
+2020-03-21 18:45:57: Node ID: 1; Title: Julien Hofer
+2020-03-21 18:55:42: Starting NLP Task
+2020-03-21 18:55:42: Remaining Nodes: 9
+2020-03-21 18:55:42: Node ID: 1; Title: Julien Hofer
+2020-03-21 19:01:26: Starting NLP Task
+2020-03-21 19:01:26: Remaining Nodes: 9
+2020-03-21 19:01:26: Node ID: 1; Title: Julien Hofer
+2020-03-22 20:42:22: Starting NLP Task
+2020-03-22 20:42:22: Remaining Nodes: 9
+2020-03-22 20:42:22: Node ID: 1; Title: Julien Hofer
+2020-03-23 12:11:33: Starting NLP Task
+2020-03-23 12:11:33: Remaining Nodes: 9
+2020-03-23 12:11:33: Node ID: 1; Title: Julien Hofer
+2020-03-23 12:11:39: Insert field body with content in database
+2020-03-23 15:44:19: Starting NLP Task
+2020-03-23 15:44:19: Remaining Nodes: 9
+2020-03-23 15:44:19: Node ID: 1; Title: Julien Hofer
+2020-03-23 15:51:02: Starting NLP Task
+2020-03-23 15:51:02: Remaining Nodes: 9
+2020-03-23 15:51:02: Node ID: 1; Title: Julien Hofer
+2020-03-25 20:03:08: Starting NLP Task
+2020-03-25 20:03:08: Remaining Nodes: 9
+2020-03-25 20:03:08: Node ID: 1; Title: Julien Hofer
+2020-03-25 20:20:07: Starting NLP Task
+2020-03-25 20:20:07: Remaining Nodes: 9
+2020-03-25 20:20:07: Node ID: 1; Title: Julien Hofer
+2020-03-25 20:22:41: Starting NLP Task
+2020-03-25 20:22:41: Remaining Nodes: 9
+2020-03-25 20:22:41: Node ID: 1; Title: Julien Hofer
+2020-03-25 22:48:17: Starting NLP Task
+2020-03-25 22:48:17: Remaining Nodes: 9
+2020-03-25 22:48:17: Node ID: 1; Title: Julien Hofer
+2020-03-26 08:00:23: Starting NLP Task
+2020-03-26 08:00:23: Remaining Nodes: 9
+2020-03-26 08:00:23: Node ID: 1; Title: Julien Hofer
+2020-03-26 08:01:10: Starting NLP Task
+2020-03-26 08:01:10: Remaining Nodes: 9
+2020-03-26 08:01:10: Node ID: 1; Title: Julien Hofer
+2020-03-26 08:01:57: Starting NLP Task
+2020-03-26 08:01:57: Remaining Nodes: 9
+2020-03-26 08:01:57: Node ID: 1; Title: Julien Hofer
+2020-03-26 08:54:08: Starting NLP Task
+2020-03-26 08:54:08: Remaining Nodes: 9
+2020-03-26 08:54:08: Node ID: 1; Title: Julien Hofer
+2020-03-26 08:55:06: Starting NLP Task
+2020-03-26 08:55:06: Remaining Nodes: 9
+2020-03-26 08:55:06: Node ID: 1; Title: Julien Hofer
+2020-03-26 09:20:59: Starting NLP Task
+2020-03-26 09:20:59: Remaining Nodes: 9
+2020-03-26 09:20:59: Node ID: 1; Title: Julien Hofer
+2020-03-26 13:21:18: Starting NLP Task
+2020-03-26 13:21:18: Remaining Nodes: 9
+2020-03-26 13:21:18: Node ID: 1; Title: Julien Hofer
+2020-03-26 14:31:03: Starting NLP Task
+2020-03-26 14:31:03: Remaining Nodes: 9
+2020-03-26 14:31:03: Node ID: 1; Title: Julien Hofer
+2020-03-26 14:32:12: Insert field body with content in database
+2020-03-26 14:32:14: Remaining Nodes: 8
+2020-03-26 14:32:14: Node ID: 2; Title: James Bond
+2020-03-26 16:02:11: Starting NLP Task
+2020-03-26 16:02:11: Remaining Nodes: 8
+2020-03-26 16:02:11: Node ID: 2; Title: James Bond
+2020-03-26 16:03:09: Starting NLP Task
+2020-03-26 16:03:09: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-03-26 16:03:09: Remaining Nodes: 9
+2020-03-26 16:03:09: Node ID: 6; Title: Go
+2020-03-26 16:03:14: Insert field body with content in database
+2020-03-26 16:03:15: Remaining Nodes: 8
+2020-03-26 16:03:15: Node ID: 7; Title: dddfdfdf
+2020-03-26 16:03:17: Insert field body with content in database
+2020-03-26 16:03:18: Remaining Nodes: 7
+2020-03-26 16:03:18: Node ID: 8; Title: Hhha
+2020-03-26 16:03:22: Insert field body with content in database
+2020-03-26 16:03:22: Remaining Nodes: 6
+2020-03-26 16:03:22: Node ID: 9; Title: gfggf
+2020-03-26 16:03:24: Insert field body with content in database
+2020-03-26 16:03:25: Remaining Nodes: 5
+2020-03-26 16:03:25: Node ID: 10; Title: Pee
+2020-03-26 16:03:28: Insert field body with content in database
+2020-03-26 16:03:28: Remaining Nodes: 4
+2020-03-26 16:03:28: Node ID: 1; Title: Julien Hofer
+2020-03-26 16:03:54: Insert field body with content in database
+2020-03-26 16:04:03: Remaining Nodes: 3
+2020-03-26 16:04:03: Node ID: 3; Title: Alan Hevner
+2020-03-26 16:04:20: Insert field body with content in database
+2020-03-26 16:04:27: Remaining Nodes: 2
+2020-03-26 16:04:27: Node ID: 5; Title: MoneyPenny
+2020-03-26 16:04:50: Insert field body with content in database
+2020-03-26 16:04:56: Remaining Nodes: 1
+2020-03-26 16:04:56: Node ID: 2; Title: James Bond
+2020-03-26 16:18:46: Starting NLP Task
+2020-03-26 16:18:46: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-03-26 16:18:46: Remaining Nodes: 9
+2020-03-26 16:18:46: Node ID: 6; Title: Go
+2020-03-26 16:18:51: Insert field body with content in database
+2020-03-26 16:18:52: Remaining Nodes: 8
+2020-03-26 16:18:52: Node ID: 7; Title: dddfdfdf
+2020-03-26 16:18:54: Insert field body with content in database
+2020-03-26 16:18:54: Remaining Nodes: 7
+2020-03-26 16:18:54: Node ID: 8; Title: Hhha
+2020-03-26 16:18:58: Insert field body with content in database
+2020-03-26 16:18:58: Remaining Nodes: 6
+2020-03-26 16:18:58: Node ID: 9; Title: gfggf
+2020-03-26 16:19:00: Insert field body with content in database
+2020-03-26 16:19:00: Remaining Nodes: 5
+2020-03-26 16:19:00: Node ID: 10; Title: Pee
+2020-03-26 16:19:02: Insert field body with content in database
+2020-03-26 16:19:03: Remaining Nodes: 4
+2020-03-26 16:19:03: Node ID: 1; Title: Julien Hofer
+2020-03-26 16:19:35: Insert field body with content in database
+2020-03-26 16:19:43: Remaining Nodes: 3
+2020-03-26 16:19:43: Node ID: 3; Title: Alan Hevner
+2020-03-26 16:20:02: Insert field body with content in database
+2020-03-26 16:20:03: Remaining Nodes: 2
+2020-03-26 16:20:03: Node ID: 5; Title: MoneyPenny
+2020-03-26 16:20:26: Insert field body with content in database
+2020-03-26 16:20:27: Remaining Nodes: 1
+2020-03-26 16:20:27: Node ID: 2; Title: James Bond
+2020-03-26 16:21:11: Insert field body with content in database
+2020-03-26 16:21:22: Creating search index
+2020-03-26 16:21:22: Adding manual created nodes
+2020-03-26 16:21:22: File /app/export/nodes_export_process.json is empty. Delete file.
+2020-03-26 16:21:22: No input for processing in /app/export/nodes_export.json
+2020-03-26 16:21:22: exit Task
+2020-03-26 16:21:22: No input for processing in /app/export/nodes_export.json
+2020-03-26 16:21:22: exit Task
+2020-04-27 19:06:37: Starting NLP Task
+2020-04-27 19:06:37: No input for processing in /app/export/nodes_export.json
+2020-04-27 19:06:37: exit Task
+2020-04-27 19:06:37: No input for processing in /app/export/nodes_export.json
+2020-04-27 19:06:37: exit Task
+2020-04-27 19:11:31: Starting NLP Task
+2020-04-27 19:11:31: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-04-27 19:11:31: Remaining Nodes: 17
+2020-04-27 19:11:31: Node ID: 3793; Title: Schupler, Zwi
+2020-04-27 19:19:55: Starting NLP Task
+2020-04-27 19:19:55: Remaining Nodes: 17
+2020-04-27 19:19:55: Node ID: 3793; Title: Schupler, Zwi
+2020-04-27 19:22:09: Starting NLP Task
+2020-04-27 19:22:09: Remaining Nodes: 17
+2020-04-27 19:22:09: Node ID: 3793; Title: Schupler, Zwi
+2020-04-27 19:24:28: Insert field field_biography with content in database
+2020-04-27 19:24:49: Remaining Nodes: 16
+2020-04-27 19:24:49: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-04-27 19:32:22: Starting NLP Task
+2020-04-27 19:32:22: Remaining Nodes: 16
+2020-04-27 19:32:22: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-04-27 19:34:16: Insert field field_biography with content in database
+2020-04-27 19:34:38: Remaining Nodes: 15
+2020-04-27 19:34:38: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-04-27 19:35:34: Insert field field_biography with content in database
+2020-04-27 19:35:47: Remaining Nodes: 14
+2020-04-27 19:35:47: Node ID: 2197; Title: Landauer, Georg
+2020-04-27 19:36:28: Insert field field_biography with content in database
+2020-04-27 19:36:37: Remaining Nodes: 13
+2020-04-27 19:36:37: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-04-27 19:37:10: Insert field field_biography with content in database
+2020-04-27 19:37:15: Remaining Nodes: 12
+2020-04-27 19:37:15: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-04-27 19:39:29: Insert field field_biography with content in database
+2020-04-27 19:39:49: Remaining Nodes: 11
+2020-04-27 19:39:49: Node ID: 1282; Title: Senator, David Werner 
+2020-04-27 19:41:23: Insert field field_biography with content in database
+2020-04-27 19:41:38: Remaining Nodes: 10
+2020-04-27 19:41:38: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-04-27 19:42:18: Insert field field_biography with content in database
+2020-04-27 19:42:25: Remaining Nodes: 9
+2020-04-27 19:42:25: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-04-27 19:43:35: Insert field field_biography with content in database
+2020-04-27 19:43:52: Remaining Nodes: 8
+2020-04-27 19:43:52: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-04-27 19:44:48: Insert field field_biography with content in database
+2020-04-27 19:45:02: Remaining Nodes: 7
+2020-04-27 19:45:02: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-04-27 19:45:56: Insert field field_biography with content in database
+2020-04-27 19:46:07: Remaining Nodes: 6
+2020-04-27 19:46:07: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-04-27 19:46:48: Insert field field_biography with content in database
+2020-04-27 19:46:54: Remaining Nodes: 5
+2020-04-27 19:46:54: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-04-27 19:47:13: Insert field field_biography with content in database
+2020-04-27 19:47:16: Remaining Nodes: 4
+2020-04-27 19:47:16: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-04-27 19:48:31: Insert field field_biography with content in database
+2020-04-27 19:48:48: Remaining Nodes: 3
+2020-04-27 19:48:48: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-04-27 19:50:43: Insert field field_biography with content in database
+2020-04-27 19:51:01: Remaining Nodes: 2
+2020-04-27 19:51:01: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-04-27 19:52:27: Insert field field_biography with content in database
+2020-04-27 19:52:52: Remaining Nodes: 1
+2020-04-27 19:52:52: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-04-27 19:53:34: Insert field field_biography with content in database
+2020-04-27 19:53:46: Creating search index
+2020-04-27 19:53:49: Adding manual created nodes
+2020-04-27 19:53:49: File /app/export/nodes_export_process.json is empty. Delete file.
+2020-04-27 19:53:49: No input for processing in /app/export/nodes_export.json
+2020-04-27 19:53:49: exit Task
+2020-04-27 19:53:49: No input for processing in /app/export/nodes_export.json
+2020-04-27 19:53:49: exit Task
+2020-06-25 07:52:12: Starting NLP Task
+2020-06-25 07:52:12: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-06-25 07:52:12: Remaining Nodes: 17
+2020-06-25 07:52:12: Node ID: 3793; Title: Schupler, Zwi
+2020-06-25 07:53:04: Starting NLP Task
+2020-06-25 07:53:04: Remaining Nodes: 17
+2020-06-25 07:53:04: Node ID: 3793; Title: Schupler, Zwi
+2020-06-25 07:54:59: Insert field field_biography with content in database
+2020-06-25 07:55:19: Remaining Nodes: 16
+2020-06-25 07:55:19: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-06-25 07:57:04: Insert field field_biography with content in database
+2020-06-25 07:57:25: Remaining Nodes: 15
+2020-06-25 07:57:25: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-06-25 07:58:16: Insert field field_biography with content in database
+2020-06-25 07:58:29: Remaining Nodes: 14
+2020-06-25 07:58:29: Node ID: 2197; Title: Landauer, Georg
+2020-06-25 07:59:06: Insert field field_biography with content in database
+2020-06-25 07:59:15: Remaining Nodes: 13
+2020-06-25 07:59:15: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-06-25 07:59:45: Insert field field_biography with content in database
+2020-06-25 07:59:50: Remaining Nodes: 12
+2020-06-25 07:59:50: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-06-25 08:01:56: Insert field field_biography with content in database
+2020-06-25 08:02:17: Remaining Nodes: 11
+2020-06-25 08:02:17: Node ID: 1282; Title: Senator, David Werner 
+2020-06-25 08:03:48: Insert field field_biography with content in database
+2020-06-25 08:04:03: Remaining Nodes: 10
+2020-06-25 08:04:03: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-06-25 08:04:44: Insert field field_biography with content in database
+2020-06-25 08:04:51: Remaining Nodes: 9
+2020-06-25 08:04:51: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-06-25 08:05:57: Insert field field_biography with content in database
+2020-06-25 08:06:12: Remaining Nodes: 8
+2020-06-25 08:06:12: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-06-25 08:07:01: Insert field field_biography with content in database
+2020-06-25 08:07:15: Remaining Nodes: 7
+2020-06-25 08:07:15: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-06-25 08:08:03: Insert field field_biography with content in database
+2020-06-25 08:08:12: Remaining Nodes: 6
+2020-06-25 08:08:12: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-06-25 08:08:50: Insert field field_biography with content in database
+2020-06-25 08:08:55: Remaining Nodes: 5
+2020-06-25 08:08:55: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-06-25 08:09:13: Insert field field_biography with content in database
+2020-06-25 08:09:14: Remaining Nodes: 4
+2020-06-25 08:09:14: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-06-25 08:10:20: Insert field field_biography with content in database
+2020-06-25 08:10:35: Remaining Nodes: 3
+2020-06-25 08:10:35: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-06-25 08:12:15: Insert field field_biography with content in database
+2020-06-25 08:12:31: Remaining Nodes: 2
+2020-06-25 08:12:31: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-06-25 08:13:55: Insert field field_biography with content in database
+2020-06-25 08:14:18: Remaining Nodes: 1
+2020-06-25 08:14:18: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-06-25 08:14:58: Insert field field_biography with content in database
+2020-06-25 08:15:09: Creating search index
+2020-06-25 08:15:12: Adding manual created nodes
+2020-06-25 08:15:12: File /app/export/nodes_export_process.json is empty. Delete file.
+2020-06-25 08:15:12: No input for processing in /app/export/nodes_export.json
+2020-06-25 08:15:12: exit Task
+2020-06-25 08:15:12: No input for processing in /app/export/nodes_export.json
+2020-06-25 08:15:12: exit Task
+2020-06-26 18:32:37: Starting NLP Task
+2020-06-26 18:32:37: No input for processing in /app/export/nodes_export.json
+2020-06-26 18:32:37: exit Task
+2020-06-26 18:32:37: No input for processing in /app/export/nodes_export.json
+2020-06-26 18:32:37: exit Task
+2020-06-26 18:41:07: Starting NLP Task
+2020-06-26 18:41:07: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-06-26 18:41:07: Remaining Nodes: 17
+2020-06-26 18:41:07: Node ID: 3793; Title: Schupler, Zwi
+2020-06-26 18:43:11: Insert field field_biography with content in database
+2020-06-26 18:43:30: Remaining Nodes: 16
+2020-06-26 18:43:30: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-06-26 18:45:09: Insert field field_biography with content in database
+2020-06-26 18:45:29: Remaining Nodes: 15
+2020-06-26 18:45:29: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-06-26 18:46:19: Insert field field_biography with content in database
+2020-06-26 18:46:31: Remaining Nodes: 14
+2020-06-26 18:46:31: Node ID: 2197; Title: Landauer, Georg
+2020-06-26 18:47:08: Insert field field_biography with content in database
+2020-06-26 18:47:17: Remaining Nodes: 13
+2020-06-26 18:47:17: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-06-26 18:47:45: Insert field field_biography with content in database
+2020-06-26 18:47:51: Remaining Nodes: 12
+2020-06-26 18:47:51: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-06-26 18:49:49: Insert field field_biography with content in database
+2020-06-26 18:50:07: Remaining Nodes: 11
+2020-06-26 18:50:07: Node ID: 1282; Title: Senator, David Werner 
+2020-06-26 18:51:33: Insert field field_biography with content in database
+2020-06-26 18:51:47: Remaining Nodes: 10
+2020-06-26 18:51:47: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-06-26 18:52:24: Insert field field_biography with content in database
+2020-06-26 18:52:30: Remaining Nodes: 9
+2020-06-26 18:52:30: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-06-26 18:53:32: Insert field field_biography with content in database
+2020-06-26 18:53:47: Remaining Nodes: 8
+2020-06-26 18:53:47: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-06-26 18:54:36: Insert field field_biography with content in database
+2020-06-26 18:54:50: Remaining Nodes: 7
+2020-06-26 18:54:50: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-06-26 18:55:44: Insert field field_biography with content in database
+2020-06-26 18:55:54: Remaining Nodes: 6
+2020-06-26 18:55:54: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-06-26 18:56:35: Insert field field_biography with content in database
+2020-06-26 18:56:39: Remaining Nodes: 5
+2020-06-26 18:56:39: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-06-26 18:56:58: Insert field field_biography with content in database
+2020-06-26 18:56:59: Remaining Nodes: 4
+2020-06-26 18:56:59: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-06-26 18:58:05: Insert field field_biography with content in database
+2020-06-26 18:58:20: Remaining Nodes: 3
+2020-06-26 18:58:20: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-06-26 19:00:01: Insert field field_biography with content in database
+2020-06-26 19:00:17: Remaining Nodes: 2
+2020-06-26 19:00:17: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-06-26 19:01:34: Insert field field_biography with content in database
+2020-06-26 19:01:55: Remaining Nodes: 1
+2020-06-26 19:01:55: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-06-26 19:02:32: Insert field field_biography with content in database
+2020-06-26 19:02:43: Creating search index
+2020-06-26 19:02:45: Adding manual created nodes
+2020-06-26 19:02:45: File /app/export/nodes_export_process.json is empty. Delete file.
+2020-06-26 19:02:45: No input for processing in /app/export/nodes_export.json
+2020-06-26 19:02:45: exit Task
+2020-06-26 19:02:45: No input for processing in /app/export/nodes_export.json
+2020-06-26 19:02:45: exit Task
+2020-06-26 20:26:03: Starting NLP Task
+2020-06-26 20:26:03: No input for processing in /app/export/nodes_export.json
+2020-06-26 20:26:03: exit Task
+2020-06-26 20:26:03: No input for processing in /app/export/nodes_export.json
+2020-06-26 20:26:03: exit Task
+2020-06-26 20:26:54: Starting NLP Task
+2020-06-26 20:26:54: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-06-26 20:26:54: Remaining Nodes: 17
+2020-06-26 20:26:54: Node ID: 3793; Title: Schupler, Zwi
+2020-06-26 20:48:30: Starting NLP Task
+2020-06-26 20:48:30: Remaining Nodes: 17
+2020-06-26 20:48:30: Node ID: 3793; Title: Schupler, Zwi
+2020-06-26 20:49:22: Starting NLP Task
+2020-06-26 20:49:22: Remaining Nodes: 17
+2020-06-26 20:49:22: Node ID: 3793; Title: Schupler, Zwi
+2020-06-26 20:49:57: Starting NLP Task
+2020-06-26 20:49:57: Remaining Nodes: 17
+2020-06-26 20:49:57: Node ID: 3793; Title: Schupler, Zwi
+2020-06-26 20:52:01: Insert field field_biography with content in database
+2020-06-27 05:43:21: Starting NLP Task
+2020-06-27 05:43:21: Remaining Nodes: 17
+2020-06-27 05:43:21: Node ID: 3793; Title: Schupler, Zwi
+2020-06-27 05:44:23: Insert field field_biography with content in database
+2020-06-27 05:44:26: Remaining Nodes: 16
+2020-06-27 05:44:26: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-06-27 05:46:13: Insert field field_biography with content in database
+2020-06-27 05:46:42: Remaining Nodes: 15
+2020-06-27 05:46:42: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-06-27 05:47:46: Insert field field_biography with content in database
+2020-06-27 05:48:04: Remaining Nodes: 14
+2020-06-27 05:48:04: Node ID: 2197; Title: Landauer, Georg
+2020-06-27 05:48:57: Insert field field_biography with content in database
+2020-06-27 05:49:07: Remaining Nodes: 13
+2020-06-27 05:49:07: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-06-27 05:49:40: Insert field field_biography with content in database
+2020-06-27 05:49:45: Remaining Nodes: 12
+2020-06-27 05:49:45: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-06-27 05:52:44: Insert field field_biography with content in database
+2020-06-27 05:53:16: Remaining Nodes: 11
+2020-06-27 05:53:16: Node ID: 1282; Title: Senator, David Werner 
+2020-06-27 05:55:33: Insert field field_biography with content in database
+2020-06-27 05:55:49: Remaining Nodes: 10
+2020-06-27 05:55:49: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-06-27 05:56:27: Insert field field_biography with content in database
+2020-06-27 05:56:35: Remaining Nodes: 9
+2020-06-27 05:56:35: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-06-27 05:57:36: Insert field field_biography with content in database
+2020-06-27 05:57:50: Remaining Nodes: 8
+2020-06-27 05:57:50: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-06-27 05:58:37: Insert field field_biography with content in database
+2020-06-27 05:58:49: Remaining Nodes: 7
+2020-06-27 05:58:49: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-06-27 05:59:30: Insert field field_biography with content in database
+2020-06-27 05:59:40: Remaining Nodes: 6
+2020-06-27 05:59:40: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-06-27 06:00:14: Insert field field_biography with content in database
+2020-06-27 06:00:19: Remaining Nodes: 5
+2020-06-27 06:00:19: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-06-27 06:00:34: Insert field field_biography with content in database
+2020-06-27 06:00:36: Remaining Nodes: 4
+2020-06-27 06:00:36: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-06-27 06:01:47: Insert field field_biography with content in database
+2020-06-27 06:02:06: Remaining Nodes: 3
+2020-06-27 06:02:06: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-06-27 06:04:22: Insert field field_biography with content in database
+2020-06-27 06:04:53: Remaining Nodes: 2
+2020-06-27 06:04:53: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-06-27 06:06:38: Insert field field_biography with content in database
+2020-06-27 06:07:02: Remaining Nodes: 1
+2020-06-27 06:07:02: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-06-27 06:07:42: Insert field field_biography with content in database
+2020-10-01 09:10:25: Starting NLP Task
+2020-10-01 09:10:25: No input for processing in /app/export/nodes_export.json
+2020-10-01 09:10:25: exit Task
+2020-10-01 09:10:25: No input for processing in /app/export/nodes_export.json
+2020-10-01 09:10:25: exit Task
+2020-10-01 09:14:13: Starting NLP Task
+2020-10-01 09:14:13: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-10-01 09:14:13: Remaining Nodes: 17
+2020-10-01 09:14:13: Node ID: 3793; Title: Schupler, Zwi
+2020-10-01 09:25:02: Starting NLP Task
+2020-10-01 09:25:02: Remaining Nodes: 17
+2020-10-01 09:25:02: Node ID: 3793; Title: Schupler, Zwi
+2020-10-01 09:36:52: Starting NLP Task
+2020-10-01 09:36:52: Remaining Nodes: 17
+2020-10-01 09:36:52: Node ID: 3793; Title: Schupler, Zwi
+2020-10-01 09:39:14: Insert field field_biography with content in database
+2020-10-01 09:39:48: Remaining Nodes: 16
+2020-10-01 09:39:48: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-10-01 09:44:16: Insert field field_biography with content in database
+2020-10-01 09:44:49: Remaining Nodes: 15
+2020-10-01 09:44:49: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-10-01 09:47:01: Insert field field_biography with content in database
+2020-10-01 09:47:22: Remaining Nodes: 14
+2020-10-01 09:47:22: Node ID: 2197; Title: Landauer, Georg
+2020-10-01 09:49:11: Insert field field_biography with content in database
+2020-10-01 09:49:23: Remaining Nodes: 13
+2020-10-01 09:49:23: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-10-01 09:50:32: Insert field field_biography with content in database
+2020-10-01 09:50:39: Remaining Nodes: 12
+2020-10-01 09:50:39: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-10-01 09:56:03: Insert field field_biography with content in database
+2020-10-01 09:56:26: Remaining Nodes: 11
+2020-10-01 09:56:26: Node ID: 1282; Title: Senator, David Werner 
+2020-10-01 10:00:14: Insert field field_biography with content in database
+2020-10-01 10:00:30: Remaining Nodes: 10
+2020-10-01 10:00:30: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-10-01 10:01:55: Insert field field_biography with content in database
+2020-10-01 10:02:02: Remaining Nodes: 9
+2020-10-01 10:02:02: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-10-01 10:04:37: Insert field field_biography with content in database
+2020-10-01 10:04:53: Remaining Nodes: 8
+2020-10-01 10:04:53: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-10-01 10:06:50: Insert field field_biography with content in database
+2020-10-01 10:07:04: Remaining Nodes: 7
+2020-10-01 10:07:04: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-10-01 10:08:57: Insert field field_biography with content in database
+2020-10-01 10:09:11: Remaining Nodes: 6
+2020-10-01 10:09:11: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-10-01 10:10:28: Insert field field_biography with content in database
+2020-10-01 10:10:35: Remaining Nodes: 5
+2020-10-01 10:10:35: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-10-01 10:11:08: Insert field field_biography with content in database
+2020-10-01 10:11:10: Remaining Nodes: 4
+2020-10-01 10:11:10: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-10-01 10:13:43: Insert field field_biography with content in database
+2020-10-01 10:14:02: Remaining Nodes: 3
+2020-10-01 10:14:02: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-10-01 10:18:17: Insert field field_biography with content in database
+2020-10-01 10:18:38: Remaining Nodes: 2
+2020-10-01 10:18:38: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-10-01 10:21:57: Insert field field_biography with content in database
+2020-10-01 10:22:20: Remaining Nodes: 1
+2020-10-01 10:22:20: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-10-01 10:23:49: Insert field field_biography with content in database
+2020-12-07 14:31:06: Starting NLP Task
+2020-12-07 14:31:06: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2020-12-07 14:31:06: Remaining Nodes: 124
+2020-12-07 14:31:06: Node ID: 1214; Title: Wronsky, Siddy (born Neufeld, Sidonie)
+2020-12-07 14:32:45: Insert field field_biography with content in database
+2020-12-07 14:33:05: Remaining Nodes: 123
+2020-12-07 14:33:05: Node ID: 1215; Title: Neufeld, Hertha
+2020-12-07 14:34:54: Insert field field_biography with content in database
+2020-12-07 14:35:09: Remaining Nodes: 122
+2020-12-07 14:35:09: Node ID: 1216; Title: Hoffert-Horani, Dr. Mirjam (born Fassbender, Maria)
+2020-12-07 14:38:40: Insert field field_biography with content in database
+2020-12-07 14:39:08: Remaining Nodes: 121
+2020-12-07 14:39:08: Node ID: 1219; Title: Filene, Dorothy (born Finkelstein, Dorothea (Dora) Henriette)
+2020-12-07 14:39:45: Insert field field_biography with content in database
+2020-12-07 14:39:51: Remaining Nodes: 120
+2020-12-07 14:39:51: Node ID: 1221; Title: Hochmann, Hanna (born Gerson)
+2020-12-07 14:40:38: Insert field field_biography with content in database
+2020-12-07 14:40:44: Remaining Nodes: 119
+2020-12-07 14:40:44: Node ID: 1222; Title: Ragolsky, Dr. Sophia (born Illich/Illch)
+2020-12-07 14:41:47: Insert field field_biography with content in database
+2020-12-07 14:41:54: Remaining Nodes: 118
+2020-12-07 14:41:54: Node ID: 1257; Title: Livneh, Dr. Emmi (Löwenthal, born Strauß)
+2020-12-07 14:42:27: Insert field field_biography with content in database
+2020-12-07 14:42:32: Remaining Nodes: 117
+2020-12-07 14:42:32: Node ID: 1281; Title: Gellner, Hedwig
+2020-12-07 14:44:20: Insert field field_biography with content in database
+2020-12-07 14:44:32: Remaining Nodes: 116
+2020-12-07 14:44:32: Node ID: 1282; Title: Senator, David Werner 
+2020-12-07 14:48:12: Insert field field_biography with content in database
+2020-12-07 14:48:29: Remaining Nodes: 115
+2020-12-07 14:48:29: Node ID: 1284; Title: Lotan, Giora (née Lubinski, Georg)
+2020-12-07 14:53:48: Insert field field_biography with content in database
+2020-12-07 14:54:08: Remaining Nodes: 114
+2020-12-07 14:54:08: Node ID: 1311; Title: Nathan, Thea Else (born Meyerowitz)
+2020-12-07 14:55:06: Insert field field_biography with content in database
+2020-12-07 14:55:14: Remaining Nodes: 113
+2020-12-07 14:55:14: Node ID: 1459; Title: Liberman, Dina
+2020-12-07 14:56:20: Insert field field_biography with content in database
+2020-12-07 14:56:28: Remaining Nodes: 112
+2020-12-07 14:56:28: Node ID: 1517; Title: Bloch, Zipora
+2020-12-07 14:58:01: Insert field field_biography with content in database
+2020-12-07 14:58:13: Remaining Nodes: 111
+2020-12-07 14:58:13: Node ID: 1518; Title: Fränkel-Eliner, Dora
+2020-12-07 15:00:32: Insert field field_biography with content in database
+2020-12-07 15:00:45: Remaining Nodes: 110
+2020-12-07 15:00:45: Node ID: 1519; Title: Ollendorff, Fanny (née Baer)
+2020-12-07 15:03:08: Insert field field_biography with content in database
+2020-12-07 15:03:28: Remaining Nodes: 109
+2020-12-07 15:03:28: Node ID: 1587; Title: Ollendorff, Friedrich
+2020-12-07 15:05:34: Insert field field_biography with content in database
+2020-12-07 15:05:48: Remaining Nodes: 108
+2020-12-07 15:05:48: Node ID: 1588; Title: Barth, Helene (née Baer)
+2020-12-07 15:07:03: Insert field field_biography with content in database
+2020-12-07 15:07:12: Remaining Nodes: 107
+2020-12-07 15:07:12: Node ID: 1589; Title: Lehmann, Siegfried
+2020-12-07 15:08:53: Insert field field_biography with content in database
+2020-12-07 15:09:02: Remaining Nodes: 106
+2020-12-07 15:09:02: Node ID: 1590; Title: Rosenblüth, Zessi
+2020-12-07 15:10:36: Insert field field_biography with content in database
+2020-12-07 15:10:51: Remaining Nodes: 105
+2020-12-07 15:10:51: Node ID: 1591; Title: Schächter, Regina
+2020-12-07 15:13:18: Insert field field_biography with content in database
+2020-12-07 15:13:36: Remaining Nodes: 104
+2020-12-07 15:13:36: Node ID: 1592; Title: Hanf-Weinreich, Frieda
+2020-12-07 15:14:47: Insert field field_biography with content in database
+2020-12-07 15:14:56: Remaining Nodes: 103
+2020-12-07 15:14:56: Node ID: 1593; Title: Hochwald Katz, Hilde (née Hochwald)
+2020-12-07 15:17:31: Insert field field_biography with content in database
+2020-12-07 15:17:49: Remaining Nodes: 102
+2020-12-07 15:17:49: Node ID: 1597; Title: Berger, Beate
+2020-12-07 15:18:38: Insert field field_biography with content in database
+2020-12-07 15:18:46: Remaining Nodes: 101
+2020-12-07 15:18:46: Node ID: 1600; Title: Itzkovitz, Miriam (born Chotory)
+2020-12-07 15:20:34: Insert field field_biography with content in database
+2020-12-07 15:20:46: Remaining Nodes: 100
+2020-12-07 15:20:46: Node ID: 1601; Title: Kraemer-Rosenkranz, Stela
+2020-12-07 15:21:30: Insert field field_biography with content in database
+2020-12-07 15:21:36: Remaining Nodes: 99
+2020-12-07 15:21:36: Node ID: 1602; Title: Eskeles, Paula (born Kronheimer, married name Müller)
+2020-12-07 15:22:16: Insert field field_biography with content in database
+2020-12-07 15:22:20: Remaining Nodes: 98
+2020-12-07 15:22:20: Node ID: 1604; Title: Magnes, Chava (born Danziger)
+2020-12-07 15:23:13: Insert field field_biography with content in database
+2020-12-07 15:23:20: Remaining Nodes: 97
+2020-12-07 15:23:20: Node ID: 1650; Title: Popper Lilli (born Zadek)
+2020-12-07 15:25:15: Insert field field_biography with content in database
+2020-12-07 15:25:30: Remaining Nodes: 96
+2020-12-07 15:25:30: Node ID: 1666; Title: Jarecki, Natalie
+2020-12-07 15:26:45: Insert field field_biography with content in database
+2020-12-07 15:26:52: Remaining Nodes: 95
+2020-12-07 15:26:52: Node ID: 1681; Title: Schattner, Naomi (born Blumfeld, Hilde )
+2020-12-07 15:27:39: Insert field field_biography with content in database
+2020-12-07 15:27:45: Remaining Nodes: 94
+2020-12-07 15:27:45: Node ID: 1700; Title: Stein, Nadia (born Brodsky)
+2020-12-07 15:30:35: Insert field field_biography with content in database
+2020-12-07 15:30:56: Remaining Nodes: 93
+2020-12-07 15:30:56: Node ID: 1701; Title: Ullmann, Hanni (born Risch)
+2020-12-07 15:32:28: Insert field field_biography with content in database
+2020-12-07 15:32:41: Remaining Nodes: 92
+2020-12-07 15:32:41: Node ID: 1702; Title: Rosenthal, Hugo (Jashuvi, Joseph)
+2020-12-07 15:36:55: Insert field field_biography with content in database
+2020-12-07 15:37:15: Remaining Nodes: 91
+2020-12-07 15:37:15: Node ID: 1712; Title: Rosenberg, Dr. Maya 
+2020-12-07 15:38:13: Insert field field_biography with content in database
+2020-12-07 15:38:22: Remaining Nodes: 90
+2020-12-07 15:38:22: Node ID: 1772; Title: Kaphan, Johanna
+2020-12-07 15:39:44: Insert field field_biography with content in database
+2020-12-07 15:39:55: Remaining Nodes: 89
+2020-12-07 15:39:55: Node ID: 1784; Title: Aloni, Jenny (née Rosenbaum)
+2020-12-07 15:43:14: Insert field field_biography with content in database
+2020-12-07 15:43:38: Remaining Nodes: 88
+2020-12-07 15:43:38: Node ID: 1791; Title: Apfelberg/Appelberg, Dr. Esther
+2020-12-07 15:46:24: Insert field field_biography with content in database
+2020-12-07 15:46:48: Remaining Nodes: 87
+2020-12-07 15:46:48: Node ID: 1835; Title: Avneri, Bruria (born Heymann, Bertha )
+2020-12-07 15:48:18: Insert field field_biography with content in database
+2020-12-07 15:48:30: Remaining Nodes: 86
+2020-12-07 15:48:30: Node ID: 1848; Title: Barak (Brock), Ruth (born Rosenthal)
+2020-12-07 15:49:00: Insert field field_biography with content in database
+2020-12-07 15:49:03: Remaining Nodes: 85
+2020-12-07 15:49:03: Node ID: 1871; Title: Bergman, Elisabeth (Lisbeth/Elisheva) born Altman))
+2020-12-07 15:49:38: Insert field field_biography with content in database
+2020-12-07 15:49:43: Remaining Nodes: 84
+2020-12-07 15:49:43: Node ID: 1876; Title: Bergmann, Dr. Emmy Mirjam (born Gruenwald)
+2020-12-07 15:50:34: Insert field field_biography with content in database
+2020-12-07 15:50:41: Remaining Nodes: 83
+2020-12-07 15:50:41: Node ID: 1902; Title: Blank, Gertrud Sara
+2020-12-07 15:52:43: Insert field field_biography with content in database
+2020-12-07 15:52:58: Remaining Nodes: 82
+2020-12-07 15:52:58: Node ID: 1928; Title: Levy-Zobel, Lucy (born Zobel)
+2020-12-07 15:54:04: Insert field field_biography with content in database
+2020-12-07 15:54:11: Remaining Nodes: 81
+2020-12-07 15:54:11: Node ID: 1935; Title: Boritzer, Regina 
+2020-12-07 15:55:45: Insert field field_biography with content in database
+2020-12-07 15:55:55: Remaining Nodes: 80
+2020-12-07 15:55:55: Node ID: 1968; Title: Britschgi-Schimmer, Dr. Ina 
+2020-12-07 15:58:21: Insert field field_biography with content in database
+2020-12-07 15:58:44: Remaining Nodes: 79
+2020-12-07 15:58:44: Node ID: 1990; Title: Chayuth, Zvia (born Glick)
+2020-12-07 16:00:23: Insert field field_biography with content in database
+2020-12-07 16:00:34: Remaining Nodes: 78
+2020-12-07 16:00:34: Node ID: 2005; Title: Cohn, Else
+2020-12-07 16:01:40: Insert field field_biography with content in database
+2020-12-07 16:01:50: Remaining Nodes: 77
+2020-12-07 16:01:50: Node ID: 2007; Title: Cohn, Eva
+2020-12-07 16:04:10: Insert field field_biography with content in database
+2020-12-07 16:04:29: Remaining Nodes: 76
+2020-12-07 16:04:29: Node ID: 2038; Title: Shifman, Vera (Eva) (née Pulvermacher)
+2020-12-07 16:05:59: Insert field field_biography with content in database
+2020-12-07 16:06:07: Remaining Nodes: 75
+2020-12-07 16:06:07: Node ID: 2063; Title: Dajan, Yehudith (born Edith Sachs)
+2020-12-07 16:06:49: Insert field field_biography with content in database
+2020-12-07 16:06:54: Remaining Nodes: 74
+2020-12-07 16:06:54: Node ID: 2081; Title: Danelius, Dr. Eva 
+2020-12-07 16:08:19: Insert field field_biography with content in database
+2020-12-07 16:08:30: Remaining Nodes: 73
+2020-12-07 16:08:30: Node ID: 2103; Title: Dukas, Dr. Rosa
+2020-12-07 16:09:48: Insert field field_biography with content in database
+2020-12-07 16:09:58: Remaining Nodes: 72
+2020-12-07 16:09:58: Node ID: 2172; Title: Ellern, Recha (Rachel)
+2020-12-07 16:11:15: Insert field field_biography with content in database
+2020-12-07 16:11:25: Remaining Nodes: 71
+2020-12-07 16:11:25: Node ID: 2197; Title: Landauer, Georg
+2020-12-07 16:13:17: Insert field field_biography with content in database
+2020-12-07 16:13:28: Remaining Nodes: 70
+2020-12-07 16:13:28: Node ID: 2221; Title: Kreutzberger, Dr. Max
+2020-12-07 16:14:29: Insert field field_biography with content in database
+2020-12-07 16:14:34: Remaining Nodes: 69
+2020-12-07 16:14:34: Node ID: 2244; Title: Feuchtwanger-Steinitz, Anna 
+2020-12-07 16:15:00: Insert field field_biography with content in database
+2020-12-07 16:15:03: Remaining Nodes: 68
+2020-12-07 16:15:03: Node ID: 2254; Title: Freund, Hilde 
+2020-12-07 16:15:23: Insert field field_biography with content in database
+2020-12-07 16:15:26: Remaining Nodes: 67
+2020-12-07 16:15:26: Node ID: 2256; Title: Freund, Lea (née Tachauer, married Fürst)
+2020-12-07 16:17:25: Insert field field_biography with content in database
+2020-12-07 16:17:41: Remaining Nodes: 66
+2020-12-07 16:17:41: Node ID: 2325; Title: Michaelis-Stern, Eva (born Stern)
+2020-12-07 16:21:25: Problem occured during extraction. Maybe restart stanford core nlp. Message: HTTPConnectionPool(host='corenlp', port=9000): Read timed out. (read timeout=120)
+2020-12-07 16:21:25: Remaining Nodes: 65
+2020-12-07 16:21:25: Node ID: 2326; Title: Gaster, Irene 
+2020-12-07 16:23:31: Insert field field_biography with content in database
+2020-12-07 16:23:48: Remaining Nodes: 64
+2020-12-07 16:23:48: Node ID: 2366; Title: Isserlin, Margarete
+2020-12-07 16:24:10: Insert field field_biography with content in database
+2020-12-07 16:24:12: Remaining Nodes: 63
+2020-12-07 16:24:12: Node ID: 2367; Title: Samuelsdorf, Dr. Anni (born Weinreich)
+2020-12-07 16:24:59: Insert field field_biography with content in database
+2020-12-07 16:25:05: Remaining Nodes: 62
+2020-12-07 16:25:05: Node ID: 2368; Title: Ilanit, Fayge (born Hindes)
+2020-12-07 16:26:35: Insert field field_biography with content in database
+2020-12-07 16:26:45: Remaining Nodes: 61
+2020-12-07 16:26:45: Node ID: 2414; Title: Jacobi, Grete (born Rabow)
+2020-12-07 16:28:02: Insert field field_biography with content in database
+2020-12-07 16:28:11: Remaining Nodes: 60
+2020-12-07 16:28:11: Node ID: 2433; Title: Jaffe, Dr. Ruth 
+2020-12-07 16:31:17: Insert field field_biography with content in database
+2020-12-07 16:31:41: Remaining Nodes: 59
+2020-12-07 16:31:41: Node ID: 2465; Title: Kalinhoff, Gabriele (born Feuchtwanger)
+2020-12-07 16:33:15: Insert field field_biography with content in database
+2020-12-07 16:33:25: Remaining Nodes: 58
+2020-12-07 16:33:25: Node ID: 2511; Title: Katz, Liselotte 
+2020-12-07 16:34:34: Insert field field_biography with content in database
+2020-12-07 16:34:43: Remaining Nodes: 57
+2020-12-07 16:34:43: Node ID: 2532; Title: Katzenstein, Jenny 
+2020-12-07 16:35:46: Insert field field_biography with content in database
+2020-12-07 16:35:53: Remaining Nodes: 56
+2020-12-07 16:35:53: Node ID: 2552; Title: Keren, Miriam (born Marianne Mayer)
+2020-12-07 16:37:49: Insert field field_biography with content in database
+2020-12-07 16:38:04: Remaining Nodes: 55
+2020-12-07 16:38:04: Node ID: 2596; Title: Hirsch, Hannah (née Krayn)
+2020-12-07 16:40:39: Insert field field_biography with content in database
+2020-12-07 16:40:56: Remaining Nodes: 54
+2020-12-07 16:40:56: Node ID: 2628; Title: Landau-Mühsam, Charlotte (born Mühsam)
+2020-12-07 16:43:01: Insert field field_biography with content in database
+2020-12-07 16:43:18: Remaining Nodes: 53
+2020-12-07 16:43:18: Node ID: 2648; Title: Levi-Altman, Margot (born Altman)
+2020-12-07 16:45:25: Insert field field_biography with content in database
+2020-12-07 16:45:42: Remaining Nodes: 52
+2020-12-07 16:45:42: Node ID: 2696; Title: Lewin, Mirjam (born Levy)
+2020-12-07 16:47:06: Insert field field_biography with content in database
+2020-12-07 16:47:17: Remaining Nodes: 51
+2020-12-07 16:47:17: Node ID: 2716; Title: Lewin, Yehudith (born Margolin)
+2020-12-07 16:48:09: Insert field field_biography with content in database
+2020-12-07 16:48:16: Remaining Nodes: 50
+2020-12-07 16:48:16: Node ID: 2759; Title: Lowitsch, Mirjam (born Margolinski)
+2020-12-07 16:49:52: Insert field field_biography with content in database
+2020-12-07 16:50:04: Remaining Nodes: 49
+2020-12-07 16:50:04: Node ID: 2790; Title: Mainz, Bertha 
+2020-12-07 16:51:03: Insert field field_biography with content in database
+2020-12-07 16:51:11: Remaining Nodes: 48
+2020-12-07 16:51:11: Node ID: 2808; Title: Mamout, Gisela (born Rigelhoft)
+2020-12-07 16:51:41: Insert field field_biography with content in database
+2020-12-07 16:51:45: Remaining Nodes: 47
+2020-12-07 16:51:45: Node ID: 2817; Title: Maor, Gila  (born Reifen)
+2020-12-07 16:52:57: Insert field field_biography with content in database
+2020-12-07 16:53:09: Remaining Nodes: 46
+2020-12-07 16:53:09: Node ID: 2820; Title: Meyer, Käthe 
+2020-12-07 16:54:16: Insert field field_biography with content in database
+2020-12-07 16:54:24: Remaining Nodes: 45
+2020-12-07 16:54:24: Node ID: 2861; Title: Müller-Cohen, Anitta (born Rosenzweig)
+2020-12-07 16:56:50: Insert field field_biography with content in database
+2020-12-07 16:57:10: Remaining Nodes: 44
+2020-12-07 16:57:10: Node ID: 2887; Title: Nahmani, Irene (born Fried)
+2020-12-07 16:57:45: Insert field field_biography with content in database
+2020-12-07 16:57:49: Remaining Nodes: 43
+2020-12-07 16:57:49: Node ID: 2897; Title: Nathan, Else 
+2020-12-07 17:00:42: Insert field field_biography with content in database
+2020-12-07 17:01:04: Remaining Nodes: 42
+2020-12-07 17:01:04: Node ID: 2917; Title: Neumark, Irma 
+2020-12-07 17:01:42: Insert field field_biography with content in database
+2020-12-07 17:01:46: Remaining Nodes: 41
+2020-12-07 17:01:46: Node ID: 2937; Title: Ochs, Gerda (born Rau)
+2020-12-07 17:04:22: Insert field field_biography with content in database
+2020-12-07 17:04:46: Remaining Nodes: 40
+2020-12-07 17:04:46: Node ID: 2961; Title: Lotan, Hilde (Born Cohn, Hildegard)
+2020-12-07 17:06:28: Insert field field_biography with content in database
+2020-12-07 17:06:42: Remaining Nodes: 39
+2020-12-07 17:06:42: Node ID: 2985; Title: Pinkhof, Sophie 
+2020-12-07 17:07:41: Insert field field_biography with content in database
+2020-12-07 17:07:51: Remaining Nodes: 38
+2020-12-07 17:07:51: Node ID: 3019; Title: Preuss-Porat, Bella (born Hamburger)
+2020-12-07 17:08:51: Insert field field_biography with content in database
+2020-12-07 17:08:58: Remaining Nodes: 37
+2020-12-07 17:08:58: Node ID: 3048; Title: Roos, Leah 
+2020-12-07 17:09:51: Insert field field_biography with content in database
+2020-12-07 17:09:58: Remaining Nodes: 36
+2020-12-07 17:09:58: Node ID: 3074; Title: Rosenstein, Mirjam (born Rosenblum, married names Warszawski, Wolff)
+2020-12-07 17:11:28: Insert field field_biography with content in database
+2020-12-07 17:11:37: Remaining Nodes: 35
+2020-12-07 17:11:37: Node ID: 3094; Title: Rosenthal, Ruth (born Hirsch)
+2020-12-07 17:12:16: Insert field field_biography with content in database
+2020-12-07 17:12:21: Remaining Nodes: 34
+2020-12-07 17:12:21: Node ID: 3145; Title: Schlesinger, Dr. Bella (née Olkanizki)
+2020-12-07 17:13:45: Insert field field_biography with content in database
+2020-12-07 17:13:53: Remaining Nodes: 33
+2020-12-07 17:13:53: Node ID: 3167; Title: Schreiber, Lina
+2020-12-07 17:14:36: Insert field field_biography with content in database
+2020-12-07 17:14:41: Remaining Nodes: 32
+2020-12-07 17:14:41: Node ID: 3180; Title: Shapiro, Ellen (born Oppenheim)
+2020-12-07 17:15:20: Insert field field_biography with content in database
+2020-12-07 17:15:24: Remaining Nodes: 31
+2020-12-07 17:15:24: Node ID: 3189; Title: Stern, Ilse 
+2020-12-07 17:18:16: Insert field field_biography with content in database
+2020-12-07 17:18:41: Remaining Nodes: 30
+2020-12-07 17:18:41: Node ID: 3232; Title: Sternberg, Elsa (born Else Rosenblüth)
+2020-12-07 17:19:54: Insert field field_biography with content in database
+2020-12-07 17:20:02: Remaining Nodes: 29
+2020-12-07 17:20:02: Node ID: 3247; Title: Stern-Horowitz, Etschi (born Stern)
+2020-12-07 17:20:25: Insert field field_biography with content in database
+2020-12-07 17:20:28: Remaining Nodes: 28
+2020-12-07 17:20:28: Node ID: 3253; Title: Straus, Rahel (born Goitein)
+2020-12-07 17:23:36: Insert field field_biography with content in database
+2020-12-07 17:24:02: Remaining Nodes: 27
+2020-12-07 17:24:02: Node ID: 3254; Title: Strauss-Weigert, Dr Dora (born Weigert)
+2020-12-07 17:24:36: Insert field field_biography with content in database
+2020-12-07 17:24:40: Remaining Nodes: 26
+2020-12-07 17:24:40: Node ID: 3280; Title: Szwedron, Genia 
+2020-12-07 17:25:11: Insert field field_biography with content in database
+2020-12-07 17:25:15: Remaining Nodes: 25
+2020-12-07 17:25:15: Node ID: 3300; Title: Tanne, Clara (born Horwitz)
+2020-12-07 17:26:03: Insert field field_biography with content in database
+2020-12-07 17:26:09: Remaining Nodes: 24
+2020-12-07 17:26:09: Node ID: 3324; Title: Tchernovitz-Avidar, Yemima (born Tchernovitz)
+2020-12-07 17:28:14: Insert field field_biography with content in database
+2020-12-07 17:28:23: Remaining Nodes: 23
+2020-12-07 17:28:23: Node ID: 3339; Title: Thon, Hannah Helena (born (Cohn)
+2020-12-07 17:30:45: Insert field field_biography with content in database
+2020-12-07 17:31:00: Remaining Nodes: 22
+2020-12-07 17:31:00: Node ID: 3340; Title: Turnowsky-Pinner, Margarete (born Pinner)
+2020-12-07 17:32:44: Insert field field_biography with content in database
+2020-12-07 17:32:55: Remaining Nodes: 21
+2020-12-07 17:32:55: Node ID: 3371; Title: Twersky, Jenya (born Ginzburg)
+2020-12-07 17:33:47: Insert field field_biography with content in database
+2020-12-07 17:33:52: Remaining Nodes: 20
+2020-12-07 17:33:52: Node ID: 3382; Title: Unger, Eva (born Warburg)
+2020-12-07 17:36:08: Insert field field_biography with content in database
+2020-12-07 17:36:22: Remaining Nodes: 19
+2020-12-07 17:36:22: Node ID: 3417; Title: Wagner-Tauber, Lina (née Tauber)
+2020-12-07 17:40:07: Insert field field_biography with content in database
+2020-12-07 17:40:20: Remaining Nodes: 18
+2020-12-07 17:40:20: Node ID: 3432; Title: Jonas, Benjamin 
+2020-12-07 17:44:22: Insert field field_biography with content in database
+2020-12-07 17:44:44: Remaining Nodes: 17
+2020-12-07 17:44:44: Node ID: 3458; Title: Zirker, Dora 
+2020-12-07 17:46:04: Insert field field_biography with content in database
+2020-12-07 17:46:10: Remaining Nodes: 16
+2020-12-07 17:46:10: Node ID: 3471; Title: Ziemles, Mirjam (born Nachmanzon)
+2020-12-07 17:46:57: Insert field field_biography with content in database
+2020-12-07 17:47:00: Remaining Nodes: 15
+2020-12-07 17:47:00: Node ID: 3488; Title: Ish-Tov Livnat, Jehudith (née Hertha Löwenthal)
+2020-12-07 17:49:42: Insert field field_biography with content in database
+2020-12-07 17:50:09: Remaining Nodes: 14
+2020-12-07 17:50:09: Node ID: 3566; Title: Weihl, Elisheva (née Elisabeth Frank)
+2020-12-07 17:51:23: Insert field field_biography with content in database
+2020-12-07 17:51:30: Remaining Nodes: 13
+2020-12-07 17:51:30: Node ID: 3585; Title: Rosolio, Pnina Ezeria (née Wiener, Paula)
+2020-12-07 17:53:22: Insert field field_biography with content in database
+2020-12-07 17:53:28: Remaining Nodes: 12
+2020-12-07 17:53:28: Node ID: 3618; Title: Lichtenstein, Paula Ruth
+2020-12-07 17:55:07: Insert field field_biography with content in database
+2020-12-07 17:55:18: Remaining Nodes: 11
+2020-12-07 17:55:18: Node ID: 3654; Title: Bolag, Alisa (Elisa)
+2020-12-07 17:56:58: Insert field field_biography with content in database
+2020-12-07 17:57:06: Remaining Nodes: 10
+2020-12-07 17:57:06: Node ID: 3674; Title: Neter, Mia (Minka) (née Thalmann)
+2020-12-07 17:59:32: Insert field field_biography with content in database
+2020-12-07 17:59:44: Remaining Nodes: 9
+2020-12-07 17:59:44: Node ID: 3793; Title: Schupler, Zwi
+2020-12-07 18:01:57: Insert field field_biography with content in database
+2020-12-07 18:02:10: Remaining Nodes: 8
+2020-12-07 18:02:10: Node ID: 3811; Title: Rothschild, Dr. Leopold Jehuda
+2020-12-07 18:03:35: Insert field field_biography with content in database
+2020-12-07 18:03:41: Remaining Nodes: 7
+2020-12-07 18:03:41: Node ID: 3825; Title: Ostfeld, Zvi Hermon (Hermann)
+2020-12-07 18:06:13: Insert field field_biography with content in database
+2020-12-07 18:06:31: Remaining Nodes: 6
+2020-12-07 18:06:31: Node ID: 3844; Title: Frankenstein, Carl (Karl)
+2020-12-07 18:08:26: Insert field field_biography with content in database
+2020-12-07 18:08:42: Remaining Nodes: 5
+2020-12-07 18:08:42: Node ID: 3857; Title: Rothschild, Siegfried (Pinchas)
+2020-12-07 18:10:33: Insert field field_biography with content in database
+2020-12-07 18:10:45: Remaining Nodes: 4
+2020-12-07 18:10:45: Node ID: 3884; Title: Franz Hainbach/Heinebach (Perez Uriel)
+2020-12-07 18:12:03: Insert field field_biography with content in database
+2020-12-07 18:12:08: Remaining Nodes: 3
+2020-12-07 18:12:08: Node ID: 3896; Title: Rund, Ernst (Yaacov)
+2020-12-07 18:12:42: Insert field field_biography with content in database
+2020-12-07 18:12:45: Remaining Nodes: 2
+2020-12-07 18:12:45: Node ID: 3900; Title: Hirsch, Siegfried (Shimon)
+2020-12-07 18:15:15: Insert field field_biography with content in database
+2020-12-07 18:15:34: Remaining Nodes: 1
+2020-12-07 18:15:34: Node ID: 3944; Title: Brachiahu (Borochov), Dr. Mordechai
+2020-12-07 18:19:54: Insert field field_biography with content in database
+2021-10-05 16:15:48: Starting NLP Task
+2021-10-05 16:15:48: Copy file /app/export/nodes_export.json to /app/export/nodes_export_process.json
+2021-10-05 16:15:48: Remaining Nodes: 239
+2021-10-05 16:15:48: Node ID: 2; Title: Kein Gehwegparken mehr!
+2021-10-05 16:16:18: Insert field field_text with content in database
+2021-10-05 16:16:21: Remaining Nodes: 238
+2021-10-05 16:16:21: Node ID: 3; Title: Mehr Straßenbäume!
+2021-10-05 16:16:23: Insert field field_text with content in database
+2021-10-05 16:16:23: Remaining Nodes: 237
+2021-10-05 16:16:23: Node ID: 4; Title: Sichere Übergänge Bellealliancestraße
+2021-10-05 16:16:26: Insert field field_text with content in database
+2021-10-05 16:16:26: Remaining Nodes: 236
+2021-10-05 16:16:26: Node ID: 5; Title: Breitere Gehwege
+2021-10-05 16:16:29: Insert field field_text with content in database
+2021-10-05 16:16:30: Remaining Nodes: 235
+2021-10-05 16:16:30: Node ID: 6; Title: Querung Amandastraße für Fußgänger + Radfahrer
+2021-10-05 16:16:37: Insert field field_text with content in database
+2021-10-05 16:16:40: Remaining Nodes: 234
+2021-10-05 16:16:40: Node ID: 7; Title: Herabsenkung der Geschwindigkeit in der Spielstraße
+2021-10-05 16:16:45: Insert field field_text with content in database
+2021-10-05 16:16:46: Remaining Nodes: 233
+2021-10-05 16:16:46: Node ID: 8; Title: Geordnetes Parken: Längsparkstände errichten
+2021-10-05 16:16:50: Insert field field_text with content in database
+2021-10-05 16:16:50: Remaining Nodes: 232
+2021-10-05 16:16:50: Node ID: 9; Title: Spielstraße heißt Spielstraße und nicht Parkplatz
+2021-10-05 16:16:53: Insert field field_text with content in database
+2021-10-05 16:16:54: Remaining Nodes: 231
+2021-10-05 16:16:54: Node ID: 10; Title: Bessere Führung des Radverkehrs
+2021-10-05 16:16:57: Insert field field_text with content in database
+2021-10-05 16:16:58: Remaining Nodes: 230
+2021-10-05 16:16:58: Node ID: 11; Title: Frisches Grün!
+2021-10-05 16:16:59: Insert field field_text with content in database
+2021-10-05 16:17:00: Remaining Nodes: 229
+2021-10-05 16:17:00: Node ID: 12; Title: Viele, viele Fahrradbügel!
+2021-10-05 16:17:03: Insert field field_text with content in database
+2021-10-05 16:17:04: Remaining Nodes: 228
+2021-10-05 16:17:04: Node ID: 13; Title: Ampel zur Querung der Altonaer Straße
+2021-10-05 16:17:10: Insert field field_text with content in database
+2021-10-05 16:17:13: Remaining Nodes: 227
+2021-10-05 16:17:13: Node ID: 14; Title: Ich wohne in der Lindenallee
+2021-10-05 16:17:14: Insert field field_text with content in database
+2021-10-05 16:17:14: Remaining Nodes: 226
+2021-10-05 16:17:14: Node ID: 15; Title: Getrennter Geh- und Radweg
+2021-10-05 16:17:17: Insert field field_text with content in database
+2021-10-05 16:17:18: Remaining Nodes: 225
+2021-10-05 16:17:18: Node ID: 16; Title: Grüne Spielstraße 
+2021-10-05 16:17:23: Insert field field_text with content in database
+2021-10-05 16:17:24: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 567 (offset: 566))
+"MERGE (:RootNode {name:'16'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Toll wären auch breitere Gehwege, mehr Platz für Beete, mehr Fahrradständer und Sitzplätze für die Anwohner*innen .'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Toll waren auch breitere Gehwege is mehr Platz fur Beete.', shorten_lemma_clause: 'Toll breit Gehweg is Platz fur Beet'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Toll waren auch breitere Gehwege mehr Fahrradstander und Sitzplatze fur die Anwohner \* innen.', shorten_lemma_clause: 'Toll breit Gehweg Fahrradstander Sitzplatze fur Anwohner \ * innen'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^}
+2021-10-05 16:17:24: Remaining Nodes: 224
+2021-10-05 16:17:24: Node ID: 17; Title: Parkplätze
+2021-10-05 16:17:25: Insert field field_text with content in database
+2021-10-05 16:17:25: Remaining Nodes: 223
+2021-10-05 16:17:25: Node ID: 18; Title: Bestehende Bäume erhalten!
+2021-10-05 16:17:28: Insert field field_text with content in database
+2021-10-05 16:17:28: Remaining Nodes: 222
+2021-10-05 16:17:28: Node ID: 19; Title: Lindenallee / meine Arbeitsstätte & Betrieb
+2021-10-05 16:17:35: Insert field field_text with content in database
+2021-10-05 16:17:36: Remaining Nodes: 221
+2021-10-05 16:17:36: Node ID: 20; Title: AUTOFREI
+2021-10-05 16:17:37: Insert field field_text with content in database
+2021-10-05 16:17:38: Remaining Nodes: 220
+2021-10-05 16:17:38: Node ID: 21; Title: Mehr Park als Straße bitte 
+2021-10-05 16:17:41: Insert field field_text with content in database
+2021-10-05 16:17:42: Remaining Nodes: 219
+2021-10-05 16:17:42: Node ID: 22; Title: Parksituation &amp; Grünzug
+2021-10-05 16:17:52: Insert field field_text with content in database
+2021-10-05 16:17:54: Remaining Nodes: 218
+2021-10-05 16:17:54: Node ID: 23; Title: Skepsis bezüglich der Umgestaltung
+2021-10-05 16:18:03: Insert field field_text with content in database
+2021-10-05 16:18:05: Remaining Nodes: 217
+2021-10-05 16:18:05: Node ID: 24; Title: Kfz versus Fußgänger/Radfahrer
+2021-10-05 16:18:06: Insert field field_text with content in database
+2021-10-05 16:18:06: Remaining Nodes: 216
+2021-10-05 16:18:06: Node ID: 25; Title: Eine Spielstraße, die den Namen auch verdient - autofrei
+2021-10-05 16:18:17: Insert field field_text with content in database
+2021-10-05 16:18:19: Remaining Nodes: 215
+2021-10-05 16:18:19: Node ID: 26; Title: Bäume und Grünflächen 
+2021-10-05 16:18:22: Insert field field_text with content in database
+2021-10-05 16:18:22: Remaining Nodes: 214
+2021-10-05 16:18:22: Node ID: 27; Title: Verkehrsberuhigung + ruhigerer Straßenbelag
+2021-10-05 16:18:27: Insert field field_text with content in database
+2021-10-05 16:18:27: Remaining Nodes: 213
+2021-10-05 16:18:27: Node ID: 28; Title: Lösung für das Parken von Autos
+2021-10-05 16:18:35: Insert field field_text with content in database
+2021-10-05 16:18:36: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 508 (offset: 507))
+"MERGE (:RootNode {name:'28'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Auch wenn ich kein Auto besitze, denke ich, dass man für die Anwohner*innen mit Auto etwas einplanen sollte.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Auch wenn ich kein Auto besitze is denke ich.', shorten_lemma_clause: 'Auto besitze is denken'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Auch wenn ich kein Auto besitze dass man fur die Anwohner \* innen mit Auto etwas einplanen sollte.', shorten_lemma_clause: 'Auto besitze fur Anwohner \ * innen Auto einplanen'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^}
+2021-10-05 16:18:36: Remaining Nodes: 212
+2021-10-05 16:18:36: Node ID: 29; Title: Hier könnte Ihr Beitrag stehen!
+2021-10-05 16:18:38: Insert field field_text with content in database
+2021-10-05 16:18:38: Remaining Nodes: 211
+2021-10-05 16:18:38: Node ID: 30; Title: Weniger Parkplätze - mehr Gehweg
+2021-10-05 16:18:42: Insert field field_text with content in database
+2021-10-05 16:18:43: Remaining Nodes: 210
+2021-10-05 16:18:43: Node ID: 31; Title: Weniger Parkplätze und Einbahnstraßenregelung
+2021-10-05 16:18:49: Insert field field_text with content in database
+2021-10-05 16:18:50: Remaining Nodes: 209
+2021-10-05 16:18:50: Node ID: 32; Title: Viel weniger Parkplätze
+2021-10-05 16:18:53: Insert field field_text with content in database
+2021-10-05 16:18:53: Remaining Nodes: 208
+2021-10-05 16:18:53: Node ID: 33; Title: Mehr Beete und Bäume
+2021-10-05 16:18:56: Insert field field_text with content in database
+2021-10-05 16:18:56: Remaining Nodes: 207
+2021-10-05 16:18:56: Node ID: 34; Title: Methode, um die derzeitige Situation zu verdeutlichen 
+2021-10-05 16:19:02: Insert field field_text with content in database
+2021-10-05 16:19:03: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 448 (offset: 447))
+"MERGE (:RootNode {name:'34'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Auch parken die Autos zum Teil so nah and den Häusern auf dem Gehweg, dass Postbot*innen, Menschen mit Kinderwagen oder Rollstuhlfahrer*innen schlichtweg nicht durchkommen...'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Auch parken die Autos zum Teil so nah and den Hausern auf dem Gehweg dass Postbot \* innen \* innen schlichtweg nicht durchkommen.', shorten_lemma_clause: 'parken Auto nah and Hausern Gehweg Postbot \ * innen \ * innen schlichtweg durchkommen'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'dem Gehweg dass Postbot \* innen is Menschen mit Kinderwagen oder Rollstuhlfahrer.', shorten_lemma_clause: 'Gehweg Postbot \ * innen is Mensch Kinderwagen Rollstuhlfahrer'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^}
+2021-10-05 16:19:03: Remaining Nodes: 206
+2021-10-05 16:19:03: Node ID: 35; Title: Fahrradhäuschen 
+2021-10-05 16:19:06: Insert field field_text with content in database
+2021-10-05 16:19:06: Remaining Nodes: 205
+2021-10-05 16:19:06: Node ID: 36; Title: Corner-Paradies "Zweite Piazza" inkl. 3 Jahre Baustelle vor der Tür? Warum? 
+2021-10-05 16:19:18: Insert field field_text with content in database
+2021-10-05 16:19:19: Remaining Nodes: 204
+2021-10-05 16:19:19: Node ID: 37; Title: Straßenbelag
+2021-10-05 16:19:23: Insert field field_text with content in database
+2021-10-05 16:19:23: Remaining Nodes: 203
+2021-10-05 16:19:23: Node ID: 38; Title: Müllentsorgung
+2021-10-05 16:19:26: Insert field field_text with content in database
+2021-10-05 16:19:26: Remaining Nodes: 202
+2021-10-05 16:19:26: Node ID: 39; Title: Längsparken statt uerparken für breitere Fußwege
+2021-10-05 16:19:31: Insert field field_text with content in database
+2021-10-05 16:19:32: Remaining Nodes: 201
+2021-10-05 16:19:32: Node ID: 40; Title: Zitat: „ Heute wirkt die Straße ungeordnet und abweisend.“ - Sagt wer?
+2021-10-05 16:19:35: Insert field field_text with content in database
+2021-10-05 16:19:36: Remaining Nodes: 200
+2021-10-05 16:19:36: Node ID: 41; Title: Mülleimer
+2021-10-05 16:19:37: Insert field field_text with content in database
+2021-10-05 16:19:37: Remaining Nodes: 199
+2021-10-05 16:19:37: Node ID: 42; Title: Lindenallee Autofrei
+2021-10-05 16:19:40: Insert field field_text with content in database
+2021-10-05 16:19:40: Remaining Nodes: 198
+2021-10-05 16:19:40: Node ID: 43; Title: Mäandernder verkehrsberuhigter Bereich 
+2021-10-05 16:19:52: Insert field field_text with content in database
+2021-10-05 16:19:53: Remaining Nodes: 197
+2021-10-05 16:19:53: Node ID: 44; Title: Tauschregal/Tauschhaus
+2021-10-05 16:19:57: Insert field field_text with content in database
+2021-10-05 16:19:58: Remaining Nodes: 196
+2021-10-05 16:19:58: Node ID: 45; Title: Insektengerechte Begrünung/Bienenwiese
+2021-10-05 16:20:03: Insert field field_text with content in database
+2021-10-05 16:20:03: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 445 (offset: 444))
+"MERGE (:RootNode {name:'45'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Bei der Begrünung der Flächen würde ich mir wünschen, dass auf eine Begrünung geachtet wird, die nicht nur Anwohner*innen, sondern auch Insekten, vor allem Bienen zu Gute kommt.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Bei der Begrunung der Flachen wurde ich mir wunschen die nicht nur Anwohner \* innen sondern auch Insekten.', shorten_lemma_clause: 'Begrunung Flache wunschen Anwohner \ * innen Insekt'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'ich mir wunschen is dass auf eine Begrunung geachtet wird.', shorten_lemma_clause: 'wunschen is Begrunung achten'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'vor allem Bienen zu Gute kommt Bei der Begrunung der Flachen wurde ich mir wunschen die nicht nur Anwohner \* innen sondern auch Insekten.', shorten_lemma_clause: 'Biene Begrunung Flache wunschen Anwohner \ * innen Insekt'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^}
+2021-10-05 16:20:03: Remaining Nodes: 195
+2021-10-05 16:20:03: Node ID: 46; Title: Beispiel Bismarckstraße
+2021-10-05 16:20:07: Insert field field_text with content in database
+2021-10-05 16:20:08: Remaining Nodes: 194
+2021-10-05 16:20:08: Node ID: 47; Title: Eimsbüttel Autofrei 
+2021-10-05 16:20:09: Insert field field_text with content in database
+2021-10-05 16:20:09: Remaining Nodes: 193
+2021-10-05 16:20:09: Node ID: 48; Title: Wir leben in einer Stadt
+2021-10-05 16:20:17: Insert field field_text with content in database
+2021-10-05 16:20:18: Remaining Nodes: 192
+2021-10-05 16:20:18: Node ID: 49; Title: Komplett Autofrei
+2021-10-05 16:20:22: Insert field field_text with content in database
+2021-10-05 16:20:23: Remaining Nodes: 191
+2021-10-05 16:20:23: Node ID: 50; Title: Sitzgelegenheiten
+2021-10-05 16:20:24: Insert field field_text with content in database
+2021-10-05 16:20:25: Remaining Nodes: 190
+2021-10-05 16:20:25: Node ID: 51; Title: Spielstraßen-Status obsolet?
+2021-10-05 16:20:31: Insert field field_text with content in database
+2021-10-05 16:20:32: Remaining Nodes: 189
+2021-10-05 16:20:32: Node ID: 52; Title: Sichere Spiel- und Gartenstraße in der Eimsbüttler Schanze
+2021-10-05 16:20:40: Insert field field_text with content in database
+2021-10-05 16:20:41: Remaining Nodes: 188
+2021-10-05 16:20:41: Node ID: 53; Title: Car Sharing
+2021-10-05 16:20:50: Insert field field_text with content in database
+2021-10-05 16:20:52: Remaining Nodes: 187
+2021-10-05 16:20:52: Node ID: 54; Title: am besten autofrei
+2021-10-05 16:20:53: Insert field field_text with content in database
+2021-10-05 16:20:53: Remaining Nodes: 186
+2021-10-05 16:20:53: Node ID: 55; Title: Spielstrasse autofrei!
+2021-10-05 16:20:56: Insert field field_text with content in database
+2021-10-05 16:20:56: Remaining Nodes: 185
+2021-10-05 16:20:56: Node ID: 56; Title: Fahrradstellplätze
+2021-10-05 16:20:58: Insert field field_text with content in database
+2021-10-05 16:20:59: Remaining Nodes: 184
+2021-10-05 16:20:59: Node ID: 57; Title: Gleichberechtigung für alle Nutzende
+2021-10-05 16:21:02: Insert field field_text with content in database
+2021-10-05 16:21:02: Remaining Nodes: 183
+2021-10-05 16:21:02: Node ID: 58; Title: Verknüpfung mit Isebek-Grünzug
+2021-10-05 16:21:08: Insert field field_text with content in database
+2021-10-05 16:21:09: Remaining Nodes: 182
+2021-10-05 16:21:09: Node ID: 59; Title: Strasse neben dem Park
+2021-10-05 16:21:11: Insert field field_text with content in database
+2021-10-05 16:21:11: Remaining Nodes: 181
+2021-10-05 16:21:11: Node ID: 60; Title: Wohnen und Parken
+2021-10-05 16:21:14: Insert field field_text with content in database
+2021-10-05 16:21:14: Remaining Nodes: 180
+2021-10-05 16:21:14: Node ID: 61; Title: Draußen und umsonst
+2021-10-05 16:21:21: Insert field field_text with content in database
+2021-10-05 16:21:22: Remaining Nodes: 179
+2021-10-05 16:21:22: Node ID: 62; Title: Weniger ist mehr
+2021-10-05 16:21:29: Insert field field_text with content in database
+2021-10-05 16:21:30: Remaining Nodes: 178
+2021-10-05 16:21:30: Node ID: 63; Title: Parkraum / Einbahnstraße
+2021-10-05 16:21:36: Insert field field_text with content in database
+2021-10-05 16:21:37: Remaining Nodes: 177
+2021-10-05 16:21:37: Node ID: 64; Title: Keine zweite Piazza/Schulterblatt
+2021-10-05 16:21:47: Insert field field_text with content in database
+2021-10-05 16:21:48: Remaining Nodes: 176
+2021-10-05 16:21:48: Node ID: 65; Title: Zuviel Blech - zu wenig Bäume
+2021-10-05 16:21:56: Insert field field_text with content in database
+2021-10-05 16:21:57: Remaining Nodes: 175
+2021-10-05 16:21:57: Node ID: 66; Title: Die Lindenallee soll wieder Kinderspielstraße und Aufenthaltsort werden
+2021-10-05 16:22:12: Insert field field_text with content in database
+2021-10-05 16:22:13: Remaining Nodes: 174
+2021-10-05 16:22:13: Node ID: 67; Title: Umwandlung des Parkplatzgeländes in eine Fläche zum Urban Gardening für Anwohnende
+2021-10-05 16:22:19: Insert field field_text with content in database
+2021-10-05 16:22:19: Remaining Nodes: 173
+2021-10-05 16:22:19: Node ID: 68; Title: Verstehe es leider nicht 
+2021-10-05 16:22:23: Insert field field_text with content in database
+2021-10-05 16:22:24: Remaining Nodes: 172
+2021-10-05 16:22:24: Node ID: 69; Title: Kopfsteinpflaster erhalten 
+2021-10-05 16:22:25: Insert field field_text with content in database
+2021-10-05 16:22:26: Remaining Nodes: 171
+2021-10-05 16:22:26: Node ID: 70; Title: Fahrradstraße für schnelle Anbindung zur Schanze
+2021-10-05 16:22:29: Insert field field_text with content in database
+2021-10-05 16:22:30: Remaining Nodes: 170
+2021-10-05 16:22:30: Node ID: 71; Title: Anwohnerparken - Einbahnstraße - Fahrradbügel - Anwohner-Paket-Drop - Versenkbare e-Car-Ladepoller alle 5m
+2021-10-05 16:22:41: Insert field field_text with content in database
+2021-10-05 16:22:43: Remaining Nodes: 169
+2021-10-05 16:22:43: Node ID: 72; Title: Dem Autohaus einen alternativen Standort anbieten und Fläche in das Konzept integrieren?
+2021-10-05 16:22:51: Insert field field_text with content in database
+2021-10-05 16:22:52: Remaining Nodes: 168
+2021-10-05 16:22:52: Node ID: 73; Title: Komplett autofrei! Aber: Kostengünstiges Parken in Anwohner(eCar?)parkhaus/-tiefgarage, z.B. auf dem Gelände des Autohauses
+2021-10-05 16:23:06: Insert field field_text with content in database
+2021-10-05 16:23:08: Remaining Nodes: 167
+2021-10-05 16:23:08: Node ID: 74; Title: Modalfilter
+2021-10-05 16:23:13: Insert field field_text with content in database
+2021-10-05 16:23:13: Remaining Nodes: 166
+2021-10-05 16:23:13: Node ID: 75; Title: Superblock
+2021-10-05 16:23:16: Insert field field_text with content in database
+2021-10-05 16:23:17: Remaining Nodes: 165
+2021-10-05 16:23:17: Node ID: 76; Title: Zuwenig Platz für alles
+2021-10-05 16:23:20: Insert field field_text with content in database
+2021-10-05 16:23:20: Remaining Nodes: 164
+2021-10-05 16:23:20: Node ID: 77; Title: Einbahnstraße und kein 2. Schulterblatt
+2021-10-05 16:23:33: Insert field field_text with content in database
+2021-10-05 16:23:34: Remaining Nodes: 163
+2021-10-05 16:23:34: Node ID: 78; Title: Breitere Fußwege durch Umwandlung der Querparkplätze in Längsparkplätze
+2021-10-05 16:23:42: Insert field field_text with content in database
+2021-10-05 16:23:43: Remaining Nodes: 162
+2021-10-05 16:23:43: Node ID: 79; Title: Radverkehr und Fußverkehr first
+2021-10-05 16:23:50: Insert field field_text with content in database
+2021-10-05 16:23:51: Remaining Nodes: 161
+2021-10-05 16:23:51: Node ID: 80; Title: zugeparkte Gehwege, Katastrophale Bedingungen 
+2021-10-05 16:24:05: Insert field field_text with content in database
+2021-10-05 16:24:08: Remaining Nodes: 160
+2021-10-05 16:24:08: Node ID: 81; Title: Parkplätze
+2021-10-05 16:24:10: Insert field field_text with content in database
+2021-10-05 16:24:10: Remaining Nodes: 159
+2021-10-05 16:24:10: Node ID: 82; Title: Wenn wir schon Ideen sammeln: Mehr Sportanlagen
+2021-10-05 16:24:12: Insert field field_text with content in database
+2021-10-05 16:24:13: Remaining Nodes: 158
+2021-10-05 16:24:13: Node ID: 83; Title: Lindenallee: Gefährlichste Spielstraße Hamburgs
+2021-10-05 16:24:18: Insert field field_text with content in database
+2021-10-05 16:24:18: Remaining Nodes: 157
+2021-10-05 16:24:18: Node ID: 84; Title: Ganz viel Potential im Parkabschnitt zur Altonaer Straße hin!
+2021-10-05 16:24:25: Insert field field_text with content in database
+2021-10-05 16:24:26: Remaining Nodes: 156
+2021-10-05 16:24:26: Node ID: 85; Title: Fahrradfreundliche Lindenalle
+2021-10-05 16:24:31: Insert field field_text with content in database
+2021-10-05 16:24:32: Remaining Nodes: 155
+2021-10-05 16:24:32: Node ID: 86; Title: Lindenallee: Straße für Menschen, nicht (nur) für Autos!
+2021-10-05 16:24:44: Insert field field_text with content in database
+2021-10-05 16:24:45: Remaining Nodes: 154
+2021-10-05 16:24:45: Node ID: 87; Title: Ein Fahrradparkhaus?
+2021-10-05 16:24:50: Insert field field_text with content in database
+2021-10-05 16:24:52: Remaining Nodes: 153
+2021-10-05 16:24:52: Node ID: 88; Title: Schade
+2021-10-05 16:25:01: Insert field field_text with content in database
+2021-10-05 16:25:03: Remaining Nodes: 152
+2021-10-05 16:25:03: Node ID: 89; Title: Alles in allem ordnen
+2021-10-05 16:25:15: Insert field field_text with content in database
+2021-10-05 16:25:16: Remaining Nodes: 151
+2021-10-05 16:25:16: Node ID: 90; Title: Einbahnstraße
+2021-10-05 16:25:19: Insert field field_text with content in database
+2021-10-05 16:25:20: Remaining Nodes: 150
+2021-10-05 16:25:20: Node ID: 91; Title: Fußwege
+2021-10-05 16:25:21: Insert field field_text with content in database
+2021-10-05 16:25:21: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 498 (offset: 497))
+"MERGE (:RootNode {name:'91'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Mehr Platz für Fußgänger*innen sollte geschaffen werden, oft kommen Menschen mit Kinderwagen kaum durch.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Mehr Platz fur Fussganger.', shorten_lemma_clause: 'Platz fur Fussganger'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'oft kommen Menschen mit Kinderwagen kaum durch Mehr Platz fur Fussganger \* innen sollte geschaffen werden.', shorten_lemma_clause: 'Mensch Kinderwagen Platz fur Fussganger \ * innen schaffen'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^}
+2021-10-05 16:25:21: Remaining Nodes: 149
+2021-10-05 16:25:21: Node ID: 92; Title: Fahrradbügel statt Sitzbänke
+2021-10-05 16:25:26: Insert field field_text with content in database
+2021-10-05 16:25:26: Remaining Nodes: 148
+2021-10-05 16:25:26: Node ID: 93; Title: Gelbe Wertstoffsäcke
+2021-10-05 16:25:29: Insert field field_text with content in database
+2021-10-05 16:25:30: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 581 (offset: 580))
+"MERGE (:RootNode {name:'93'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Einige Häuser in der Lindenallee haben keine gelben Tonnen, statt dessen stellen die Bewohner*innen gelbe Wertstoffsäcke an die Straße.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'der Lindenallee haben keine gelben Tonnen is statt dessen stellen.', shorten_lemma_clause: 'Lindenallee gelb Tonne is stellen'}) MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Einige Hauser in der Lindenallee haben keine gelben Tonnen die Bewohner \* innen gelbe Wertstoffsacke an die Strasse.', shorten_lemma_clause: 'Hauser Lindenallee gelb Tonne Bewohner \ * innen gelbe Wertstoffsacke Strasse'})"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^}
+2021-10-05 16:25:30: Remaining Nodes: 147
+2021-10-05 16:25:30: Node ID: 94; Title: Anwohnerparken
+2021-10-05 16:25:31: Insert field field_text with content in database
+2021-10-05 16:25:31: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 291 (offset: 290))
+"MERGE (:RootNode {name:'94'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'In der Lindenallee sollte nur noch Anwohner*innen das Parken mit Parkausweis erlaubt sein.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Anwohner \* innen das Parken mit Parkausweis erlaubt sein In der Lindenallee sollte nur noch.', shorten_lemma_clause: 'Anwohner \ * innen Parken Parkausweis erlauben Lindenallee'})"
+                                                                                                                                                                                                                                                                                                   ^}
+2021-10-05 16:25:31: Remaining Nodes: 146
+2021-10-05 16:25:31: Node ID: 95; Title: Leiseren Straßenbelag bitte!
+2021-10-05 16:25:36: Insert field field_text with content in database
+2021-10-05 16:25:37: Remaining Nodes: 145
+2021-10-05 16:25:37: Node ID: 96; Title: Autofreie Innenstädte
+2021-10-05 16:25:41: Insert field field_text with content in database
+2021-10-05 16:25:42: Remaining Nodes: 144
+2021-10-05 16:25:42: Node ID: 97; Title: Gesamt- Freiraumkonzept für die 30 er Zone zwischen Lindenpark und Schäferkampsallee
+2021-10-05 16:25:50: Insert field field_text with content in database
+2021-10-05 16:25:51: Remaining Nodes: 143
+2021-10-05 16:25:51: Node ID: 98; Title: städtische "Einstellplätze Gemeinschaftsanlage" mit Parkhaus bebauen
+2021-10-05 16:25:57: Insert field field_text with content in database
+2021-10-05 16:25:57: Remaining Nodes: 142
+2021-10-05 16:25:57: Node ID: 99; Title: bitte mehr grau
+2021-10-05 16:26:04: Insert field field_text with content in database
+2021-10-05 16:26:05: Remaining Nodes: 141
+2021-10-05 16:26:05: Node ID: 100; Title: Orte zum Treffen/Überdachte Fahrradständer
+2021-10-05 16:26:10: Insert field field_text with content in database
+2021-10-05 16:26:11: Remaining Nodes: 140
+2021-10-05 16:26:11: Node ID: 101; Title: Parkraum - realistisch bleiben
+2021-10-05 16:26:18: Insert field field_text with content in database
+2021-10-05 16:26:19: Remaining Nodes: 139
+2021-10-05 16:26:19: Node ID: 102; Title: Neuordnung Fußgänger/ Radfahrer Lindenpark
+2021-10-05 16:26:25: Insert field field_text with content in database
+2021-10-05 16:26:26: Remaining Nodes: 138
+2021-10-05 16:26:26: Node ID: 103; Title: Großräumig wäre schlauer. Wer kann sowas entscheiden?
+2021-10-05 16:26:38: Insert field field_text with content in database
+2021-10-05 16:26:39: Remaining Nodes: 137
+2021-10-05 16:26:39: Node ID: 104; Title: An die Auswerter*innen dieses Verfahrens
+2021-10-05 16:26:45: Insert field field_text with content in database
+2021-10-05 16:26:46: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 390 (offset: 389))
+"MERGE (:RootNode {name:'104'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Mit den Daten dieser Umfrage könnte man also noch mehr Stimmen von Bewohner*innen des Viertels an der Umgestaltung beteiligen.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Mit den Daten dieser Umfrage konnte man noch mehr Stimmen von Bewohner \* innen des Viertels an der Umgestaltung beteiligen also.', shorten_lemma_clause: 'Datum Umfrage Stimme Bewohner \ * innen Viertel Umgestaltung beteiligen'})"
+                                                                                                                                                                                                                                                                                                                                                                                                      ^}
+2021-10-05 16:26:46: Remaining Nodes: 136
+2021-10-05 16:26:46: Node ID: 105; Title: Erhalt der Parkmöglichkeiten
+2021-10-05 16:26:48: Insert field field_text with content in database
+2021-10-05 16:26:49: Remaining Nodes: 135
+2021-10-05 16:26:49: Node ID: 106; Title: Flächen für selbstorganisierte Beete der Anwohner:innen
+2021-10-05 16:26:55: Insert field field_text with content in database
+2021-10-05 16:26:56: Remaining Nodes: 134
+2021-10-05 16:26:56: Node ID: 107; Title: Parkplatzanzahl erhalten
+2021-10-05 16:27:04: Insert field field_text with content in database
+2021-10-05 16:27:05: Remaining Nodes: 133
+2021-10-05 16:27:05: Node ID: 108; Title: Autos raus!
+2021-10-05 16:27:09: Insert field field_text with content in database
+2021-10-05 16:27:10: Remaining Nodes: 132
+2021-10-05 16:27:10: Node ID: 109; Title: Umgestaltung Lindenallee
+2021-10-05 16:27:13: Insert field field_text with content in database
+2021-10-05 16:27:14: Remaining Nodes: 131
+2021-10-05 16:27:14: Node ID: 110; Title: Größere und mehr parkplätze
+2021-10-05 16:27:22: Insert field field_text with content in database
+2021-10-05 16:27:23: Remaining Nodes: 130
+2021-10-05 16:27:23: Node ID: 111; Title: "Kiezblocks" gegen Durchgangsverkehr
+2021-10-05 16:27:29: Insert field field_text with content in database
+2021-10-05 16:27:30: Remaining Nodes: 129
+2021-10-05 16:27:30: Node ID: 112; Title: Viel wichtiger als Parkplätze wegfallen zu lassen ist es die Geschwindigkeit zu reduzieren mit der Autos durch die Straße rasen
+2021-10-05 16:27:40: Insert field field_text with content in database
+2021-10-05 16:27:41: Remaining Nodes: 128
+2021-10-05 16:27:41: Node ID: 113; Title: An einigen (wenigen) engen Stellen sollte es unmöglich gemacht werden zu parken, da die Autos dort oft die Müllabfuhr/Feuerwehr/etc blockieren 
+2021-10-05 16:27:52: Insert field field_text with content in database
+2021-10-05 16:27:53: Remaining Nodes: 127
+2021-10-05 16:27:53: Node ID: 114; Title: Anwohnerbeete statt des derzeitigen Gestrüpps
+2021-10-05 16:28:06: Insert field field_text with content in database
+2021-10-05 16:28:07: Remaining Nodes: 126
+2021-10-05 16:28:07: Node ID: 115; Title: offizielle Geschenkebank/Regal
+2021-10-05 16:28:12: Insert field field_text with content in database
+2021-10-05 16:28:13: Remaining Nodes: 125
+2021-10-05 16:28:13: Node ID: 116; Title: Parkplatzsituation bitte nicht verschlechtern
+2021-10-05 16:28:18: Insert field field_text with content in database
+2021-10-05 16:28:19: Remaining Nodes: 124
+2021-10-05 16:28:19: Node ID: 117; Title: Brauche ich ein Auto?
+2021-10-05 16:28:28: Insert field field_text with content in database
+2021-10-05 16:28:29: Remaining Nodes: 123
+2021-10-05 16:28:29: Node ID: 118; Title: idealbild
+2021-10-05 16:28:32: Insert field field_text with content in database
+2021-10-05 16:28:32: Remaining Nodes: 122
+2021-10-05 16:28:32: Node ID: 119; Title: Straße zurückerobern, Autos in die Quartiersgarage
+2021-10-05 16:28:39: Insert field field_text with content in database
+2021-10-05 16:28:40: Remaining Nodes: 121
+2021-10-05 16:28:40: Node ID: 120; Title: Parkplatz am Brunnen soll bebaut werden?
+2021-10-05 16:28:43: Insert field field_text with content in database
+2021-10-05 16:28:43: Remaining Nodes: 120
+2021-10-05 16:28:43: Node ID: 121; Title: Spielstraße und Grünflachen
+2021-10-05 16:28:49: Insert field field_text with content in database
+2021-10-05 16:28:50: Remaining Nodes: 119
+2021-10-05 16:28:50: Node ID: 122; Title: Warnung: Was passieren könnte, wenn wir Autos aussperren!
+2021-10-05 16:29:03: Insert field field_text with content in database
+2021-10-05 16:29:05: Remaining Nodes: 118
+2021-10-05 16:29:05: Node ID: 123; Title: Eigentumswohnungen auf dem öffentlichen Parkplatz gegenüber Lindenallee 20?
+2021-10-05 16:29:10: Insert field field_text with content in database
+2021-10-05 16:29:11: Remaining Nodes: 117
+2021-10-05 16:29:11: Node ID: 124; Title: Einbahnstrassen
+2021-10-05 16:29:15: Insert field field_text with content in database
+2021-10-05 16:29:16: Remaining Nodes: 116
+2021-10-05 16:29:16: Node ID: 125; Title: Haltebuchten Lieferverkehr
+2021-10-05 16:29:17: Insert field field_text with content in database
+2021-10-05 16:29:17: Remaining Nodes: 115
+2021-10-05 16:29:17: Node ID: 126; Title: Lasst doch bitte unser schönes Viertel in Ruhe!
+2021-10-05 16:29:28: Insert field field_text with content in database
+2021-10-05 16:29:30: Remaining Nodes: 114
+2021-10-05 16:29:30: Node ID: 127; Title: Abgesenkte Einfahrt
+2021-10-05 16:29:34: Insert field field_text with content in database
+2021-10-05 16:29:35: Remaining Nodes: 113
+2021-10-05 16:29:35: Node ID: 128; Title: Ladesäulen
+2021-10-05 16:29:39: Insert field field_text with content in database
+2021-10-05 16:29:40: Remaining Nodes: 112
+2021-10-05 16:29:40: Node ID: 129; Title: Parkplätze
+2021-10-05 16:29:46: Insert field field_text with content in database
+2021-10-05 16:29:47: Remaining Nodes: 111
+2021-10-05 16:29:47: Node ID: 130; Title: Test Überschrift
+2021-10-05 16:29:50: Insert field field_text with content in database
+2021-10-05 16:29:50: Remaining Nodes: 110
+2021-10-05 16:29:50: Node ID: 131; Title: Mehr Aufenthaltsqualität
+2021-10-05 16:29:51: Insert field field_text with content in database
+2021-10-05 16:29:52: Remaining Nodes: 109
+2021-10-05 16:29:52: Node ID: 132; Title: Fernwärme
+2021-10-05 16:29:54: Insert field field_text with content in database
+2021-10-05 16:29:54: Remaining Nodes: 108
+2021-10-05 16:29:54: Node ID: 133; Title: Weniger Blech, mehr Grün bitte
+2021-10-05 16:29:58: Insert field field_text with content in database
+2021-10-05 16:29:58: Remaining Nodes: 107
+2021-10-05 16:29:58: Node ID: 134; Title: Anmerkung Anwohner aus der Lindenallee
+2021-10-05 16:30:09: Insert field field_text with content in database
+2021-10-05 16:30:11: Remaining Nodes: 106
+2021-10-05 16:30:11: Node ID: 135; Title: @Bezirksamt - bitte um ausführliche Infos zur Parkplatz-Bebauung Höhe Haus 17
+2021-10-05 16:30:12: Insert field field_text with content in database
+2021-10-05 16:30:12: Remaining Nodes: 105
+2021-10-05 16:30:12: Node ID: 136; Title: Straßenpark in Amsterdam! (Als Anregung!)
+2021-10-05 16:30:15: Insert field field_text with content in database
+2021-10-05 16:30:16: Remaining Nodes: 104
+2021-10-05 16:30:16: Node ID: 137; Title: Mal was diskutieren? Tagsüber grün &amp; autofrei &amp; ruhig, nachts Cornerparadies?
+2021-10-05 16:30:27: Insert field field_text with content in database
+2021-10-05 16:30:28: Remaining Nodes: 103
+2021-10-05 16:30:28: Node ID: 138; Title: Süd: Einbahnstraße/breiter Fußweg eine Seite/Anwohnerparken+Grünflächen im Wechsel-&gt;Slalomfahrbahn
+2021-10-05 16:30:37: Insert field field_text with content in database
+2021-10-05 16:30:38: Remaining Nodes: 102
+2021-10-05 16:30:38: Node ID: 139; Title: Mehr Grün, weniger Autos
+2021-10-05 16:30:41: Insert field field_text with content in database
+2021-10-05 16:30:42: Remaining Nodes: 101
+2021-10-05 16:30:42: Node ID: 140; Title: Fahrradverkehr und -abstellmöglichkeiten fördern
+2021-10-05 16:30:47: Insert field field_text with content in database
+2021-10-05 16:30:48: Remaining Nodes: 100
+2021-10-05 16:30:48: Node ID: 141; Title: Verschenken als Trend
+2021-10-05 16:30:54: Insert field field_text with content in database
+2021-10-05 16:30:55: Remaining Nodes: 99
+2021-10-05 16:30:55: Node ID: 142; Title: Durchgang Marthastraße/Lindenallee
+2021-10-05 16:31:00: Insert field field_text with content in database
+2021-10-05 16:31:01: Remaining Nodes: 98
+2021-10-05 16:31:01: Node ID: 143; Title: Sitzgelegenheiten
+2021-10-05 16:31:10: Insert field field_text with content in database
+2021-10-05 16:31:11: Remaining Nodes: 97
+2021-10-05 16:31:11: Node ID: 144; Title: Lindenallee, Margaretenstraße, Vereinsstraße und Umgebung
+2021-10-05 16:31:13: Insert field field_text with content in database
+2021-10-05 16:31:14: Remaining Nodes: 96
+2021-10-05 16:31:14: Node ID: 145; Title: Radwege und Bänke
+2021-10-05 16:31:28: Insert field field_text with content in database
+2021-10-05 16:31:30: Remaining Nodes: 95
+2021-10-05 16:31:30: Node ID: 146; Title: Autos parken fast in Hauseingängen
+2021-10-05 16:31:32: Insert field field_text with content in database
+2021-10-05 16:31:33: Problem occured during save. Maybe restart neo4j service. Message: {code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '*': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 306 (offset: 305))
+"MERGE (:RootNode {name:'146'})-[:has_content_field]-(:ContentField {name: 'field_text'})-[:has_sentence]-(sen:Sentence {original_sent:'Wahrnehmung für dringend notwendigen Fußgänger*innenraum stärken.'})MERGE (sen)-[:has_clause]-(:Clause {original_clause:'Wahrnehmung fur dringend notwendigen Fussganger \* innenraum starken.', shorten_lemma_clause: 'Wahrnehmung fur dringen notwendig Fussganger \ * innenraum stark'})"
+                                                                                                                                                                                                                                                                                                                  ^}
+2021-10-05 16:31:33: Remaining Nodes: 94
+2021-10-05 16:31:33: Node ID: 147; Title: Off Topic: Endlich wieder ein Straßenfest "Bellinda"
+2021-10-05 16:31:36: Insert field field_text with content in database
+2021-10-05 16:31:37: Remaining Nodes: 93
+2021-10-05 16:31:37: Node ID: 148; Title: Parkplätze ?
+2021-10-05 16:31:43: Insert field field_text with content in database
+2021-10-05 16:31:44: Remaining Nodes: 92
+2021-10-05 16:31:44: Node ID: 149; Title: Ohne den Parkplatz
+2021-10-05 16:31:46: Insert field field_text with content in database
+2021-10-05 16:31:47: Remaining Nodes: 91
+2021-10-05 16:31:47: Node ID: 150; Title: Parkplatzproblem
+2021-10-05 16:31:51: Insert field field_text with content in database
+2021-10-05 16:31:52: Remaining Nodes: 90
+2021-10-05 16:31:52: Node ID: 151; Title: Amandastraße Parkquerung sperren oder Vorfahrt Fußgänger!
+2021-10-05 16:31:58: Insert field field_text with content in database
+2021-10-05 16:32:00: Remaining Nodes: 89
+2021-10-05 16:32:00: Node ID: 152; Title: Historische Spuren wieder sichtbar machen!
+2021-10-05 16:32:10: Insert field field_text with content in database
+2021-10-05 16:32:12: Remaining Nodes: 88
+2021-10-05 16:32:12: Node ID: 153; Title: Anregung an die Verantwortlichen: Feedback einbauen?
+2021-10-05 16:32:22: Insert field field_text with content in database
+2021-10-05 16:32:23: Remaining Nodes: 87
+2021-10-05 16:32:23: Node ID: 154; Title: * S P I E L S T R A S S E *
+2021-10-05 16:32:31: Insert field field_text with content in database
+2021-10-05 16:32:31: Remaining Nodes: 86
+2021-10-05 16:32:31: Node ID: 155; Title: Mehr Bordeaux in Hamburg
+2021-10-05 16:32:39: Insert field field_text with content in database
+2021-10-05 16:32:40: Remaining Nodes: 85
+2021-10-05 16:32:40: Node ID: 156; Title: Straßenpflaster fahrradtauglicher machen
+2021-10-05 16:32:44: Insert field field_text with content in database
+2021-10-05 16:32:44: Remaining Nodes: 84
+2021-10-05 16:32:44: Node ID: 157; Title: Straßenpflaster fahrradtauglicher machen
+2021-10-05 16:32:47: Insert field field_text with content in database
+2021-10-05 16:32:48: Remaining Nodes: 83
+2021-10-05 16:32:48: Node ID: 158; Title: Umgestaltung, ja bitte...
+2021-10-05 16:32:55: Insert field field_text with content in database
+2021-10-05 16:32:56: Remaining Nodes: 82
+2021-10-05 16:32:56: Node ID: 159; Title: Wochenmarkt 
+2021-10-05 16:32:58: Insert field field_text with content in database
+2021-10-05 16:32:58: Remaining Nodes: 81
+2021-10-05 16:32:58: Node ID: 160; Title: Lindenpark Diagonal-Fußweg zur Altonaer Straße
+2021-10-05 16:33:01: Insert field field_text with content in database
+2021-10-05 16:33:01: Remaining Nodes: 80
+2021-10-05 16:33:01: Node ID: 161; Title: Beteiligungsverfahren Umgestaltung Lindenallee,
+2021-10-05 16:33:12: Insert field field_text with content in database
+2021-10-05 16:33:13: Remaining Nodes: 79
+2021-10-05 16:33:13: Node ID: 162; Title: Parkplätze eh schon knapp
+2021-10-05 16:33:15: Insert field field_text with content in database
+2021-10-05 16:33:16: Remaining Nodes: 78
+2021-10-05 16:33:16: Node ID: 163; Title: Lebensraum oder Blechhaufen ?
+2021-10-05 16:33:24: Insert field field_text with content in database
+2021-10-05 16:33:25: Problem occured during save. Maybe restart neo4j service. Message: 2
+2021-10-05 16:33:25: Remaining Nodes: 77
+2021-10-05 16:33:25: Node ID: 164; Title: Mehr Außenfläche für den Aydin Markt in der Lindenallee
+2021-10-05 16:33:32: Insert field field_text with content in database
+2021-10-05 16:33:33: Remaining Nodes: 76
+2021-10-05 16:33:33: Node ID: 165; Title: Warum Veränderung?
+2021-10-05 16:33:42: Insert field field_text with content in database
+2021-10-05 16:33:43: Remaining Nodes: 75
+2021-10-05 16:33:43: Node ID: 166; Title: Weiß jemand was über die Timeline?
+2021-10-05 16:33:59: Insert field field_text with content in database
+2021-10-05 16:34:01: Remaining Nodes: 74
+2021-10-05 16:34:01: Node ID: 167; Title: Kräuterpark
+2021-10-05 16:34:03: Insert field field_text with content in database
+2021-10-05 16:34:03: Remaining Nodes: 73
+2021-10-05 16:34:03: Node ID: 168; Title: Einbahnstraßenregelung
+2021-10-05 16:34:05: Insert field field_text with content in database
+2021-10-05 16:34:05: Remaining Nodes: 72
+2021-10-05 16:34:05: Node ID: 169; Title: Fahrradständer
+2021-10-05 16:34:06: Insert field field_text with content in database
+2021-10-05 16:34:07: Remaining Nodes: 71
+2021-10-05 16:34:07: Node ID: 170; Title: Müllsäcke
+2021-10-05 16:34:09: Insert field field_text with content in database
+2021-10-05 16:34:09: Remaining Nodes: 70
+2021-10-05 16:34:09: Node ID: 171; Title: Tauschladen
+2021-10-05 16:34:11: Insert field field_text with content in database
+2021-10-05 16:34:11: Remaining Nodes: 69
+2021-10-05 16:34:11: Node ID: 172; Title: Anregung für die Auswertung der Beiträge
+2021-10-05 16:34:28: Insert field field_text with content in database
+2021-10-05 16:34:31: Remaining Nodes: 68
+2021-10-05 16:34:31: Node ID: 173; Title: Belle soll Höhe Lindenallee testweise für Durchgangsverkehr gesperrt werden (BV-Beschluß)
+2021-10-05 16:34:40: Insert field field_text with content in database
+2021-10-05 16:34:41: Remaining Nodes: 67
+2021-10-05 16:34:41: Node ID: 174; Title: Spielstraße
+2021-10-05 16:34:50: Insert field field_text with content in database
+2021-10-05 16:34:52: Remaining Nodes: 66
+2021-10-05 16:34:52: Node ID: 175; Title: System Fahrradhäuschen
+2021-10-05 16:34:57: Insert field field_text with content in database
+2021-10-05 16:34:58: Remaining Nodes: 65
+2021-10-05 16:34:58: Node ID: 176; Title: Anwohnerparken auf reduzierter Fläche reicht doch schon!
+2021-10-05 16:35:07: Insert field field_text with content in database
+2021-10-05 16:35:09: Remaining Nodes: 64
+2021-10-05 16:35:09: Node ID: 177; Title: „Kombi-Straße“: Spielen, relaxen und fahren
+2021-10-05 16:35:13: Insert field field_text with content in database
+2021-10-05 16:35:14: Remaining Nodes: 63
+2021-10-05 16:35:14: Node ID: 178; Title: Parkplätze am Ende der Lindenallee kreativ erhalten.
+2021-10-05 16:35:21: Insert field field_text with content in database
+2021-10-05 16:35:22: Remaining Nodes: 62
+2021-10-05 16:35:22: Node ID: 179; Title: Wohnhäuser überprüfen
+2021-10-05 16:35:27: Insert field field_text with content in database
+2021-10-05 16:35:28: Remaining Nodes: 61
+2021-10-05 16:35:28: Node ID: 180; Title: Lastenräder
+2021-10-05 16:35:33: Insert field field_text with content in database
+2021-10-05 16:35:34: Remaining Nodes: 60
+2021-10-05 16:35:34: Node ID: 181; Title: Keine Chance für Dauerparker und Halbstarke
+2021-10-05 16:35:48: Insert field field_text with content in database
+2021-10-05 16:35:50: Remaining Nodes: 59
+2021-10-05 16:35:50: Node ID: 182; Title: Lindenallee komplett von Bäumen befreien und die Flächen maximal ausnutzen für Bürgersteig, Parkplätze und Zweispurfahrbahn 
+2021-10-05 16:36:01: Insert field field_text with content in database
+2021-10-05 16:36:02: Remaining Nodes: 58
+2021-10-05 16:36:02: Node ID: 183; Title: Die Lindenalle ist meinen Augen auch so schon schön
+2021-10-05 16:36:14: Insert field field_text with content in database
+2021-10-05 16:36:16: Remaining Nodes: 57
+2021-10-05 16:36:16: Node ID: 184; Title: Hundewiese
+2021-10-05 16:36:19: Insert field field_text with content in database
+2021-10-05 16:36:19: Remaining Nodes: 56
+2021-10-05 16:36:19: Node ID: 185; Title: Spielstrasse deutlicher machen
+2021-10-05 16:36:27: Insert field field_text with content in database
+2021-10-05 16:36:29: Remaining Nodes: 55
+2021-10-05 16:36:29: Node ID: 186; Title: Skatelandschaft
+2021-10-05 16:36:36: Insert field field_text with content in database
+2021-10-05 16:36:37: Remaining Nodes: 54
+2021-10-05 16:36:37: Node ID: 187; Title: Anwohnerparken - Abschätzung des Bedarfs an Parkplätzen möglich?
+2021-10-05 16:36:48: Insert field field_text with content in database
+2021-10-05 16:36:50: Remaining Nodes: 53
+2021-10-05 16:36:50: Node ID: 188; Title: Hamburgs „Parkplatz“ fast sechsmal so groß wie die Außenalster.
+2021-10-05 16:37:02: Insert field field_text with content in database
+2021-10-05 16:37:04: Remaining Nodes: 52
+2021-10-05 16:37:04: Node ID: 189; Title: 2.500 qm Platzbedarf für die stehende PKWs in der Lindenallee
+2021-10-05 16:37:11: Insert field field_text with content in database
+2021-10-05 16:37:13: Remaining Nodes: 51
+2021-10-05 16:37:13: Node ID: 190; Title: Gesamtkonzept
+2021-10-05 16:37:18: Insert field field_text with content in database
+2021-10-05 16:37:18: Remaining Nodes: 50
+2021-10-05 16:37:18: Node ID: 191; Title: Überdachte Fahrradständer - allgemein zugänglich
+2021-10-05 16:37:24: Insert field field_text with content in database
+2021-10-05 16:37:25: Remaining Nodes: 49
+2021-10-05 16:37:25: Node ID: 192; Title: Parkraumüberwachung: Strengere Kontrollen
+2021-10-05 16:37:31: Insert field field_text with content in database
+2021-10-05 16:37:31: Remaining Nodes: 48
+2021-10-05 16:37:31: Node ID: 193; Title: Verschönerung des Brunnens + Platz am Brunnen
+2021-10-05 16:37:35: Insert field field_text with content in database
+2021-10-05 16:37:36: Remaining Nodes: 47
+2021-10-05 16:37:36: Node ID: 194; Title: Kein Parkhaus!!! Hochbeete und Spielflächen für Kinder!
+2021-10-05 16:37:47: Insert field field_text with content in database
+2021-10-05 16:37:49: Remaining Nodes: 46
+2021-10-05 16:37:49: Node ID: 195; Title: Parken nur für Anwohner, Parkverbot für Camper und großvolumige Fahrzeuge
+2021-10-05 16:37:56: Insert field field_text with content in database
+2021-10-05 16:37:57: Remaining Nodes: 45
+2021-10-05 16:37:57: Node ID: 196; Title: Drei unterschiedlich große Parkhäuser
+2021-10-05 16:38:03: Insert field field_text with content in database
+2021-10-05 16:38:04: Remaining Nodes: 44
+2021-10-05 16:38:04: Node ID: 197; Title: Radweg verbessern
+2021-10-05 16:38:05: Insert field field_text with content in database
+2021-10-05 16:38:05: Remaining Nodes: 43
+2021-10-05 16:38:05: Node ID: 198; Title: Lindenallee 
+2021-10-05 16:38:21: Insert field field_text with content in database
+2021-10-05 16:38:23: Remaining Nodes: 42
+2021-10-05 16:38:23: Node ID: 199; Title: Mehr Sitzgelegenheiten
+2021-10-05 16:38:25: Insert field field_text with content in database
+2021-10-05 16:38:25: Remaining Nodes: 41
+2021-10-05 16:38:25: Node ID: 200; Title: Zone 30 rund um das Viertel der Lindenallee
+2021-10-05 16:38:28: Insert field field_text with content in database
+2021-10-05 16:38:29: Remaining Nodes: 40
+2021-10-05 16:38:29: Node ID: 201; Title: Anregung für die Planung
+2021-10-05 16:38:37: Insert field field_text with content in database
+2021-10-05 16:38:38: Remaining Nodes: 39
+2021-10-05 16:38:38: Node ID: 202; Title: Off-topic   Bürgerbeteiligung
+2021-10-05 16:38:45: Insert field field_text with content in database
+2021-10-05 16:38:47: Remaining Nodes: 38
+2021-10-05 16:38:47: Node ID: 203; Title: Mehr Platz für Fußgänger und Radfahrer 
+2021-10-05 16:38:50: Insert field field_text with content in database
+2021-10-05 16:38:51: Remaining Nodes: 37
+2021-10-05 16:38:51: Node ID: 204; Title: Umfrage/ Abstimmung über die (faire) Flächennutzung?
+2021-10-05 16:38:58: Insert field field_text with content in database
+2021-10-05 16:38:59: Remaining Nodes: 36
+2021-10-05 16:38:59: Node ID: 205; Title: Grüne Straßen voller Wunder
+2021-10-05 16:39:15: Insert field field_text with content in database
+2021-10-05 16:39:18: Remaining Nodes: 35
+2021-10-05 16:39:18: Node ID: 206; Title: Wir gestalten unsere Straße gemeinsam
+2021-10-05 16:39:28: Insert field field_text with content in database
+2021-10-05 16:39:29: Remaining Nodes: 34
+2021-10-05 16:39:29: Node ID: 207; Title: Weniger Autos, mehr Platz für Kinder, Fußgänger, Fahrradfahrer
+2021-10-05 16:39:37: Insert field field_text with content in database
+2021-10-05 16:39:39: Remaining Nodes: 33
+2021-10-05 16:39:39: Node ID: 208; Title: Erneuerung und Ausbau 
+2021-10-05 16:39:45: Insert field field_text with content in database
+2021-10-05 16:39:45: Remaining Nodes: 32
+2021-10-05 16:39:45: Node ID: 209; Title: HH 2030: die 15-Minuten-Stadt
+2021-10-05 16:39:46: Insert field field_text with content in database
+2021-10-05 16:39:47: Remaining Nodes: 31
+2021-10-05 16:39:47: Node ID: 210; Title: Alles geht zusammen, wenn jeder Rücksicht nimmt
+2021-10-05 16:39:56: Insert field field_text with content in database
+2021-10-05 16:39:57: Remaining Nodes: 30
+2021-10-05 16:39:57: Node ID: 211; Title: Es geht nur mit Kompromissen liebe Nachbarn!
+2021-10-05 16:40:09: Insert field field_text with content in database
+2021-10-05 16:40:11: Remaining Nodes: 29
+2021-10-05 16:40:11: Node ID: 212; Title: Weniger Rücksicht auf PKW Belange
+2021-10-05 16:40:21: Insert field field_text with content in database
+2021-10-05 16:40:22: Remaining Nodes: 28
+2021-10-05 16:40:22: Node ID: 213; Title: Parkplatzsituation und Verkehrsaufkommen
+2021-10-05 16:40:31: Insert field field_text with content in database
+2021-10-05 16:40:32: Remaining Nodes: 27
+2021-10-05 16:40:32: Node ID: 214; Title: Keine Piazza-Situation
+2021-10-05 16:40:39: Insert field field_text with content in database
+2021-10-05 16:40:40: Remaining Nodes: 26
+2021-10-05 16:40:40: Node ID: 215; Title: Kinder gehören auf  eingezäunte Spielplätze und sonst nirgendwohin im öffentlichen Raum!
+2021-10-05 16:40:52: Insert field field_text with content in database
+2021-10-05 16:40:53: Remaining Nodes: 25
+2021-10-05 16:40:53: Node ID: 216; Title: Parkplatzsituation neu bewerten
+2021-10-05 16:40:59: Insert field field_text with content in database
+2021-10-05 16:41:00: Remaining Nodes: 24
+2021-10-05 16:41:00: Node ID: 217; Title: Taubenturm gegen Plage
+2021-10-05 16:41:04: Insert field field_text with content in database
+2021-10-05 16:41:05: Remaining Nodes: 23
+2021-10-05 16:41:05: Node ID: 218; Title: Hohe Immergrün Pflanzen/ oder Hecke vor den VW-Autohaus-Zaun, Höhe Lindenallee 63/61
+2021-10-05 16:41:10: Insert field field_text with content in database
+2021-10-05 16:41:10: Remaining Nodes: 22
+2021-10-05 16:41:10: Node ID: 219; Title: Taubenturm wäre wirklich gut
+2021-10-05 16:41:13: Insert field field_text with content in database
+2021-10-05 16:41:14: Remaining Nodes: 21
+2021-10-05 16:41:14: Node ID: 220; Title: Anwohnerstrasse und Bremsschwellen
+2021-10-05 16:41:21: Insert field field_text with content in database
+2021-10-05 16:41:22: Remaining Nodes: 20
+2021-10-05 16:41:22: Node ID: 221; Title: Biotop schützen
+2021-10-05 16:41:29: Insert field field_text with content in database
+2021-10-05 16:41:30: Remaining Nodes: 19
+2021-10-05 16:41:30: Node ID: 222; Title: Transparente Nachhaltigkeit für einen Straßenpark
+2021-10-05 16:41:37: Insert field field_text with content in database
+2021-10-05 16:41:38: Remaining Nodes: 18
+2021-10-05 16:41:38: Node ID: 223; Title: Kfz Parken
+2021-10-05 16:41:47: Insert field field_text with content in database
+2021-10-05 16:41:48: Remaining Nodes: 17
+2021-10-05 16:41:48: Node ID: 224; Title: Grüne Lindenallee mit breiteren Gehwegen. 
+2021-10-05 16:41:55: Insert field field_text with content in database
+2021-10-05 16:41:56: Remaining Nodes: 16
+2021-10-05 16:41:56: Node ID: 225; Title: Bewohnerparken
+2021-10-05 16:42:06: Insert field field_text with content in database
+2021-10-05 16:42:08: Remaining Nodes: 15
+2021-10-05 16:42:08: Node ID: 226; Title: Quadratische Poller 
+2021-10-05 16:42:11: Insert field field_text with content in database
+2021-10-05 16:42:12: Remaining Nodes: 14
+2021-10-05 16:42:12: Node ID: 227; Title: Tier Figur für Kinder
+2021-10-05 16:42:14: Insert field field_text with content in database
+2021-10-05 16:42:14: Remaining Nodes: 13
+2021-10-05 16:42:14: Node ID: 228; Title: Hochbeete und Bäume / Grünfläche
+2021-10-05 16:42:15: Insert field field_text with content in database
+2021-10-05 16:42:15: Remaining Nodes: 12
+2021-10-05 16:42:15: Node ID: 229; Title: Entfernung Müllsäcke 
+2021-10-05 16:42:17: Insert field field_text with content in database
+2021-10-05 16:42:17: Remaining Nodes: 11
+2021-10-05 16:42:17: Node ID: 230; Title: Erhalt aller Parkplätze
+2021-10-05 16:42:19: Insert field field_text with content in database
+2021-10-05 16:42:19: Remaining Nodes: 10
+2021-10-05 16:42:19: Node ID: 231; Title: Mehr Bänke
+2021-10-05 16:42:21: Insert field field_text with content in database
+2021-10-05 16:42:21: Remaining Nodes: 9
+2021-10-05 16:42:21: Node ID: 232; Title: Parkplätze erhalten
+2021-10-05 16:42:25: Insert field field_text with content in database
+2021-10-05 16:42:26: Remaining Nodes: 8
+2021-10-05 16:42:26: Node ID: 233; Title: Historischen Fahrzeugbestand bewahren
+2021-10-05 16:42:30: Insert field field_text with content in database
+2021-10-05 16:42:31: Remaining Nodes: 7
+2021-10-05 16:42:31: Node ID: 234; Title: Résumée/Beschlussvorlage: Öffentlichen Parkraum erhalten
+2021-10-05 16:42:44: Insert field field_text with content in database
+2021-10-05 16:42:46: Remaining Nodes: 6
+2021-10-05 16:42:46: Node ID: 235; Title: Teilnahme!
+2021-10-05 16:42:50: Insert field field_text with content in database
+2021-10-05 16:42:50: Remaining Nodes: 5
+2021-10-05 16:42:50: Node ID: 236; Title: für Ihre
+2021-10-05 16:42:54: Insert field field_text with content in database
+2021-10-05 16:42:54: Remaining Nodes: 4
+2021-10-05 16:42:54: Node ID: 237; Title: Vielen Dank
+2021-10-05 16:42:58: Insert field field_text with content in database
+2021-10-05 16:42:58: Remaining Nodes: 3
+2021-10-05 16:42:58: Node ID: 238; Title: 04.-28. März 2021.
+2021-10-05 16:43:01: Insert field field_text with content in database
+2021-10-05 16:43:02: Remaining Nodes: 2
+2021-10-05 16:43:02: Node ID: 239; Title: Online-Beteiligung
+2021-10-05 16:43:05: Insert field field_text with content in database
+2021-10-05 16:43:05: Remaining Nodes: 1
+2021-10-05 16:43:05: Node ID: 240; Title: Neugestaltung 
+2021-10-05 16:43:07: Insert field field_text with content in database
