@@ -5,8 +5,8 @@ services:
     container_name: "${PROJECT_NAME}_mariadb"
     #command: --max_allowed_packet=32505856 #Set max_allowed_packet to 256M
     environment:
-      MYSQL_DATABASE: semi_navi_d9
-      MYSQL_ROOT_PASSWORD: semi_navi_d9
+      MYSQL_DATABASE: xnavi_d9
+      MYSQL_ROOT_PASSWORD: xnavi_d9
     ports:
       - "3306:3306"
     volumes:
