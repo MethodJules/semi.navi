@@ -1,0 +1,57 @@
+### Drupal template
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+
+# Ignore configuration files that may contain sensitive information
+/docroot/web/sites/*/*settings*.php
+/docroot/web/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+/docroot/web/sites/*/files
+/docroot/web/sites/*/public
+/docroot/web/sites/*/private
+/docroot/web/sites/*/files-public
+/docroot/web/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+/docroot/web/sites/*/translations
+/docroot/web/sites/*/tmp
+/docroot/web/sites/*/cache
+
+# Ignore testing related files
+/docroot/web/sites/simpletest
+
+# Ignore drupal core (if not versioning drupal sources)
+/docroot/web/core
+/docroot/web/vendor
+/docroot/web/modules/README.txt
+/docroot/web/profiles/README.txt
+/docroot/web/themes/README.txt
+/docroot/web/sites/README.txt
+/docroot/web/sites/example.sites.php
+/docroot/web/sites/example.settings.local.php
+/docroot/web/sites/development.services.yml
+/docroot/web/.csslintrc
+/docroot/web/.editorconfig
+/docroot/web/.eslintignore
+/docroot/web/.eslintrc.json
+/docroot/web/.gitattributes
+/docroot/web/.ht.router.php
+/docroot/web/.htaccess
+/docroot/web/autoload.php
+/docroot/web/example.gitignore
+/docroot/web/index.php
+/docroot/web/INSTALL.txt
+/docroot/web/LICENSE.txt
+/docroot/web/README.txt
+/docroot/web/robots.txt
+/docroot/web/update.php
+/docroot/web/web.config
+
+# Ignore Docker database volumes
+/database
+/docker/neo4j
+
+# Ignore IDE settings
+.idea

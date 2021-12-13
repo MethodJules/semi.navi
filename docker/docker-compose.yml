@@ -5,8 +5,8 @@ services:
     container_name: "${PROJECT_NAME}_mariadb"
     #command: --max_allowed_packet=32505856 #Set max_allowed_packet to 256M
     environment:
-      MYSQL_DATABASE: xnavi_d9
-      MYSQL_ROOT_PASSWORD: xnavi_d9
+      MYSQL_DATABASE: ${PROJECT_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
@@ -24,6 +24,7 @@ services:
     restart: always
   xnavi_d9_solr:
     image: solr:7.5
+    container_name: "${PROJECT_NAME}_solr"
     ports:
       - "8983:8983"
     volumes:
@@ -31,6 +32,7 @@ services:
       - xnavi_d9_core:/opt/solr/server/solr/core
   xnavi_neo4j:
         image: neo4j:4.0.3
+        container_name: "${PROJECT_NAME}_neo4j"
         ports:
             - "7474:7474"
             - "7687:7687"
@@ -40,16 +42,18 @@ services:
           - ./neo4j/import/:/var/lib/neo4j/import
           - ./neo4j/plugins:/plugins
         environment:
-          - NEO4J_AUTH=neo4j/test
-          - NEO4J_dbms_default__listen__address=neo4j
-          - NEO4J_dbms_default__advertised__address=neo4j
-          - NEO4J_dbms_connector_bolt_listen__address=neo4j:7687
-          - NEO4J_dbms_connector_http_listen__address=neo4j:7474
+          - NEO4J_AUTH=${NEO4J_USER}/${NEO4J_PASSWORD}
+          - NEO4J_dbms_default__listen__address=xnavi_neo4j
+          - NEO4J_dbms_default__advertised__address=xnavi_neo4j
+          - NEO4J_dbms_connector_bolt_listen__address=xnavi_neo4j:7687
+          - NEO4J_dbms_connector_http_listen__address=xnavi_neo4j:7474
   xnavi_corenlp:
         image: graham3333/corenlp-complete
+        container_name: "${PROJECT_NAME}_corenlp"
         ports:
           - "9000:9000"
   xnavi_python:
+        container_name: "${PROJECT_NAME}_python"
         build: ./python
         volumes:
           - ./python:/app
@@ -58,7 +62,7 @@ services:
         depends_on:
           - xnavi_neo4j
           - xnavi_corenlp
-  
+
 volumes:
   #xnavi_d9_db_data:
   xnavi_d9_core:
