@@ -12,7 +12,8 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * migrated. The values of those fields will be migrated to the base fields they
  * were replacing.
  *
- * For available configuration keys, refer to the parent classes:
+ * For available configuration keys, refer to the parent classes.
+ *
  * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
  * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
  *
@@ -35,7 +36,7 @@ class Field extends DrupalSqlBase {
       ->condition('fc.storage_active', 1)
       ->condition('fc.deleted', 0)
       ->condition('fci.deleted', 0);
-    $query->join('field_config_instance', 'fci', 'fc.id = fci.field_id');
+    $query->join('field_config_instance', 'fci', '[fc].[id] = [fci].[field_id]');
 
     // The Title module fields are not migrated.
     if ($this->moduleExists('title')) {

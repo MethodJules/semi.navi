@@ -8,6 +8,7 @@ use Drupal\Core\Database\Database;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Tests\BrowserTestBase;
+use Drupal\TestTools\Extension\SchemaInspector;
 
 /**
  * Helper class for module test cases.
@@ -34,32 +35,13 @@ abstract class ModuleTestBase extends BrowserTestBase {
   }
 
   /**
-   * Assert there are tables that begin with the specified base table name.
-   *
-   * @param $base_table
-   *   Beginning of table name to look for.
-   * @param $count
-   *   (optional) Whether or not to assert that there are tables that match the
-   *   specified base table. Defaults to TRUE.
-   */
-  public function assertTableCount($base_table, $count = TRUE) {
-    $connection = Database::getConnection();
-    $tables = $connection->schema()->findTables($connection->prefixTables('{' . $base_table . '}') . '%');
-
-    if ($count) {
-      $this->assertNotEmpty($tables, new FormattableMarkup('Tables matching "@base_table" found.', ['@base_table' => $base_table]));
-    }
-    $this->assertEmpty($tables, new FormattableMarkup('Tables matching "@base_table" not found.', ['@base_table' => $base_table]));
-  }
-
-  /**
    * Assert that all tables defined in a module's hook_schema() exist.
    *
    * @param $module
    *   The name of the module.
    */
   public function assertModuleTablesExist($module) {
-    $tables = array_keys(drupal_get_module_schema($module));
+    $tables = array_keys(SchemaInspector::getTablesSpecification(\Drupal::moduleHandler(), $module));
     $tables_exist = TRUE;
     $schema = Database::getConnection()->schema();
     foreach ($tables as $table) {
@@ -77,7 +59,7 @@ abstract class ModuleTestBase extends BrowserTestBase {
    *   The name of the module.
    */
   public function assertModuleTablesDoNotExist($module) {
-    $tables = array_keys(drupal_get_module_schema($module));
+    $tables = array_keys(SchemaInspector::getTablesSpecification(\Drupal::moduleHandler(), $module));
     $tables_exist = FALSE;
     $schema = Database::getConnection()->schema();
     foreach ($tables as $table) {
@@ -95,7 +77,7 @@ abstract class ModuleTestBase extends BrowserTestBase {
    *   The name of the module.
    */
   public function assertModuleConfig($module) {
-    $module_config_dir = drupal_get_path('module', $module) . '/' . InstallStorage::CONFIG_INSTALL_DIRECTORY;
+    $module_config_dir = $this->getModulePath($module) . '/' . InstallStorage::CONFIG_INSTALL_DIRECTORY;
     if (!is_dir($module_config_dir)) {
       return;
     }
@@ -111,7 +93,7 @@ abstract class ModuleTestBase extends BrowserTestBase {
     }
     $this->assertNotEmpty($all_names);
 
-    $module_config_dependencies = \Drupal::service('config.manager')->findConfigEntityDependents('module', [$module]);
+    $module_config_dependencies = \Drupal::service('config.manager')->findConfigEntityDependencies('module', [$module]);
     // Look up each default configuration object name in the active
     // configuration, and if it exists, remove it from the stack.
     $names = $module_file_storage->listAll();
@@ -157,7 +139,7 @@ abstract class ModuleTestBase extends BrowserTestBase {
       else {
         $message = 'Module "@module" is not enabled.';
       }
-      $this->assertEqual($enabled, $this->container->get('module_handler')->moduleExists($module), new FormattableMarkup($message, ['@module' => $module]));
+      $this->assertEquals($enabled, $this->container->get('module_handler')->moduleExists($module), new FormattableMarkup($message, ['@module' => $module]));
     }
   }
 

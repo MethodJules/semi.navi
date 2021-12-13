@@ -4,6 +4,8 @@ namespace Drupal\Tests\migrate_drupal_ui\Functional\d7;
 
 use Drupal\Tests\migrate_drupal_ui\Functional\MultilingualReviewPageTestBase;
 
+// cspell:ignore Filefield Flexslider Multiupload Imagefield
+
 /**
  * Tests migrate upgrade review page for Drupal 7.
  *
@@ -18,6 +20,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
    * {@inheritdoc}
    */
   protected static $modules = [
+    'datetime_range',
     'language',
     'content_translation',
     'telephone',
@@ -38,7 +41,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->loadFixture(drupal_get_path('module', 'migrate_drupal') . '/tests/fixtures/drupal7.php');
+    $this->loadFixture($this->getModulePath('migrate_drupal') . '/tests/fixtures/drupal7.php');
   }
 
   /**
@@ -98,7 +101,10 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Locale',
       'Menu',
       'Menu translation',
+      'Multiupload Filefield Widget',
+      'Multiupload Imagefield Widget',
       'Node',
+      'Node Reference',
       'Number',
       'OpenID',
       'Options',
@@ -121,6 +127,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'System',
       'Taxonomy translation',
       'Taxonomy',
+      'Telephone',
       'Term Depth access',
       'Test search node tags',
       'Test search type',
@@ -132,6 +139,7 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Trigger',
       'Update manager',
       'User',
+      'User Reference',
       'Views content panes',
       'Views UI',
     ];
@@ -160,6 +168,8 @@ class MultilingualReviewPageTest extends MultilingualReviewPageTestBase {
       'Multilingual select',
       'Path translation',
       'Picture',
+      'References',
+      'References UUID',
       'Translation redirect',
       'Translation sets',
       'User mail translation',

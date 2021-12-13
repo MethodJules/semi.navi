@@ -7,7 +7,8 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 /**
  * Drupal 6 field instance per form display source from database.
  *
- * For available configuration keys, refer to the parent classes:
+ * For available configuration keys, refer to the parent classes.
+ *
  * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
  * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
  *
@@ -64,7 +65,7 @@ class FieldInstancePerFormDisplay extends DrupalSqlBase {
         'type',
         'module',
       ]);
-    $query->join('content_node_field', 'cnf', 'cnfi.field_name = cnf.field_name');
+    $query->join('content_node_field', 'cnf', '[cnfi].[field_name] = [cnf].[field_name]');
     $query->orderBy('cnfi.weight');
 
     return $query;

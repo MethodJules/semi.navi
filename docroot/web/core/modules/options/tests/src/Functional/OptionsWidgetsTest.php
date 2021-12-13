@@ -148,8 +148,8 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertSession()->checkboxNotChecked('edit-card-1-0');
     $this->assertSession()->checkboxNotChecked('edit-card-1-1');
     $this->assertSession()->checkboxNotChecked('edit-card-1-2');
-    $this->assertRaw('Some dangerous &amp; unescaped <strong>markup</strong>');
-    $this->assertRaw('Some HTML encoded markup with &lt; &amp; &gt;');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped <strong>markup</strong>');
+    $this->assertSession()->responseContains('Some HTML encoded markup with &lt; &amp; &gt;');
 
     // Select first option.
     $edit = ['card_1' => 0];
@@ -206,7 +206,7 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertSession()->checkboxNotChecked('edit-card-2-0');
     $this->assertSession()->checkboxNotChecked('edit-card-2-1');
     $this->assertSession()->checkboxNotChecked('edit-card-2-2');
-    $this->assertRaw('Some dangerous &amp; unescaped <strong>markup</strong>');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped <strong>markup</strong>');
 
     // Submit form: select first and third options.
     $edit = [
@@ -245,7 +245,7 @@ class OptionsWidgetsTest extends FieldTestBase {
       'card_2[2]' => TRUE,
     ];
     $this->submitForm($edit, 'Save');
-    $this->assertText('this field cannot hold more than 2 values');
+    $this->assertSession()->pageTextContains('this field cannot hold more than 2 values');
 
     // Submit form: uncheck all options.
     $edit = [
@@ -303,12 +303,12 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertFalse($this->assertSession()->optionExists('card_1', 0)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_1', 1)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_1', 2)->isSelected());
-    $this->assertRaw('Some dangerous &amp; unescaped markup');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped markup');
 
     // Submit form: select invalid 'none' option.
     $edit = ['card_1' => '_none'];
     $this->submitForm($edit, 'Save');
-    $this->assertRaw(t('@title field is required.', ['@title' => $field->getName()]));
+    $this->assertSession()->pageTextContains("{$field->getName()} field is required.");
 
     // Submit form: select first option.
     $edit = ['card_1' => 0];
@@ -334,7 +334,8 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertSame('- None -', $option->getText());
     // Submit form: Unselect the option.
     $edit = ['card_1' => '_none'];
-    $this->drupalPostForm('entity_test/manage/' . $entity->id() . '/edit', $edit, 'Save');
+    $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
+    $this->submitForm($edit, 'Save');
     $this->assertFieldValues($entity_init, 'card_1', []);
 
     // Test optgroups.
@@ -348,9 +349,9 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertFalse($this->assertSession()->optionExists('card_1', 0)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_1', 1)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_1', 2)->isSelected());
-    $this->assertRaw('Some dangerous &amp; unescaped markup');
-    $this->assertRaw('More &lt;script&gt;dangerous&lt;/script&gt; markup');
-    $this->assertRaw('Group 1');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped markup');
+    $this->assertSession()->responseContains('More &lt;script&gt;dangerous&lt;/script&gt; markup');
+    $this->assertSession()->responseContains('Group 1');
 
     // Submit form: select first option.
     $edit = ['card_1' => 0];
@@ -365,7 +366,8 @@ class OptionsWidgetsTest extends FieldTestBase {
 
     // Submit form: Unselect the option.
     $edit = ['card_1' => '_none'];
-    $this->drupalPostForm('entity_test/manage/' . $entity->id() . '/edit', $edit, 'Save');
+    $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
+    $this->submitForm($edit, 'Save');
     $this->assertFieldValues($entity_init, 'card_1', []);
   }
 
@@ -400,7 +402,7 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertFalse($this->assertSession()->optionExists('card_2', 0)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_2', 1)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_2', 2)->isSelected());
-    $this->assertRaw('Some dangerous &amp; unescaped markup');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped markup');
 
     // Submit form: select first and third options.
     $edit = ['card_2[]' => [0 => 0, 2 => 2]];
@@ -427,7 +429,7 @@ class OptionsWidgetsTest extends FieldTestBase {
     // Submit form: select the three options while the field accepts only 2.
     $edit = ['card_2[]' => [0 => 0, 1 => 1, 2 => 2]];
     $this->submitForm($edit, 'Save');
-    $this->assertText('this field cannot hold more than 2 values');
+    $this->assertSession()->pageTextContains('this field cannot hold more than 2 values');
 
     // Submit form: uncheck all options.
     $edit = ['card_2[]' => []];
@@ -439,12 +441,14 @@ class OptionsWidgetsTest extends FieldTestBase {
     // Check that the 'none' option has no effect if actual options are selected
     // as well.
     $edit = ['card_2[]' => ['_none' => '_none', 0 => 0]];
-    $this->drupalPostForm('entity_test/manage/' . $entity->id() . '/edit', $edit, 'Save');
+    $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
+    $this->submitForm($edit, 'Save');
     $this->assertFieldValues($entity_init, 'card_2', [0]);
 
     // Check that selecting the 'none' option empties the field.
     $edit = ['card_2[]' => ['_none' => '_none']];
-    $this->drupalPostForm('entity_test/manage/' . $entity->id() . '/edit', $edit, 'Save');
+    $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
+    $this->submitForm($edit, 'Save');
     $this->assertFieldValues($entity_init, 'card_2', []);
 
     // A required select list does not have an empty key.
@@ -470,9 +474,9 @@ class OptionsWidgetsTest extends FieldTestBase {
     $this->assertFalse($this->assertSession()->optionExists('card_2', 0)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_2', 1)->isSelected());
     $this->assertFalse($this->assertSession()->optionExists('card_2', 2)->isSelected());
-    $this->assertRaw('Some dangerous &amp; unescaped markup');
-    $this->assertRaw('More &lt;script&gt;dangerous&lt;/script&gt; markup');
-    $this->assertRaw('Group 1');
+    $this->assertSession()->responseContains('Some dangerous &amp; unescaped markup');
+    $this->assertSession()->responseContains('More &lt;script&gt;dangerous&lt;/script&gt; markup');
+    $this->assertSession()->responseContains('Group 1');
 
     // Submit form: select first option.
     $edit = ['card_2[]' => [0 => 0]];
@@ -487,7 +491,8 @@ class OptionsWidgetsTest extends FieldTestBase {
 
     // Submit form: Unselect the option.
     $edit = ['card_2[]' => ['_none' => '_none']];
-    $this->drupalPostForm('entity_test/manage/' . $entity->id() . '/edit', $edit, 'Save');
+    $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
+    $this->submitForm($edit, 'Save');
     $this->assertFieldValues($entity_init, 'card_2', []);
   }
 
@@ -568,8 +573,11 @@ class OptionsWidgetsTest extends FieldTestBase {
 
     // Display form: check that _none options are present and has label.
     $this->drupalGet('entity_test/manage/' . $entity->id() . '/edit');
-    $this->assertNotEmpty($this->xpath('//div[@id=:id]//input[@value=:value]', [':id' => 'edit-card-1', ':value' => '_none']), 'A test radio button has a "None" choice.');
-    $this->assertNotEmpty($this->xpath('//div[@id=:id]//label[@for=:for and text()=:label]', [':id' => 'edit-card-1', ':for' => 'edit-card-1-none', ':label' => 'N/A']), 'A test radio button has a "N/A" choice.');
+    // Verify that a test radio button has a "None" choice.
+    $this->assertSession()->elementExists('xpath', '//div[@id="edit-card-1"]//input[@value="_none"]');
+    // Verify that a test radio button has a "N/A" choice..
+    $this->assertSession()->elementExists('xpath', '//div[@id="edit-card-1"]//label[@for="edit-card-1-none"]');
+    $this->assertSession()->elementTextEquals('xpath', '//div[@id="edit-card-1"]//label[@for="edit-card-1-none"]', "N/A");
 
     // Change it to the select widget.
     $display_repository->getFormDisplay('entity_test', 'entity_test')

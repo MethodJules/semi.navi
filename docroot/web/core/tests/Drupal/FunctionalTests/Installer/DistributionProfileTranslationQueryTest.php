@@ -94,14 +94,14 @@ class DistributionProfileTranslationQueryTest extends InstallerTestBase {
 
     // Check the language direction.
     $direction = $this->getSession()->getPage()->find('xpath', '/@dir')->getText();
-    $this->assertEqual('ltr', $direction);
+    $this->assertEquals('ltr', $direction);
 
     // Verify that the distribution name appears.
-    $this->assertRaw($this->info['distribution']['name']);
+    $this->assertSession()->pageTextContains($this->info['distribution']['name']);
     // Verify that the requested theme is used.
-    $this->assertRaw($this->info['distribution']['install']['theme']);
+    $this->assertSession()->responseContains($this->info['distribution']['install']['theme']);
     // Verify that the "Choose profile" step does not appear.
-    $this->assertNoText('profile');
+    $this->assertSession()->pageTextNotContains('profile');
 
     parent::setUpSettings();
   }
@@ -114,12 +114,12 @@ class DistributionProfileTranslationQueryTest extends InstallerTestBase {
     $this->assertSession()->statusCodeEquals(200);
 
     // Confirm that we are logged-in after installation.
-    $this->assertText($this->rootUser->getDisplayName());
+    $this->assertSession()->pageTextContains($this->rootUser->getDisplayName());
 
     // Verify German was configured but not English.
     $this->drupalGet('admin/config/regional/language');
-    $this->assertText('German');
-    $this->assertNoText('English');
+    $this->assertSession()->pageTextContains('German');
+    $this->assertSession()->pageTextNotContains('English');
   }
 
   /**

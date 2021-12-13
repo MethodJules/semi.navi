@@ -19,6 +19,9 @@ namespace Drupal\migrate\Plugin\migrate\source;
  * 'constants/field_name' elements, with values of 'user' and 'image',
  * respectively.
  *
+ * For additional configuration keys, refer to the parent class:
+ * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
+ *
  * @MigrateSource(
  *   id = "empty",
  *   source_module = "migrate"
@@ -60,7 +63,7 @@ class EmptySource extends SourcePluginBase {
   /**
    * {@inheritdoc}
    */
-  public function count($refresh = FALSE) {
+  protected function doCount() {
     return 1;
   }
 

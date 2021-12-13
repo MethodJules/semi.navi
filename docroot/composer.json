@@ -24,7 +24,7 @@
         "drupal/core-recommended": "^9.1",
         "drupal/default_content": "@alpha",
         "drupal/devel": "^4.1",
-        "drupal/facets": "^1.8",
+        "drupal/facets": "^2.0",
         "drupal/geocoder": "^3.20",
         "drupal/geofield": "^1.22",
         "drupal/leaflet": "^2.1",

@@ -86,7 +86,7 @@ class ConfigDiffTest extends KernelTestBase {
     $diff = \Drupal::service('config.manager')->diff($active, $sync, $config_name, $config_name);
     // Prove the fields match.
     $edits = $diff->getEdits();
-    $this->assertEqual('copy', $edits[0]->type, 'The first item in the diff is a copy.');
+    $this->assertEquals('copy', $edits[0]->type, 'The first item in the diff is a copy.');
     $this->assertCount(1, $edits, 'There is one item in the diff');
 
     // Rename the entity.
@@ -101,7 +101,7 @@ class ConfigDiffTest extends KernelTestBase {
       ['id: ' . $new_test_entity_id],
       ['id: ' . $test_entity_id]);
     $this->assertYamlEdit($edits, 'label', 'copy');
-    $this->assertEqual('copy', $edits[2]->type, 'The third item in the diff is a copy.');
+    $this->assertEquals('copy', $edits[2]->type, 'The third item in the diff is a copy.');
     $this->assertCount(3, $edits, 'There are three items in the diff.');
   }
 
@@ -127,7 +127,7 @@ class ConfigDiffTest extends KernelTestBase {
     // Test the fields match in the default collection diff.
     $diff = \Drupal::service('config.manager')->diff($active, $sync, $config_name);
     $edits = $diff->getEdits();
-    $this->assertEqual('copy', $edits[0]->type, 'The first item in the diff is a copy.');
+    $this->assertEquals('copy', $edits[0]->type, 'The first item in the diff is a copy.');
     $this->assertCount(1, $edits, 'There is one item in the diff');
 
     // Test that the differences are detected when diffing the collection.
@@ -151,8 +151,10 @@ class ConfigDiffTest extends KernelTestBase {
    * @param mixed $closing
    *   (optional) The closing value of the edit. If not supplied, assertion
    *   is skipped.
+   *
+   * @internal
    */
-  protected function assertYamlEdit(array $edits, $field, $type, $orig = NULL, $closing = NULL) {
+  protected function assertYamlEdit(array $edits, string $field, string $type, $orig = NULL, $closing = NULL): void {
     $match = FALSE;
     foreach ($edits as $edit) {
       // Choose which section to search for the field.
@@ -163,7 +165,7 @@ class ConfigDiffTest extends KernelTestBase {
           if (strpos($item, $field . ':') === 0) {
             $match = TRUE;
             // Assert that the edit is of the type specified.
-            $this->assertEqual($type, $edit->type, "The {$field} item in the diff is a {$type}");
+            $this->assertEquals($type, $edit->type, "The {$field} item in the diff is a {$type}");
             // If an original value was given, assert that it matches.
             if (isset($orig)) {
               $this->assertSame($orig, $edit->orig, "The original value for key '{$field}' is correct.");

@@ -7,8 +7,8 @@ services:
     environment:
       MYSQL_DATABASE: ${PROJECT_NAME}
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-    ports:
-      - "3306:3306"
+  # ports:
+  #    - "3306:3306"
     volumes:
       - ../database:/var/lib/mysql
     restart: always
@@ -17,25 +17,41 @@ services:
       - xnavi_d9_db
     build: .
     container_name: "${PROJECT_NAME}_drupal"
-    ports:
-      - "8080:80"
+    # ports:
+    #  - "8080:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.seminavi_backend_d9.entrypoints=http"
+      - "traefik.http.routers.seminavi_backend_d9.rule=Host(`seminavi.ydns.eu`)"
+      - "traefik.http.middlewares.seminavi_backend_d9-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.seminavi_backend_d9.middlewares=seminavi_backend_d9-https-redirect"
+      - "traefik.http.routers.seminavi_backend_d9-secure.entrypoints=https"
+      - "traefik.http.routers.seminavi_backend_d9-secure.rule=Host(`seminavi.ydns.eu`)"
+      - "traefik.http.routers.seminavi_backend_d9-secure.tls=true"
+      - "traefik.http.routers.seminavi_backend_d9-secure.tls.certresolver=http"
+      - "traefik.http.routers.seminavi_backend_d9-secure.service=seminavi_backend_d9"
+      - "traefik.http.services.seminavi_backend_d9.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
     volumes:
       - ../docroot:/app
+    networks:
+      - proxy
+      - default
     restart: always
   xnavi_d9_solr:
     image: solr:7.5
     container_name: "${PROJECT_NAME}_solr"
-    ports:
-      - "8983:8983"
+    #  ports:
+    #  - "8983:8983"
     volumes:
       - ./solr_xnavi_config:/opt/solr/solr_xnavi_config
       - xnavi_d9_core:/opt/solr/server/solr/core
   xnavi_neo4j:
         image: neo4j:4.0.3
         container_name: "${PROJECT_NAME}_neo4j"
-        ports:
-            - "7474:7474"
-            - "7687:7687"
+        #   ports:
+        #    - "7475:7474"
+        #    - "7688:7687"
         volumes:
           - ./neo4j/data:/data
           - ./neo4j/logs:/logs
@@ -50,8 +66,8 @@ services:
   xnavi_corenlp:
         image: graham3333/corenlp-complete
         container_name: "${PROJECT_NAME}_corenlp"
-        ports:
-          - "9000:9000"
+        #   ports:
+        #  - "9000:9000"
   xnavi_python:
         container_name: "${PROJECT_NAME}_python"
         build: ./python
@@ -66,3 +82,7 @@ services:
 volumes:
   #xnavi_d9_db_data:
   xnavi_d9_core:
+networks:
+  proxy:
+    external:
+      name: proxy

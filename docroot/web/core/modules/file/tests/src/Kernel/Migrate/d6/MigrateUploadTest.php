@@ -44,8 +44,8 @@ class MigrateUploadTest extends MigrateDrupal6TestBase {
         'filemime' => 'text/plain',
         'created' => 1,
         'changed' => 1,
-        'status' => FILE_STATUS_PERMANENT,
       ]);
+      $file->setPermanent();
       $file->enforceIsNew();
       file_put_contents($file->getFileUri(), 'hello world');
 
@@ -64,7 +64,7 @@ class MigrateUploadTest extends MigrateDrupal6TestBase {
   }
 
   /**
-   * Test upload migration from Drupal 6 to Drupal 8.
+   * Tests upload migration from Drupal 6 to Drupal 8.
    */
   public function testUpload() {
     $this->container->get('entity_type.manager')

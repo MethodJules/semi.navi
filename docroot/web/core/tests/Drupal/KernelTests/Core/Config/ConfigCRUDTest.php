@@ -7,7 +7,6 @@ use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigNameException;
 use Drupal\Core\Config\ConfigValueException;
-use Drupal\Core\Config\InstallStorage;
 use Drupal\Core\Config\DatabaseStorage;
 use Drupal\Core\Config\UnsupportedDataTypeConfigException;
 use Drupal\KernelTests\KernelTestBase;
@@ -270,8 +269,6 @@ class ConfigCRUDTest extends KernelTestBase {
     $storage = new DatabaseStorage($this->container->get('database'), 'config');
     $name = 'config_test.types';
     $config = $this->config($name);
-    $original_content = file_get_contents(drupal_get_path('module', 'config_test') . '/' . InstallStorage::CONFIG_INSTALL_DIRECTORY . "/$name.yml");
-    $this->verbose('<pre>' . $original_content . "\n" . var_export($storage->read($name), TRUE));
 
     // Verify variable data types are intact.
     $data = [
@@ -282,11 +279,16 @@ class ConfigCRUDTest extends KernelTestBase {
       'float_as_integer' => (float) 1,
       'hex' => 0xC,
       'int' => 99,
-      'octal' => 0775,
+      // Symfony 5.1's YAML parser issues a deprecation when reading octal with
+      // a leading zero, to comply with YAML 1.2. However PECL YAML is still
+      // YAML 1.1 compliant.
+      // @todo: revisit parsing of octal once PECL YAML supports YAML 1.2.
+      // See https://www.drupal.org/project/drupal/issues/3205480
+      // 'octal' => 0775,
       'string' => 'string',
       'string_int' => '1',
     ];
-    $data['_core']['default_config_hash'] = Crypt::hashBase64(serialize($data));
+    $data = ['_core' => ['default_config_hash' => Crypt::hashBase64(serialize($data))]] + $data;
     $this->assertSame($data, $config->get());
 
     // Re-set each key using Config::set().
@@ -297,7 +299,6 @@ class ConfigCRUDTest extends KernelTestBase {
     $this->assertSame($data, $config->get());
     // Assert the data against the file storage.
     $this->assertSame($data, $storage->read($name));
-    $this->verbose('<pre>' . $name . var_export($storage->read($name), TRUE));
 
     // Set data using config::setData().
     $config->setData($data)->save();

@@ -573,7 +573,7 @@
   // @NOTE: This method used by Leaflet Markecluster module (don't remove/rename)
   Drupal.Leaflet.prototype.fitbounds = function(mapid) {
     let self = this;
-    let start_zoom = self.settings.zoom ?? 12;
+    let start_zoom = self.settings.zoom ? self.settings.zoom : 12;
     // Note: self.settings.center might not be defined in case of Leaflet widget and Automatically locate user current position.
     let start_center = self.settings.center ? new L.LatLng(self.settings.center.lat, self.settings.center.lon) : new L.LatLng(0,0);
 

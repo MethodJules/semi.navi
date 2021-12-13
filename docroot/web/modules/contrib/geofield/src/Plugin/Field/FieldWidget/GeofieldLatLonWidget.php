@@ -84,14 +84,14 @@ class GeofieldLatLonWidget extends GeofieldBaseWidget {
   public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
     foreach ($values as $delta => $value) {
       foreach ($this->components as $component) {
-        if (empty($value['value'][$component]) || !is_numeric($value['value'][$component])) {
+        if (is_null($value['value'][$component]) || !is_numeric($value['value'][$component])) {
           $values[$delta]['value'] = '';
           continue 2;
         }
 
       }
       $components = $value['value'];
-      $values[$delta]['value'] = $this->wktGenerator->wktBuildPoint([trim($components['lon']), trim($components['lat'])]);
+      $values[$delta]['value'] = $this->geofieldBackendValue($this->wktGenerator->wktBuildPoint([trim($components['lon']), trim($components['lat'])]));
     }
 
     return $values;

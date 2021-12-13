@@ -26,7 +26,8 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * In this example field instances of type page are retrieved from the source
  * database.
  *
- * For additional configuration keys, refer to the parent classes:
+ * For additional configuration keys, refer to the parent classes.
+ *
  * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
  * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
  *
@@ -45,7 +46,7 @@ class FieldInstance extends DrupalSqlBase {
     if (isset($this->configuration['node_type'])) {
       $query->condition('cnfi.type_name', $this->configuration['node_type']);
     }
-    $query->join('content_node_field', 'cnf', 'cnf.field_name = cnfi.field_name');
+    $query->join('content_node_field', 'cnf', '[cnf].[field_name] = [cnfi].[field_name]');
     $query->fields('cnf');
     $query->orderBy('cnfi.field_name');
     $query->orderBy('cnfi.type_name');

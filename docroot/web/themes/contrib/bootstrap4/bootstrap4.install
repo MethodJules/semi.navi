@@ -82,3 +82,15 @@ function bootstrap4_update_8103() {
     ->set('b4_top_container_config', '')
     ->save(TRUE);
 }
+
+/**
+ * Update configuration: remove subtheme values.
+ */
+function bootstrap4_update_8220() {
+  \Drupal::configFactory()
+    ->getEditable('bootstrap4.settings')
+    ->clear('subtheme_folder')
+    ->clear('subtheme_name')
+    ->clear('subtheme_machine_name')
+    ->save(TRUE);
+}

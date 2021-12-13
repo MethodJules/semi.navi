@@ -10,7 +10,7 @@ and recompile css!)
 
 ## FEATURES
 
-* Bootstrap 4 library (4.5.3 and 4.6.0) included
+* Bootstrap 4 library (4.6.1) included
 * Bootstrap 4 style guide (view all Bootstrap 4 components on one page)
 * Bootstrap 4 breakpoints
 * Bootstrap 4 integration with CKEditor
@@ -38,18 +38,16 @@ Head to `Appearance` and clicking bootstrap4 `settings`.
 
 ### Subtheme
 
-* If you require subtheme (usually if you want to override templates), 
-    see [subtheme docs](_SUBTHEME/README.md).
+_SUBTHEME folder was removed and is no longer available.
 
-* Interface subtheme creation is coming to [Bootstrap4 Tools](https://www.drupal.org/project/bootstrap4_tools) module
+Subtheme can be created via UI interface in theme settings (`Appearance` menu).
 
 ## Development and patching
 
 - Install development dependencies by running `npm install`
 - To lint SASS files run `npm run lint:sass` (it will fail build if lint fails)
 - To lint JS files run `npm run lint:js` (it will fail build if lint fails)
-- To compile SASS (for Bootstrap 4.5.3) run `sass scss/style-4-5.scss css/style.css` (requires [SASS compiler](https://sass-lang.com/install))
-- To compile SASS (for Bootstrap 4.6.0) run `sass scss/style.scss css/style.css` (requires [SASS compiler](https://sass-lang.com/install))
+- To compile SASS (for Bootstrap 4.6.1) run `sass scss/style.scss css/style.css` (requires [SASS compiler](https://sass-lang.com/install))
 - To compile JS: run `npm run build:js`
 - optional: create symlink from bootstrap4 repo folder to a local Drupal installation to simplify development `ln -s /path/to/bootstrap4 /path/to/local-drupal-site/web/themes/contrib`
 

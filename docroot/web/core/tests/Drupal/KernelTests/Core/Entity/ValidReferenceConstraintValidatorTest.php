@@ -76,8 +76,8 @@ class ValidReferenceConstraintValidatorTest extends EntityKernelTestBase {
 
     // Make sure the information provided by a violation is correct.
     $violation = $violations[0];
-    $this->assertEqual(t('The referenced entity (%type: %id) does not exist.', ['%type' => 'user', '%id' => $entity->id()]), $violation->getMessage(), 'The message for invalid value is correct.');
-    $this->assertEqual($typed_data, $violation->getRoot(), 'Violation root is correct.');
+    $this->assertEquals(t('The referenced entity (%type: %id) does not exist.', ['%type' => 'user', '%id' => $entity->id()]), $violation->getMessage(), 'The message for invalid value is correct.');
+    $this->assertEquals($typed_data, $violation->getRoot(), 'Violation root is correct.');
   }
 
   /**
@@ -87,13 +87,13 @@ class ValidReferenceConstraintValidatorTest extends EntityKernelTestBase {
     // Create two types of users, with and without access to bypass content
     // access.
     /** @var \Drupal\user\RoleInterface $role_with_access */
-    $role_with_access = Role::create(['id' => 'role_with_access']);
+    $role_with_access = Role::create(['id' => 'role_with_access', 'label' => 'With access']);
     $role_with_access->grantPermission('access content');
     $role_with_access->grantPermission('bypass node access');
     $role_with_access->save();
 
     /** @var \Drupal\user\RoleInterface $role_without_access */
-    $role_without_access = Role::create(['id' => 'role_without_access']);
+    $role_without_access = Role::create(['id' => 'role_without_access', 'label' => 'Without access']);
     $role_without_access->grantPermission('access content');
     $role_without_access->save();
 

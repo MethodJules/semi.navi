@@ -2,9 +2,11 @@
 
 namespace Drupal\system\Form;
 
+use Drupal\Core\Batch\BatchBuilder;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -182,19 +184,12 @@ class PrepareModulesEntityUninstallForm extends ConfirmFormBase {
     $entity_type_id = $form_state->getValue('entity_type_id');
 
     $entity_type_plural = $this->entityTypeManager->getDefinition($entity_type_id)->getPluralLabel();
-    $batch = [
-      'title' => t('Deleting @entity_type_plural', [
-        '@entity_type_plural' => $entity_type_plural,
-      ]),
-      'operations' => [
-        [
-          [__CLASS__, 'deleteContentEntities'], [$entity_type_id],
-        ],
-      ],
-      'finished' => [__CLASS__, 'moduleBatchFinished'],
-      'progress_message' => '',
-    ];
-    batch_set($batch);
+    $batch_builder = (new BatchBuilder())
+      ->setTitle($this->t('Deleting @entity_type_plural', ['@entity_type_plural' => $entity_type_plural]))
+      ->setProgressMessage('')
+      ->setFinishCallback([__CLASS__, 'moduleBatchFinished'])
+      ->addOperation([__CLASS__, 'deleteContentEntities'], [$entity_type_id]);
+    batch_set($batch_builder->toArray());
   }
 
   /**
@@ -237,7 +232,7 @@ class PrepareModulesEntityUninstallForm extends ConfirmFormBase {
     // estimation of the completion level we reached.
     if (count($entity_ids) > 0 && $context['sandbox']['progress'] != $context['sandbox']['max']) {
       $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
-      $context['message'] = t('Deleting items... Completed @percentage% (@current of @total).', ['@percentage' => round(100 * $context['sandbox']['progress'] / $context['sandbox']['max']), '@current' => $context['sandbox']['progress'], '@total' => $context['sandbox']['max']]);
+      $context['message'] = new TranslatableMarkup('Deleting items... Completed @percentage% (@current of @total).', ['@percentage' => round(100 * $context['sandbox']['progress'] / $context['sandbox']['max']), '@current' => $context['sandbox']['progress'], '@total' => $context['sandbox']['max']]);
 
     }
     else {
@@ -253,7 +248,7 @@ class PrepareModulesEntityUninstallForm extends ConfirmFormBase {
    */
   public static function moduleBatchFinished($success, $results, $operations) {
     $entity_type_plural = \Drupal::entityTypeManager()->getDefinition($results['entity_type_id'])->getPluralLabel();
-    \Drupal::messenger()->addStatus(t('All @entity_type_plural have been deleted.', ['@entity_type_plural' => $entity_type_plural]));
+    \Drupal::messenger()->addStatus(new TranslatableMarkup('All @entity_type_plural have been deleted.', ['@entity_type_plural' => $entity_type_plural]));
 
     return new RedirectResponse(Url::fromRoute('system.modules_uninstall')->setAbsolute()->toString());
   }

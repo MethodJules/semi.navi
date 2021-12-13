@@ -852,6 +852,12 @@
  * Services can also be defined dynamically, as in the
  * \Drupal\Core\CoreServiceProvider class, but this is less common for modules.
  *
+ * @section sec_define Service autowiring
+ * Instead of specifying arguments explicitly, the container can also autowire
+ * a service's arguments from the constructor's type-hints. See
+ * @link https://symfony.com/doc/current/service_container/autowiring.html the Symfony documentation on defining services dependencies automatically @endlink
+ * for details.
+ *
  * @section sec_tags Service tags
  * Some services have tags, which are defined in the service definition. See
  * @link service_tag Service Tags @endlink for usage.
@@ -2036,7 +2042,7 @@ function hook_mail_alter(&$message) {
 }
 
 /**
- * Prepares a message based on parameters;
+ * Prepares a message based on parameters.
  *
  * This hook is called from MailManagerInterface->mail(). Note that hook_mail(),
  * unlike hook_mail_alter(), is only called on the $module argument to
@@ -2413,8 +2419,8 @@ function hook_validation_constraint_alter(array &$definitions) {
  * @code
  * array('#type' => 'status_messages')
  * @endcode
- * to a render array, use drupal_render() to render it, and add a command to
- * place the messages in an appropriate location.
+ * to a render array, use \Drupal::service('renderer')->render() to render it,
+ * and add a command to place the messages in an appropriate location.
  *
  * @section sec_other Other methods for triggering Ajax
  * Here are some additional methods you can use to trigger Ajax responses in
@@ -2502,7 +2508,7 @@ function hook_validation_constraint_alter(array &$definitions) {
  *
  * @section sec_dispatch Dispatching events
  * To dispatch an event, call the
- * \Symfony\Component\EventDispatcher\EventDispatcherInterface::dispatch()
+ * \Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch()
  * method on the 'event_dispatcher' service (see the
  * @link container Services topic @endlink for more information about how to
  * interact with services). The first argument is the unique event name, which

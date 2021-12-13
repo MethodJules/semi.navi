@@ -16,7 +16,7 @@
   margin-bottom: 1.125rem;
   color: inherit;
   border: 1px solid #e7edf1;
-  border-radius: 2px;
+  border-radius: 0.1875rem;
   box-shadow: 0 1px 4px #d7e1e8;
 }
 
@@ -98,7 +98,7 @@
   content: "";
   pointer-events: none;
   opacity: 0;
-  border-radius: 2px;
+  border-radius: 0.1875rem;
   box-shadow: inset 0 0 0 2px #53b0eb;
 }
 
@@ -111,7 +111,8 @@
 /* Disable default outline for summary, since we have own implementation */
 
 .olivero-details__summary:focus {
-  outline: none;
+  outline: solid 2px transparent;
+  outline-offset: -4px;
 }
 
 /* Details summary, hover state */
@@ -196,7 +197,7 @@
 }
 
 .collapse-processed > .olivero-details__summary .details-title:focus {
-  outline: none;
+  outline: solid 2px transparent;
 }
 
 .collapse-processed > .olivero-details__summary .details-title:hover {

@@ -74,7 +74,7 @@ class LinkFieldUITest extends BrowserTestBase {
    */
   public function testFieldUI() {
     foreach ($this->providerTestFieldUI() as $item) {
-      list($cardinality, $link_type, $title, $label, $field_name, $default_uri) = $item;
+      [$cardinality, $link_type, $title, $label, $field_name, $default_uri] = $item;
       $this->runFieldUIItem($cardinality, $link_type, $title, $label, $field_name, $default_uri);
     }
   }
@@ -172,7 +172,7 @@ class LinkFieldUITest extends BrowserTestBase {
     // generate warnings.
     // @todo Mess with the formatter settings a bit here.
     $this->drupalGet("$type_path/display");
-    $this->assertText('Link text trimmed to 80 characters');
+    $this->assertSession()->pageTextContains('Link text trimmed to 80 characters');
 
     // Make the fields visible in the form display.
     $form_display_id = implode('.', ['node', $this->contentType->id(), 'default']);
@@ -218,8 +218,10 @@ class LinkFieldUITest extends BrowserTestBase {
    *   The name of the field to check.
    * @param string $text
    *   The text to check.
+   *
+   * @internal
    */
-  protected function assertFieldContainsRawText($field_name, $text) {
+  protected function assertFieldContainsRawText(string $field_name, string $text): void {
     $this->assertTrue((bool) preg_match('/' . preg_quote($text, '/') . '/ui', $this->getFieldHtml($field_name)));
   }
 
@@ -230,8 +232,10 @@ class LinkFieldUITest extends BrowserTestBase {
    *   The name of the field to check.
    * @param string $text
    *   The text to check.
+   *
+   * @internal
    */
-  protected function assertNoFieldContainsRawText($field_name, $text) {
+  protected function assertNoFieldContainsRawText(string $field_name, string $text): void {
     $this->assertFalse((bool) preg_match('/' . preg_quote($text, '/') . '/ui', $this->getFieldHtml($field_name)));
   }
 

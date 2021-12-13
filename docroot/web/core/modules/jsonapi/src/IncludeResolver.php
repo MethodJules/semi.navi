@@ -179,7 +179,7 @@ class IncludeResolver {
       return array_map('trim', explode('.', $include_path));
     }, $include_paths);
     $resolved_paths_per_resource_type = [];
-    /* @var \Drupal\jsonapi\JsonApiResource\ResourceIdentifierInterface $resource_object */
+    /** @var \Drupal\jsonapi\JsonApiResource\ResourceIdentifierInterface $resource_object */
     foreach ($data as $resource_object) {
       $resource_type = $resource_object->getResourceType();
       $resource_type_name = $resource_type->getTypeName();
@@ -249,7 +249,7 @@ class IncludeResolver {
       if (!$field_name = array_shift($parts)) {
         continue;
       }
-      $previous = isset($merged[$field_name]) ? $merged[$field_name] : [];
+      $previous = $merged[$field_name] ?? [];
       $merged[$field_name] = array_merge($previous, [$parts]);
     }
     return !empty($merged) ? array_map([static::class, __FUNCTION__], $merged) : $merged;

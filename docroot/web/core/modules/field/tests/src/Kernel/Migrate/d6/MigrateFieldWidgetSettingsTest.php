@@ -28,7 +28,7 @@ class MigrateFieldWidgetSettingsTest extends MigrateDrupal6TestBase {
   }
 
   /**
-   * Test that migrated view modes can be loaded using D8 API's.
+   * Tests that migrated view modes can be loaded using D8 API's.
    */
   public function testWidgetSettings() {
     // Test the config can be loaded.
@@ -37,10 +37,16 @@ class MigrateFieldWidgetSettingsTest extends MigrateDrupal6TestBase {
 
     // Text field.
     $component = $form_display->getComponent('field_test');
-    $expected = ['weight' => 1, 'type' => 'text_textfield'];
-    $expected['settings'] = ['size' => 60, 'placeholder' => ''];
-    $expected['third_party_settings'] = [];
-    $expected['region'] = 'content';
+    $expected = [
+      'type' => 'text_textfield',
+      'weight' => 1,
+      'region' => 'content',
+      'settings' => [
+        'size' => 60,
+        'placeholder' => '',
+      ],
+      'third_party_settings' => [],
+    ];
     $this->assertSame($expected, $component, 'Text field settings are correct.');
 
     // Integer field.

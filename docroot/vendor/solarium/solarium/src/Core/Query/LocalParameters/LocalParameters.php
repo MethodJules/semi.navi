@@ -16,7 +16,7 @@ use Solarium\Exception\OutOfBoundsException;
 /**
  * Local Parameters.
  *
- * @see https://lucene.apache.org/solr/guide/local-parameters-in-queries.html
+ * @see https://solr.apache.org/guide/local-parameters-in-queries.html
  *
  * @author wicliff <wicliff.wolda@gmail.com>
  */
@@ -26,18 +26,6 @@ class LocalParameters implements \ArrayAccess
      * @var \Solarium\Core\Query\LocalParameters\LocalParameterInterface[]
      */
     private $parameters = [];
-
-    /**
-     * @return string|null
-     */
-    public function render(): ?string
-    {
-        if ('' === $value = implode(' ', array_filter(array_map('strval', $this->parameters)))) {
-            return null;
-        }
-
-        return sprintf('{!%s}', $value);
-    }
 
     /**
      * @param string $key
@@ -895,6 +883,7 @@ class LocalParameters implements \ArrayAccess
         return isset($this->parameters[$offset]);
     }
 
+    #[\ReturnTypeWillChange]
     /**
      * {@inheritdoc}
      */
@@ -906,9 +895,9 @@ class LocalParameters implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
-        return $this->parameters[$offset] = $value;
+        $this->parameters[$offset] = $value;
     }
 
     /**
@@ -1023,5 +1012,22 @@ class LocalParameters implements \ArrayAccess
         }
 
         return $this->parameters[$type];
+    }
+
+    /**
+     * Get all local parameters in a key => value format.
+     *
+     * @return array
+     */
+    public function getParameters(): array
+    {
+        $params = [];
+
+        /** @var LocalParameterInterface $parameter */
+        foreach ($this->parameters as $parameter) {
+            $params[$parameter->getType()] = $parameter->getValues();
+        }
+
+        return $params;
     }
 }

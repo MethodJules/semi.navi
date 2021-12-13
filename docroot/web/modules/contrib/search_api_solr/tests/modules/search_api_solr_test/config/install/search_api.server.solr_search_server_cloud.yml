@@ -26,9 +26,11 @@ backend_config:
     password: ''
     commit_within: 1000
     jmx: false
+    jts: false
     solr_install_dir: ''
     checkpoints_collection: checkpoints
     skip_schema_check: false
+    distrib: true
   optimize: false
   fallback_multiple: true
 status: true

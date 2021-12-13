@@ -38,7 +38,7 @@ class MigrateShortcutSetTest extends MigrateDrupal7TestBase {
   }
 
   /**
-   * Test the shortcut set migration.
+   * Tests the shortcut set migration.
    */
   public function testShortcutSetMigration() {
     $this->assertEntity('default', 'Default', 2);
@@ -54,8 +54,10 @@ class MigrateShortcutSetTest extends MigrateDrupal7TestBase {
    *   The expected shortcut set label.
    * @param int $expected_size
    *   The number of shortcuts expected to be in the set.
+   *
+   * @internal
    */
-  protected function assertEntity($id, $label, $expected_size) {
+  protected function assertEntity(string $id, string $label, int $expected_size): void {
     $shortcut_set = ShortcutSet::load($id);
     $this->assertInstanceOf(ShortcutSetInterface::class, $shortcut_set);
     /** @var \Drupal\shortcut\ShortcutSetInterface $shortcut_set */

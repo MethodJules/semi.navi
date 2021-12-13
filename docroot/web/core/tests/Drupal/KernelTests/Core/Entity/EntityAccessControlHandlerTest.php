@@ -38,15 +38,17 @@ class EntityAccessControlHandlerTest extends EntityLanguageTestBase {
 
   /**
    * Asserts entity access correctly grants or denies access.
+   *
+   * @internal
    */
-  public function assertEntityAccess($ops, AccessibleInterface $object, AccountInterface $account = NULL) {
+  public function assertEntityAccess(array $ops, AccessibleInterface $object, AccountInterface $account = NULL): void {
     foreach ($ops as $op => $result) {
       $message = new FormattableMarkup("Entity access returns @result with operation '@op'.", [
         '@result' => !isset($result) ? 'null' : ($result ? 'true' : 'false'),
         '@op' => $op,
       ]);
 
-      $this->assertEqual($object->access($op, $account), $result, $message);
+      $this->assertEquals($object->access($op, $account), $result, $message);
     }
   }
 
@@ -286,7 +288,7 @@ class EntityAccessControlHandlerTest extends EntityLanguageTestBase {
     $entity->access('create');
     $this->assertTrue($state->get('entity_test_entity_create_access'));
     $this->assertSame(['entity_type_id' => 'entity_test', 'langcode' => LanguageInterface::LANGCODE_DEFAULT], $state->get('entity_test_entity_create_access_context'));
-    $this->assertEqual(TRUE, $state->get('entity_test_entity_test_create_access'));
+    $this->assertEquals(TRUE, $state->get('entity_test_entity_test_create_access'));
 
     // Test hook_entity_access() and hook_ENTITY_TYPE_access().
     $entity->access('view');

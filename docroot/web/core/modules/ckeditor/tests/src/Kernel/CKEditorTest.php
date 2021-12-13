@@ -36,14 +36,22 @@ class CKEditorTest extends KernelTestBase {
   protected $ckeditor;
 
   /**
+   * The file URL generator.
+   *
+   * @var \Drupal\Core\File\FileUrlGeneratorInterface
+   */
+  protected $fileUrlGenerator;
+
+  /**
    * The Editor Plugin Manager.
    *
-   * @var \Drupal\editor\Plugin\EditorManager;
+   * @var \Drupal\editor\Plugin\EditorManager
    */
   protected $manager;
 
   protected function setUp(): void {
     parent::setUp();
+    $this->fileUrlGenerator = $this->container->get('file_url_generator');
 
     // Install the Filter module.
 
@@ -93,8 +101,8 @@ class CKEditorTest extends KernelTestBase {
       'language' => 'en',
       'stylesSet' => FALSE,
       'drupalExternalPlugins' => [
-        'drupalimage' => file_url_transform_relative(file_create_url('core/modules/ckeditor/js/plugins/drupalimage/plugin.js')),
-        'drupallink' => file_url_transform_relative(file_create_url('core/modules/ckeditor/js/plugins/drupallink/plugin.js')),
+        'drupalimage' => $this->fileUrlGenerator->generateString('core/modules/ckeditor/js/plugins/drupalimage/plugin.js'),
+        'drupallink' => $this->fileUrlGenerator->generateString('core/modules/ckeditor/js/plugins/drupallink/plugin.js'),
       ],
     ];
     $this->assertEquals($expected_config, $this->ckeditor->getJSSettings($editor), 'Generated JS settings are correct for default configuration.');
@@ -114,9 +122,9 @@ class CKEditorTest extends KernelTestBase {
     $expected_config['toolbar'][0]['items'][] = 'Format';
     $expected_config['format_tags'] = 'p;h2;h3;h4;h5;h6';
     $expected_config['extraPlugins'] .= ',llama_contextual,llama_contextual_and_button';
-    $expected_config['drupalExternalPlugins']['llama_contextual'] = file_url_transform_relative(file_create_url('core/modules/ckeditor/tests/modules/js/llama_contextual.js'));
-    $expected_config['drupalExternalPlugins']['llama_contextual_and_button'] = file_url_transform_relative(file_create_url('core/modules/ckeditor/tests/modules/js/llama_contextual_and_button.js'));
-    $expected_config['contentsCss'][] = file_url_transform_relative(file_create_url('core/modules/ckeditor/tests/modules/ckeditor_test.css')) . $query_string;
+    $expected_config['drupalExternalPlugins']['llama_contextual'] = $this->fileUrlGenerator->generateString('core/modules/ckeditor/tests/modules/js/llama_contextual.js');
+    $expected_config['drupalExternalPlugins']['llama_contextual_and_button'] = $this->fileUrlGenerator->generateString('core/modules/ckeditor/tests/modules/js/llama_contextual_and_button.js');
+    $expected_config['contentsCss'][] = $this->fileUrlGenerator->generateString('core/modules/ckeditor/tests/modules/ckeditor_test.css') . $query_string;
     $this->assertEquals($expected_config, $this->ckeditor->getJSSettings($editor), 'Generated JS settings are correct for customized configuration.');
 
     // Change the allowed HTML tags; the "allowedContent" and "format_tags"
@@ -257,7 +265,7 @@ class CKEditorTest extends KernelTestBase {
 
     // Enable the editor_test module, which implements hook_ckeditor_css_alter().
     $this->enableModules(['ckeditor_test']);
-    $expected[] = file_url_transform_relative(file_create_url(drupal_get_path('module', 'ckeditor_test') . '/ckeditor_test.css')) . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString($this->getModulePath('ckeditor_test') . '/ckeditor_test.css') . $query_string;
     $this->assertSame($expected, $this->ckeditor->buildContentsCssJSSetting($editor), '"contentsCss" configuration part of JS settings built correctly while a hook_ckeditor_css_alter() implementation exists.');
 
     // Enable LlamaCss plugin, which adds an additional CKEditor stylesheet.
@@ -269,17 +277,17 @@ class CKEditorTest extends KernelTestBase {
     $settings['toolbar']['rows'][0][0]['items'][] = 'LlamaCSS';
     $editor->setSettings($settings);
     $editor->save();
-    $expected[] = file_url_transform_relative(file_create_url(drupal_get_path('module', 'ckeditor_test') . '/css/llama.css')) . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString($this->getModulePath('ckeditor_test') . '/css/llama.css') . $query_string;
     $this->assertSame($expected, $this->ckeditor->buildContentsCssJSSetting($editor), '"contentsCss" configuration part of JS settings built correctly while a CKEditorPluginInterface implementation exists.');
 
     // Enable the Bartik theme, which specifies a CKEditor stylesheet.
     \Drupal::service('theme_installer')->install(['bartik']);
     $this->config('system.theme')->set('default', 'bartik')->save();
-    $expected[] = file_url_transform_relative(file_create_url('core/themes/bartik/css/base/elements.css')) . $query_string;
-    $expected[] = file_url_transform_relative(file_create_url('core/themes/bartik/css/components/captions.css')) . $query_string;
-    $expected[] = file_url_transform_relative(file_create_url('core/themes/bartik/css/components/table.css')) . $query_string;
-    $expected[] = file_url_transform_relative(file_create_url('core/themes/bartik/css/components/text-formatted.css')) . $query_string;
-    $expected[] = file_url_transform_relative(file_create_url('core/themes/bartik/css/classy/components/media-embed-error.css')) . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString('core/themes/bartik/css/base/elements.css') . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString('core/themes/bartik/css/components/captions.css') . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString('core/themes/bartik/css/components/table.css') . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString('core/themes/bartik/css/components/text-formatted.css') . $query_string;
+    $expected[] = $this->fileUrlGenerator->generateString('core/themes/bartik/css/classy/components/media-embed-error.css') . $query_string;
     $this->assertSame($expected, $this->ckeditor->buildContentsCssJSSetting($editor), '"contentsCss" configuration part of JS settings built correctly while a theme providing a CKEditor stylesheet exists.');
   }
 
@@ -294,14 +302,14 @@ class CKEditorTest extends KernelTestBase {
     $expected = $this->getDefaultInternalConfig();
     $expected['disallowedContent'] = $this->getDefaultDisallowedContentConfig();
     $expected['allowedContent'] = $this->getDefaultAllowedContentConfig();
-    $this->assertEqual($expected, $internal_plugin->getConfig($editor), '"Internal" plugin configuration built correctly for default toolbar.');
+    $this->assertEquals($expected, $internal_plugin->getConfig($editor), '"Internal" plugin configuration built correctly for default toolbar.');
 
     // Format dropdown/button enabled: new setting should be present.
     $settings = $editor->getSettings();
     $settings['toolbar']['rows'][0][0]['items'][] = 'Format';
     $editor->setSettings($settings);
     $expected['format_tags'] = 'p;h2;h3;h4;h5;h6';
-    $this->assertEqual($expected, $internal_plugin->getConfig($editor), '"Internal" plugin configuration built correctly for customized toolbar.');
+    $this->assertEquals($expected, $internal_plugin->getConfig($editor), '"Internal" plugin configuration built correctly for customized toolbar.');
   }
 
   /**
@@ -387,15 +395,15 @@ class CKEditorTest extends KernelTestBase {
     $langcodes = $this->ckeditor->getLangcodes();
 
     // Language codes transformed with browser mappings.
-    $this->assertTrue($langcodes['pt-pt'] == 'pt', '"pt" properly resolved');
-    $this->assertTrue($langcodes['zh-hans'] == 'zh-cn', '"zh-hans" properly resolved');
+    $this->assertSame('pt', $langcodes['pt-pt'], '"pt" properly resolved');
+    $this->assertSame('zh-cn', $langcodes['zh-hans'], '"zh-hans" properly resolved');
 
     // Language code both in Drupal and CKEditor.
-    $this->assertTrue($langcodes['gl'] == 'gl', '"gl" properly resolved');
+    $this->assertSame('gl', $langcodes['gl'], '"gl" properly resolved');
 
     // Language codes only in CKEditor.
-    $this->assertTrue($langcodes['en-au'] == 'en-au', '"en-au" properly resolved');
-    $this->assertTrue($langcodes['sr-latn'] == 'sr-latn', '"sr-latn" properly resolved');
+    $this->assertSame('en-au', $langcodes['en-au'], '"en-au" properly resolved');
+    $this->assertSame('sr-latn', $langcodes['sr-latn'], '"sr-latn" properly resolved');
 
     // No locale module, so even though languages are enabled, CKEditor should
     // still be in English.
@@ -421,13 +429,54 @@ class CKEditorTest extends KernelTestBase {
   }
 
   /**
+   * Tests loading of theme's CKEditor stylesheets defined in the .info file.
+   */
+  public function testExternalStylesheets() {
+    /** @var \Drupal\Core\Extension\ThemeInstallerInterface $theme_installer */
+    $theme_installer = \Drupal::service('theme_installer');
+    // Case 1: Install theme which has an absolute external CSS URL.
+    $theme_installer->install(['test_ckeditor_stylesheets_external']);
+    $this->config('system.theme')->set('default', 'test_ckeditor_stylesheets_external')->save();
+    $expected = [
+      'https://fonts.googleapis.com/css?family=Open+Sans',
+    ];
+    $this->assertSame($expected, _ckeditor_theme_css('test_ckeditor_stylesheets_external'));
+
+    // Case 2: Install theme which has an external protocol-relative CSS URL.
+    $theme_installer->install(['test_ckeditor_stylesheets_protocol_relative']);
+    $this->config('system.theme')->set('default', 'test_ckeditor_stylesheets_protocol_relative')->save();
+    $expected = [
+      '//fonts.googleapis.com/css?family=Open+Sans',
+    ];
+    $this->assertSame($expected, _ckeditor_theme_css('test_ckeditor_stylesheets_protocol_relative'));
+
+    // Case 3: Install theme which has a relative CSS URL.
+    $theme_installer->install(['test_ckeditor_stylesheets_relative']);
+    $this->config('system.theme')->set('default', 'test_ckeditor_stylesheets_relative')->save();
+    $expected = [
+      'core/modules/system/tests/themes/test_ckeditor_stylesheets_relative/css/yokotsoko.css',
+    ];
+    $this->assertSame($expected, _ckeditor_theme_css('test_ckeditor_stylesheets_relative'));
+
+    // Case 4: Install theme which has a Drupal root CSS URL.
+    $theme_installer->install(['test_ckeditor_stylesheets_drupal_root']);
+    $this->config('system.theme')->set('default', 'test_ckeditor_stylesheets_drupal_root')->save();
+    $expected = [
+      'core/modules/system/tests/themes/test_ckeditor_stylesheets_drupal_root/css/yokotsoko.css',
+    ];
+    $this->assertSame($expected, _ckeditor_theme_css('test_ckeditor_stylesheets_drupal_root'));
+  }
+
+  /**
    * Assert that CKEditor picks the expected language when French is default.
    *
    * @param string $langcode
    *   Language code to assert for. Defaults to French. That is the default
    *   language set in this assertion.
+   *
+   * @internal
    */
-  protected function assertCKEditorLanguage($langcode = 'fr') {
+  protected function assertCKEditorLanguage(string $langcode = 'fr'): void {
     // Set French as the site default language.
     ConfigurableLanguage::createFromLangcode('fr')->save();
     $this->config('system.site')->set('default_langcode', 'fr')->save();
@@ -440,7 +489,7 @@ class CKEditorTest extends KernelTestBase {
     // Test that we now get the expected language.
     $editor = Editor::load('filtered_html');
     $settings = $this->ckeditor->getJSSettings($editor);
-    $this->assertEqual($langcode, $settings['language']);
+    $this->assertEquals($langcode, $settings['language']);
   }
 
   protected function getDefaultInternalConfig() {
@@ -504,8 +553,8 @@ class CKEditorTest extends KernelTestBase {
   protected function getDefaultContentsCssConfig() {
     $query_string = '?0=';
     return [
-      file_url_transform_relative(file_create_url('core/modules/ckeditor/css/ckeditor-iframe.css')) . $query_string,
-      file_url_transform_relative(file_create_url('core/modules/system/css/components/align.module.css')) . $query_string,
+      $this->fileUrlGenerator->generateString('core/modules/ckeditor/css/ckeditor-iframe.css') . $query_string,
+      $this->fileUrlGenerator->generateString('core/modules/system/css/components/align.module.css') . $query_string,
     ];
   }
 

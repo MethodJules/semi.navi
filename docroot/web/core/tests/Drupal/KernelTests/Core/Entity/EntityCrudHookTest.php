@@ -68,10 +68,12 @@ class EntityCrudHookTest extends EntityKernelTestBase {
    * Module entity_crud_hook_test implements all core entity CRUD hooks and
    * stores a message for each in $GLOBALS['entity_crud_hook_test'].
    *
-   * @param $messages
+   * @param array $messages
    *   An array of plain-text messages in the order they should appear.
+   *
+   * @internal
    */
-  protected function assertHookMessageOrder($messages) {
+  protected function assertHookMessageOrder(array $messages): void {
     $positions = [];
     foreach ($messages as $message) {
       // Verify that each message is found and record its position.
@@ -83,7 +85,7 @@ class EntityCrudHookTest extends EntityKernelTestBase {
     // Sort the positions and ensure they remain in the same order.
     $sorted = $positions;
     sort($sorted);
-    $this->assertTrue($sorted == $positions, 'The hook messages appear in the correct order.');
+    $this->assertSame($positions, $sorted, 'The hook messages appear in the correct order.');
   }
 
   /**

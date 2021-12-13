@@ -26,20 +26,20 @@ class FeedAdminDisplayTest extends AggregatorTestBase {
 
     // The scheduled feed shows that it has not been updated yet and is
     // scheduled.
-    $this->assertText('never');
-    $this->assertText('imminently');
-    $this->assertNoText('ago');
-    $this->assertNoText('left');
+    $this->assertSession()->pageTextContains('never');
+    $this->assertSession()->pageTextContains('imminently');
+    $this->assertSession()->pageTextNotContains('ago');
+    $this->assertSession()->pageTextNotContains('left');
 
     $this->updateFeedItems($scheduled_feed);
     $this->drupalGet('admin/config/services/aggregator');
 
     // After the update, an interval should be displayed on both last updated
     // and next update.
-    $this->assertNoText('never');
-    $this->assertNoText('imminently');
-    $this->assertText('ago');
-    $this->assertText('left');
+    $this->assertSession()->pageTextNotContains('never');
+    $this->assertSession()->pageTextNotContains('imminently');
+    $this->assertSession()->pageTextContains('ago');
+    $this->assertSession()->pageTextContains('left');
 
     // Delete scheduled feed.
     $this->deleteFeed($scheduled_feed);
@@ -49,20 +49,20 @@ class FeedAdminDisplayTest extends AggregatorTestBase {
 
     $this->drupalGet('admin/config/services/aggregator');
     // The non scheduled feed shows that it has not been updated yet.
-    $this->assertText('never');
-    $this->assertNoText('imminently');
-    $this->assertNoText('ago');
-    $this->assertNoText('left');
+    $this->assertSession()->pageTextContains('never');
+    $this->assertSession()->pageTextNotContains('imminently');
+    $this->assertSession()->pageTextNotContains('ago');
+    $this->assertSession()->pageTextNotContains('left');
 
     $this->updateFeedItems($non_scheduled_feed);
     $this->drupalGet('admin/config/services/aggregator');
 
     // After the feed update, we still need to see "never" as next update label.
     // Last update will show an interval.
-    $this->assertText('never');
-    $this->assertNoText('imminently');
-    $this->assertText('ago');
-    $this->assertNoText('left');
+    $this->assertSession()->pageTextContains('never');
+    $this->assertSession()->pageTextNotContains('imminently');
+    $this->assertSession()->pageTextContains('ago');
+    $this->assertSession()->pageTextNotContains('left');
   }
 
   /**

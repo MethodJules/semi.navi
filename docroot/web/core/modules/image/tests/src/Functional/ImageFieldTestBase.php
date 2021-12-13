@@ -85,7 +85,8 @@ abstract class ImageFieldTestBase extends BrowserTestBase {
       'title[0][value]' => $this->randomMachineName(),
     ];
     $edit['files[' . $field_name . '_0]'] = \Drupal::service('file_system')->realpath($image->uri);
-    $this->drupalPostForm('node/add/' . $type, $edit, 'Preview');
+    $this->drupalGet('node/add/' . $type);
+    $this->submitForm($edit, 'Preview');
   }
 
   /**
@@ -105,7 +106,8 @@ abstract class ImageFieldTestBase extends BrowserTestBase {
       'title[0][value]' => $this->randomMachineName(),
     ];
     $edit['files[' . $field_name . '_0]'] = \Drupal::service('file_system')->realpath($image->uri);
-    $this->drupalPostForm('node/add/' . $type, $edit, 'Save');
+    $this->drupalGet('node/add/' . $type);
+    $this->submitForm($edit, 'Save');
     if ($alt) {
       // Add alt text.
       $this->submitForm([$field_name . '[0][alt]' => $alt], 'Save');
@@ -114,7 +116,7 @@ abstract class ImageFieldTestBase extends BrowserTestBase {
     // Retrieve ID of the newly created node from the current URL.
     $matches = [];
     preg_match('/node\/([0-9]+)/', $this->getUrl(), $matches);
-    return isset($matches[1]) ? $matches[1] : FALSE;
+    return $matches[1] ?? FALSE;
   }
 
   /**

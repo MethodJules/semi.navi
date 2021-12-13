@@ -36,43 +36,59 @@
 
 .node--view-mode-teaser .node__top-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin: 0;
-    margin-bottom: 1.125rem
+    margin: 0
   }
 
 @media (min-width: 62.5rem) {
 
 .node--view-mode-teaser .node__top-wrapper {
-      position: relative; /* Anchor the image */
-      margin: 0
+      position: relative /* Anchor the image */
   }
     }
 
-[dir="ltr"] .node--view-mode-teaser .field--name-field-image {
+[dir="ltr"] .node--view-mode-teaser .primary-image {
     margin-right: 1.125rem
 }
 
-[dir="rtl"] .node--view-mode-teaser .field--name-field-image {
+[dir="rtl"] .node--view-mode-teaser .primary-image {
     margin-left: 1.125rem
 }
 
-.node--view-mode-teaser .field--name-field-image {
+.node--view-mode-teaser .primary-image {
     flex-shrink: 0;
-    margin: 0
+    margin: 0;
+    margin-bottom: 1.125rem
+
+    /* Ensure title does not wrap under image until necessary. */
   }
 
-.node--view-mode-teaser .field--name-field-image img {
+.node--view-mode-teaser .primary-image + .node__title {
+      flex-basis: calc(100% - 5.0625rem)
+    }
+
+@media (min-width: 62.5rem) {
+
+.node--view-mode-teaser .primary-image + .node__title {
+        flex-basis: auto
+    }
+      }
+
+.node--view-mode-teaser .primary-image a {
+      display: block;
+    }
+
+.node--view-mode-teaser .primary-image img {
       width: 3.9375rem;
       height: 3.9375rem;
-      -o-object-fit: cover;
       object-fit: cover;
       border-radius: 50%
     }
 
 @media (min-width: 62.5rem) {
 
-.node--view-mode-teaser .field--name-field-image img {
+.node--view-mode-teaser .primary-image img {
         width: calc(7.14286vw - 2.31696rem);
         height: calc(7.14286vw - 2.31696rem)
     }
@@ -80,7 +96,7 @@
 
 @media (min-width: 75rem) {
 
-.node--view-mode-teaser .field--name-field-image img {
+.node--view-mode-teaser .primary-image img {
         width: calc(7.14286vw - 2.87946rem);
         height: calc(7.14286vw - 2.87946rem)
     }
@@ -88,7 +104,7 @@
 
 @media (min-width: 90rem) {
 
-.node--view-mode-teaser .field--name-field-image img {
+.node--view-mode-teaser .primary-image img {
         width: 3.61607rem;
         height: 3.61607rem
     }
@@ -96,15 +112,15 @@
 
 @media (min-width: 62.5rem) {
 
-[dir="ltr"] .node--view-mode-teaser .field--name-field-image {
+[dir="ltr"] .node--view-mode-teaser .primary-image {
       left: calc(-7.14286vw - -1.07143px)
   }
 
-[dir="rtl"] .node--view-mode-teaser .field--name-field-image {
+[dir="rtl"] .node--view-mode-teaser .primary-image {
       right: calc(-7.14286vw - -1.07143px)
   }
 
-.node--view-mode-teaser .field--name-field-image {
+.node--view-mode-teaser .primary-image {
       position: absolute;
       top: 0;
       margin: 0
@@ -113,28 +129,29 @@
 
 @media (min-width: 75rem) {
 
-[dir="ltr"] .node--view-mode-teaser .field--name-field-image {
+[dir="ltr"] .node--view-mode-teaser .primary-image {
       left: calc(-7.14286vw - -0.62946rem)
   }
 
-[dir="rtl"] .node--view-mode-teaser .field--name-field-image {
+[dir="rtl"] .node--view-mode-teaser .primary-image {
       right: calc(-7.14286vw - -0.62946rem)
   }
     }
 
 @media (min-width: 90rem) {
 
-[dir="ltr"] .node--view-mode-teaser .field--name-field-image {
+[dir="ltr"] .node--view-mode-teaser .primary-image {
       left: -5.86607rem
   }
 
-[dir="rtl"] .node--view-mode-teaser .field--name-field-image {
+[dir="rtl"] .node--view-mode-teaser .primary-image {
       right: -5.86607rem
   }
     }
 
 .node--view-mode-teaser .node__title {
     margin: 0;
+    margin-bottom: 1.125rem;
     color: #0d1214;
     font-size: 1.5rem;
     line-height: 1.6875rem
@@ -143,7 +160,6 @@
 @media (min-width: 62.5rem) {
 
 .node--view-mode-teaser .node__title {
-      margin-bottom: 1.125rem;
       font-size: 2.25rem;
       line-height: 3.375rem
   }

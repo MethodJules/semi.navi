@@ -16,6 +16,7 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal7TestBase {
   protected static $modules = [
     'comment',
     'datetime',
+    'datetime_range',
     'image',
     'link',
     'menu_ui',
@@ -42,8 +43,10 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal7TestBase {
    *
    * @param string $id
    *   The view display ID.
+   *
+   * @internal
    */
-  protected function assertEntity($id) {
+  protected function assertEntity(string $id): void {
     $display = EntityViewDisplay::load($id);
     $this->assertInstanceOf(EntityViewDisplayInterface::class, $display);
   }
@@ -61,8 +64,10 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal7TestBase {
    *   The expected label of the component.
    * @param int $weight
    *   The expected weight of the component.
+   *
+   * @internal
    */
-  protected function assertComponent($display_id, $component_id, $type, $label, $weight) {
+  protected function assertComponent(string $display_id, string $component_id, string $type, string $label, int $weight): void {
     $component = EntityViewDisplay::load($display_id)->getComponent($component_id);
     $this->assertIsArray($component);
     $this->assertSame($type, $component['type']);
@@ -77,8 +82,10 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal7TestBase {
    *   The display ID.
    * @param string $component_id
    *   The component ID.
+   *
+   * @internal
    */
-  protected function assertComponentNotExists($display_id, $component_id) {
+  protected function assertComponentNotExists(string $display_id, string $component_id): void {
     $component = EntityViewDisplay::load($display_id)->getComponent($component_id);
     $this->assertNull($component);
   }
@@ -178,6 +185,7 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal7TestBase {
     $this->assertComponent('node.test_content_type.default', 'field_node_entityreference', 'entity_reference_label', 'above', 15);
     $this->assertComponent('node.test_content_type.default', 'field_user_entityreference', 'entity_reference_label', 'above', 16);
     $this->assertComponent('node.test_content_type.default', 'field_term_entityreference', 'entity_reference_label', 'above', 17);
+    $this->assertComponent('node.test_content_type.default', 'field_telephone', 'telephone_link', 'above', 21);
     $this->assertComponentNotExists('node.test_content_type.default', 'field_term_reference');
     $this->assertComponentNotExists('node.test_content_type.default', 'field_text');
 

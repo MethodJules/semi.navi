@@ -86,13 +86,13 @@ class MenuLinkContentFormTest extends BrowserTestBase {
     $option = $this->assertSession()->optionExists('edit-menu-parent', 'admin:');
     $this->assertTrue($option->isSelected());
     // Test that the field description is present.
-    $this->assertRaw('The location this menu link points to.');
+    $this->assertSession()->pageTextContains('The location this menu link points to.');
 
     $this->submitForm([
-      'title[0][value]' => t('Front page'),
+      'title[0][value]' => 'Front page',
       'link[0][uri]' => '<front>',
     ], 'Save');
-    $this->assertText('The menu link has been saved.');
+    $this->assertSession()->pageTextContains('The menu link has been saved.');
   }
 
   /**
@@ -101,10 +101,10 @@ class MenuLinkContentFormTest extends BrowserTestBase {
   public function testMenuLinkContentFormValidation() {
     $this->drupalGet('admin/structure/menu/manage/admin/add');
     $this->submitForm([
-      'title[0][value]' => t('Test page'),
+      'title[0][value]' => 'Test page',
       'link[0][uri]' => '<test>',
     ], 'Save');
-    $this->assertText('Manually entered paths should start with one of the following characters: / ? #');
+    $this->assertSession()->pageTextContains('Manually entered paths should start with one of the following characters: / ? #');
   }
 
 }

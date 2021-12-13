@@ -83,7 +83,7 @@ class FrontPageTest extends ViewTestBase {
     $this->executeView($view);
     $view->preview();
 
-    $this->assertEqual(new FormattableMarkup('Welcome to @site_name', ['@site_name' => $site_name]), $view->getTitle(), 'The welcome title is used for the empty view.');
+    $this->assertEquals(new FormattableMarkup('Welcome to @site_name', ['@site_name' => $site_name]), $view->getTitle(), 'The welcome title is used for the empty view.');
     $view->destroy();
 
     // Create some nodes on the frontpage view. Add more than 10 nodes in order
@@ -166,8 +166,10 @@ class FrontPageTest extends ViewTestBase {
    *   An array of nids which should not be part of the resultset.
    * @param string $message
    *   (optional) A custom message to display with the assertion.
+   *
+   * @internal
    */
-  protected function assertNotInResultSet(ViewExecutable $view, array $not_expected_nids, $message = '') {
+  protected function assertNotInResultSet(ViewExecutable $view, array $not_expected_nids, string $message = ''): void {
     $found_nids = array_filter($view->result, function ($row) use ($not_expected_nids) {
       return in_array($row->nid, $not_expected_nids);
     });
@@ -372,7 +374,7 @@ class FrontPageTest extends ViewTestBase {
     $node->save();
 
     $this->drupalGet(Url::fromRoute('view.frontpage.page_1'));
-    $this->assertText($title);
+    $this->assertSession()->pageTextContains($title);
   }
 
 }

@@ -7,9 +7,10 @@ use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
 use Drupal\migrate\Row;
 
 /**
- * Gets i18n block data from source database.
+ * Drupal 6 i18n block data from database.
  *
- * For available configuration keys, refer to the parent classes:
+ * For available configuration keys, refer to the parent classes.
+ *
  * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
  * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
  *
@@ -31,7 +32,7 @@ class BlockTranslation extends Block {
     $query = $this->select('i18n_blocks', 'i18n')
       ->fields('i18n')
       ->fields('b', ['bid', 'module', 'delta', 'theme', 'title']);
-    $query->innerJoin($this->blockTable, 'b', ('b.module = i18n.module AND b.delta = i18n.delta'));
+    $query->innerJoin($this->blockTable, 'b', ('[b].[module] = [i18n].[module] AND [b].[delta] = [i18n].[delta]'));
     return $query;
   }
 
