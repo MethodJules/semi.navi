@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tid
+    - node.type.relationship
+id: node.relationship.field_tid
+field_name: field_tid
+entity_type: node
+bundle: relationship
+label: TID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

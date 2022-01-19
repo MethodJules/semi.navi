@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marker_end
+    - node.type.relationship
+id: node.relationship.field_marker_end
+field_name: field_marker_end
+entity_type: node
+bundle: relationship
+label: marker-end
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

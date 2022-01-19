@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Concept Map module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function concept_map_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.concept_map') {
+    // Main module help for the concept_map module.
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds concept mapping capabilities.') . '</p>';
+      return $output;
+  }
+}
