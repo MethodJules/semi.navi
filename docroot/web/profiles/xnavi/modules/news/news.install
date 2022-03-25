@@ -1,0 +1,150 @@
+<?php
+
+/**
+* Implements hook_schema().
+*/
+
+function news_schema() {
+
+
+    $schema['activities'] = [
+        'description' => 'The table for the activities',
+        'fields' => [
+            'activities_id' => [
+                'description' => 'The primary identifier for activities.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],       
+            'nid' => [
+                'description' => 'The node id',
+                'type' => 'int',
+                'not null' => FALSE,
+                'sortable' => TRUE,
+                'views' => TRUE,
+                'not null' => TRUE,
+            ],
+            'content_type' => [
+                'description' => 'The content type',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+        ],
+
+        'primary key' => ['activities_id'],
+    ];
+
+    $schema['newsletter_order'] = [
+        'description' => 'The table to save newsletter orders',
+        'fields' => [
+            'newsletter_order_id' => [
+                'description' => 'The primary identifier for newsletter order.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'email' => [
+                'description' => 'The E-Mail-Address from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'salutation' => [
+                'description' => 'The salutation from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'default' => '',
+            ],
+            'firstname' => [
+                'description' => 'The first name from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'default' => '',
+            ],
+            'surname' => [
+                'description' => 'The surname from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'default' => '',
+            ],
+            'company' => [
+                'description' => 'The company from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'default' => '',
+            ],
+            'branch' => [
+                'description' => 'The branch from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'default' => '',
+            ],
+            'types' => [
+                'description' => 'The branch from the orderer',
+                'type' => 'varchar',
+                'length' => 1024,
+                'default' => '',
+            ],
+            'token' => [
+                'description' => 'The generated random token from the orderer',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'confirmation_flag' => [
+                    'description' => 'The confirmation flag 1=confirmed, 0=not confirmed',
+                    'type' => 'int',
+                    'not null' => TRUE,
+            ],            
+        ],
+        'primary key' => ['newsletter_order_id']
+    ];
+
+    $schema['newsletter_log'] = [
+        'description' => 'The table for logging send newsletters',
+        'fields' => [
+            'newsletter_log_id' => [
+                'description' => 'The primary identifier for newsletter logs',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'date' => [
+                'description' => 'The date when the newsletter was send',
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+            ],
+            'last_activity' => [
+                'description' => 'The last activity id that was send in the last newsletter',
+                'type' => 'int'
+            ],
+        ],
+        'primary key' => ['newsletter_log_id'],
+    ];
+
+    return $schema;
+}
+
+
+/**
+* Implements hook_uninstall().
+*/
+
+function news_uninstall() {
+
+    /*
+        // Remove the styles directory and generated images.
+        \Drupal::service('file_system')->deleteRecursive(\Drupal::config('system.file')->get('default_scheme') . '://styles');
+    */
+
+    \Drupal::database()->schema()->dropTable('activities');
+    \Drupal::database()->schema()->dropTable('newsletter_order');
+    \Drupal::database()->schema()->dropTable('newsletter_log');
+
+
+
+}

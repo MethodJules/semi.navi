@@ -1,0 +1,312 @@
+entity.bibcite_reference_type.add_form:
+  path: '/admin/structure/bibcite/reference/settings/types/add'
+  defaults:
+    _entity_form: 'bibcite_reference_type.add'
+    _title: 'Add reference type'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_reference_type.delete_form:
+  path: '/admin/structure/bibcite/reference/settings/types/{bibcite_reference_type}/delete'
+  defaults:
+    _entity_form: 'bibcite_reference_type.delete'
+    _title: 'Delete reference type'
+  requirements:
+    _entity_access: 'bibcite_reference_type.delete'
+
+entity.bibcite_reference_type.edit_form:
+  path: '/admin/structure/bibcite/reference/settings/types/{bibcite_reference_type}'
+  defaults:
+    _entity_form: 'bibcite_reference_type.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_reference_type.collection:
+  path: '/admin/structure/bibcite/reference/settings/types'
+  defaults:
+    _entity_list: 'bibcite_reference_type'
+    _title: 'Types'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_reference.add_form:
+  path: '/bibcite/reference/add/{bibcite_reference_type}'
+  defaults:
+    _title: 'Add reference'
+    _controller: '\Drupal\bibcite_entity\Controller\BibciteEntityController::add'
+  requirements:
+    _reference_add_access: 'bibcite_reference:{bibcite_reference_type}'
+  options:
+    _admin_route: TRUE
+
+entity.bibcite_reference.revision_delete_form:
+  path: '/bibcite/reference/{bibcite_reference}/revisions/{bibcite_reference_revision}/delete'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\ReferenceRevisionDeleteForm'
+    _title: 'Delete earlier revision'
+  requirements:
+    _entity_access_revision: bibcite_reference.delete
+  options:
+    _admin_route: TRUE
+    parameters:
+      bibcite_reference_revision:
+        type: entity_revision:bibcite_reference
+
+entity.bibcite_reference.collection:
+  path: '/admin/content/bibcite/reference'
+  defaults:
+    _entity_list: 'bibcite_reference'
+    _title: 'References'
+  requirements:
+    _permission: 'view bibcite_reference'
+
+entity.bibcite_reference.delete_multiple_form:
+  path: '/admin/content/bibcite/reference/delete'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\DeleteMultiple'
+    entity_type_id: 'bibcite_reference'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_keyword.collection:
+  path: '/admin/content/bibcite/keyword'
+  defaults:
+    _entity_list: 'bibcite_keyword'
+    _title: 'Keywords'
+  requirements:
+    _permission: 'view bibcite_keyword'
+
+entity.bibcite_keyword.delete_multiple_form:
+  path: '/admin/content/bibcite/keyword/delete'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\DeleteMultiple'
+    entity_type_id: 'bibcite_keyword'
+  requirements:
+    _permission: 'administer bibcite_keyword'
+
+entity.bibcite_keyword.bibcite_merge_form:
+  path: '/admin/content/bibcite/keyword/{bibcite_keyword}/merge'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeForm'
+    _title_callback: 'Drupal\bibcite_entity\Form\MergeForm::getTitle'
+  requirements:
+    _permission: 'administer bibcite_keyword'
+  options:
+    _bibcite_entity_type_id: 'bibcite_keyword'
+    parameters:
+      bibcite_keyword:
+        type: 'entity:bibcite_keyword'
+
+entity.bibcite_keyword.bibcite_merge_form_confirm:
+  path: '/admin/content/bibcite/keyword/{bibcite_keyword}/merge/{bibcite_keyword_target}'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeConfirmForm'
+    field_name: 'keywords'
+  requirements:
+    _permission: 'administer bibcite_keyword'
+  options:
+    _bibcite_entity_type_id: 'bibcite_keyword'
+    parameters:
+      bibcite_keyword:
+        type: 'entity:bibcite_keyword'
+      bibcite_keyword_target:
+        type: 'entity:bibcite_keyword'
+
+entity.bibcite_keyword.bibcite_merge_multiple_form:
+  path: '/admin/content/bibcite/keyword/merge'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeMultipleForm'
+    entity_type_id: 'bibcite_keyword'
+    field_name: 'keyword'
+  requirements:
+    _permission: 'administer bibcite_keyword'
+
+entity.bibcite_contributor.collection:
+  path: '/admin/content/bibcite/contributor'
+  defaults:
+    _entity_list: 'bibcite_contributor'
+    _title: 'Contributors'
+  requirements:
+    _permission: 'view bibcite_contributor'
+
+entity.bibcite_contributor.delete_multiple_form:
+  path: '/admin/content/bibcite/contributor/delete'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\DeleteMultiple'
+    entity_type_id: 'bibcite_contributor'
+  requirements:
+    _permission: 'administer bibcite_keyword'
+
+entity.bibcite_contributor.bibcite_merge_form:
+  path: '/admin/content/bibcite/contributor/{bibcite_contributor}/merge'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeForm'
+    _title_callback: 'Drupal\bibcite_entity\Form\MergeForm::getTitle'
+  requirements:
+    _permission: 'administer bibcite_contributor'
+  options:
+    _bibcite_entity_type_id: 'bibcite_contributor'
+    parameters:
+      bibcite_contributor:
+        type: 'entity:bibcite_contributor'
+
+entity.bibcite_contributor.bibcite_merge_form_confirm:
+  path: '/admin/content/bibcite/contributor/{bibcite_contributor}/merge/{bibcite_contributor_target}'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeConfirmForm'
+    field_name: 'author'
+  requirements:
+    _permission: 'administer bibcite_contributor'
+  options:
+    _bibcite_entity_type_id: 'bibcite_contributor'
+    parameters:
+      bibcite_contributor:
+        type: 'entity:bibcite_contributor'
+      bibcite_contributor_target:
+        type: 'entity:bibcite_contributor'
+
+entity.bibcite_contributor.bibcite_merge_multiple_form:
+  path: '/admin/content/bibcite/contributor/merge'
+  defaults:
+    _form: 'Drupal\bibcite_entity\Form\MergeMultipleForm'
+    entity_type_id: 'bibcite_contributor'
+    field_name: 'author'
+  requirements:
+    _permission: 'administer bibcite_contributor'
+
+entity.bibcite_contributor_category.collection:
+  path: '/admin/structure/bibcite/contributor/settings/category'
+  defaults:
+    _entity_list: 'bibcite_contributor_category'
+    _title: 'Contributor categories'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_category.add_form:
+  path: '/admin/structure/bibcite/contributor/settings/category/add'
+  defaults:
+    _entity_form: 'bibcite_contributor_category.add'
+    _title: 'Add contributor category'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_category.edit_form:
+  path: '/admin/structure/bibcite/contributor/settings/category/{bibcite_contributor_category}'
+  defaults:
+    _entity_form: 'bibcite_contributor_category.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_category.delete_form:
+  path: '/admin/structure/bibcite/contributor/settings/category/{bibcite_contributor_category}/delete'
+  defaults:
+    _entity_form: 'bibcite_contributor_category.delete'
+    _title: 'Delete contributor category'
+  requirements:
+    _entity_access: 'bibcite_contributor_category.delete'
+
+entity.bibcite_contributor_role.collection:
+  path: '/admin/structure/bibcite/contributor/settings/role'
+  defaults:
+    _entity_list: 'bibcite_contributor_role'
+    _title: 'Contributor roles'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_role.add_form:
+  path: '/admin/structure/bibcite/contributor/settings/role/add'
+  defaults:
+    _entity_form: 'bibcite_contributor_role.add'
+    _title: 'Add contributor role'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_role.edit_form:
+  path: '/admin/structure/bibcite/contributor/settings/role/{bibcite_contributor_role}'
+  defaults:
+    _entity_form: 'bibcite_contributor_role.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'administer bibcite_reference'
+
+entity.bibcite_contributor_role.delete_form:
+  path: '/admin/structure/bibcite/contributor/settings/role/{bibcite_contributor_role}/delete'
+  defaults:
+    _entity_form: 'bibcite_contributor_role.delete'
+    _title: 'Delete contributor role'
+  requirements:
+    _entity_access: 'bibcite_contributor_role.delete'
+
+bibcite_entity.contributor.settings:
+  path: '/admin/structure/bibcite/contributor/settings'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\ContributorSettings'
+    _title: 'Contributors'
+  requirements:
+    _permission: 'administer bibcite'
+
+bibcite_entity.keyword.settings:
+  path: '/admin/structure/bibcite/keyword/settings'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Keywords'
+  requirements:
+    _permission: 'administer bibcite'
+
+bibcite_entity.reference.settings:
+  path: '/admin/structure/bibcite/reference/settings'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\ReferenceSettings'
+    _title: 'References'
+  requirements:
+    _permission: 'administer bibcite'
+
+bibcite_entity.reference.settings.links:
+  path: '/admin/structure/bibcite/reference/settings/links'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\ReferenceSettingsLinksForm'
+    _title: 'Links'
+  requirements:
+    _permission: 'administer bibcite'
+
+bibcite_entity.mapping:
+  path: '/admin/config/bibcite/settings/mapping/{bibcite_format}'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\MappingForm'
+    _title_callback: '\Drupal\bibcite_entity\Form\MappingForm:formTitle'
+  requirements:
+    _permission: 'administer bibcite'
+  options:
+    parameters:
+      bibcite_format:
+        type: bibcite_format
+
+bibcite_entity.mapping.csl:
+  path: '/admin/config/bibcite/settings/mapping/csl'
+  defaults:
+    _form: '\Drupal\bibcite_entity\Form\CslMappingForm'
+    _title: 'Mapping for CSL format'
+  requirements:
+    _permission: 'administer bibcite'
+
+bibcite_entity.settings:
+  path: '/admin/structure/bibcite'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Bibliography'
+  requirements:
+    _permission: 'administer bibcite'
+
+entity.bibcite_reference.preview:
+  path: '/bibcite/reference/preview/{bibcite_reference_preview}/{view_mode_id}'
+  defaults:
+    _controller: '\Drupal\bibcite_entity\Controller\BibciteEntityPreviewController::view'
+    _title_callback: '\Drupal\bibcite_entity\Controller\BibciteEntityPreviewController::title'
+  requirements:
+    _bibcite_reference_preview_access: '{bibcite_reference_preview}'
+  options:
+    parameters:
+      bibcite_reference_preview:
+        type: 'bibcite_reference_preview'

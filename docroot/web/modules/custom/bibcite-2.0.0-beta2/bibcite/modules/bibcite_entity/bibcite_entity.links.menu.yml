@@ -1,0 +1,66 @@
+# Reference menu items definition
+bibcite.bibliography:
+  title: 'Bibliography'
+  route_name: entity.bibcite_reference.collection
+  description: 'Find and manage bibliographic references.'
+  parent: system.admin_content
+  weight: 100
+entity.bibcite_reference.collection:
+  title: 'References'
+  route_name: entity.bibcite_reference.collection
+  parent: bibcite.bibliography
+  weight: 10
+entity.bibcite_reference.add:
+  title: 'Add Reference'
+  route_name: entity.bibcite_reference.add_page
+  parent: entity.bibcite_reference.collection
+  weight: 10
+entity.bibcite_contributor.collection:
+  title: 'Contributors'
+  route_name: entity.bibcite_contributor.collection
+  parent: bibcite.bibliography
+  weight: 20
+entity.bibcite_contributor.add:
+  title: 'Add Contributor'
+  route_name: entity.bibcite_contributor.add_form
+  parent: entity.bibcite_contributor.collection
+  weight: 10
+entity.bibcite_keyword.collection:
+  title: 'Keywords'
+  route_name: entity.bibcite_keyword.collection
+  parent: bibcite.bibliography
+  weight: 30
+entity.bibcite_keyword.add:
+  title: 'Add Keyword'
+  route_name: entity.bibcite_keyword.add_form
+  parent: entity.bibcite_keyword.collection
+  weight: 10
+
+bibcite_entity.settings:
+  title: 'Bibliography'
+  description: 'Settings'
+  parent: system.admin_structure
+  route_name: bibcite_entity.settings
+  weight: 100
+
+bibcite_entity.reference.settings:
+  title: 'References'
+  parent: bibcite_entity.settings
+  route_name: bibcite_entity.reference.settings
+  weight: 20
+bibcite_entity.contributor.settings:
+  title: 'Contributors'
+  parent: bibcite_entity.settings
+  route_name: bibcite_entity.contributor.settings
+  weight: 30
+bibcite_entity.keyword.settings:
+  title: 'Keywords'
+  parent: bibcite_entity.settings
+  route_name: bibcite_entity.keyword.settings
+  weight: 40
+
+bibcite_entity.mapping:
+  title: 'Mapping'
+  parent: bibcite.settings
+  route_name: bibcite_entity.mapping.csl
+  weight: 40

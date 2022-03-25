@@ -1,0 +1,43 @@
+{#
+/**
+* @file
+* Theme override
+*
+* Available variables
+* - form: The child elements of the form
+*
+* @see template_preprocess_form
+*/
+#}
+
+<form{{ attributes }}>
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id}}
+    <div><h2>Morphbox Generator</h2></div>
+    <div id="morphbox-vue">
+        {{ form.morphbox.dimension}}
+        {{ form.morphbox.attribute}}
+        {% verbatim %}
+            <div>Dimension: {{ table }}</div>
+            <div>Attribute for {{ table }}: {{ attribute }}</div>
+        {% endverbatim %}
+        <div>{{ form.morphbox.button_dimension_add }}</div>
+        <div>{{ form.morphbox.button_attribute_add }}</div>
+        <div>{{ form.morphbox.button_dimension_save }}</div>
+
+        {% verbatim %}
+            <div class="row"> 
+                <div class="list-group flex-row mt-3">
+                    <div v-for="dimension in morphboxData.dimensions" :key="dimension" class="list-group-item border-white">
+                        {{dimension.name}}
+                        <div v-for="attribute in dimension.attributes" :key="attribute">
+                            {{attribute.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    {% endverbatim %}
+    <div>{{ form.morphbox.submit }}</div>
+</form>

@@ -1,0 +1,6 @@
+name: News
+description: News Modul
+core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
+package: x.Navi Optional

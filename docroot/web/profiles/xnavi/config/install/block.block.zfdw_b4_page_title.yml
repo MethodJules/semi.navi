@@ -1,0 +1,17 @@
+langcode: de
+status: true
+dependencies:
+  theme:
+    - zfdw_b4
+id: zfdw_b4_page_title
+theme: zfdw_b4
+region: content
+weight: -14
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: Seitentitel
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,53 @@
+format: bibtex
+types:
+  article: journal_article
+  book: book
+  booklet:
+  conference: conference_paper
+  inbook: book_chapter
+  incollection:
+  inproceedings: conference_paper
+  manual:
+  mastersthesis:
+  misc: miscellaneous
+  phdthesis: thesis
+  proceedings: conference_proceedings
+  techreport:
+  unpublished: unpublished
+fields:
+  author: author
+  title: title
+  type: type
+  keywords: keywords
+  abstract: bibcite_abst_e
+  year: bibcite_year
+  booktitle:
+  journal: bibcite_secondary_title
+  series:
+  volume: bibcite_volume
+  edition: bibcite_edition
+  chapter: bibcite_section
+  number: bibcite_number
+  pages: bibcite_pages
+  month: bibcite_date
+  institution:
+  organization:
+  publisher: bibcite_publisher
+  school:
+  address: bibcite_place_published
+  issn: bibcite_issn
+  isbn: bibcite_isbn
+  url: bibcite_url
+  doi: bibcite_doi
+  note: bibcite_notes
+  language: bibcite_lang
+  annote:
+  crossref:
+  editor:
+  howpublished:
+  key:
+
+dependencies:
+  enforced:
+    module:
+      - bibcite_bibtex

@@ -1,0 +1,20 @@
+id: usermanagement
+module: xnavi_demo
+label: Demonstrates User Management
+langcode: en
+routes:
+  - route_name: entity.user.collection
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: User Management
+    body: Here you can edit existing users or add new ones. You also can add new fields to the user information.<br>But only if you want to.
+    weight: "1"
+  add-user:
+    id: add-user
+    plugin: text
+    label: Adding a User
+    body: If you click this button you can add a new user. <br> Do you want to try it?
+    weight: "2"
+    selector: '#block-claro-local-actions > ul > li > a'

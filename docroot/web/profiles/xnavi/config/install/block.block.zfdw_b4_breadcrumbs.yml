@@ -1,0 +1,19 @@
+langcode: de
+status: false
+dependencies:
+  module:
+    - system
+  #theme:
+  #  - zfdw_b4
+id: zfdw_b4_breadcrumbs
+theme: zfdw_b4
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Pfadnavigation
+  provider: system
+  label_display: '0'
+visibility: {  }

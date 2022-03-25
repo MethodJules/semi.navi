@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.concept.body
+    - field.field.node.concept.field_concept_map_id
+    - field.field.node.concept.field_uid
+    - node.type.concept
+  module:
+    - text
+    - user
+id: node.concept.teaser
+targetEntityType: node
+bundle: concept
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_concept_map_id: true
+  field_uid: true

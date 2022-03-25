@@ -1,0 +1,44 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.wissenskarte.comment_node_wissenskarte
+    - field.field.node.wissenskarte.field_beschreibung
+    - field.field.node.wissenskarte.field_internal_reference
+    - field.field.node.wissenskarte.field_markierte_bereiche
+    - field.field.node.wissenskarte.field_tag_combined
+    - field.field.node.wissenskarte.field_wk_bild
+    - node.type.wissenskarte
+  module:
+    - knowledgemap
+    - user
+id: node.wissenskarte.teaser
+targetEntityType: node
+bundle: wissenskarte
+mode: teaser
+content:
+  field_markierte_bereiche:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_wk_bild:
+    type: knowledgemap_formatter
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  comment_node_wissenskarte: true
+  field_beschreibung: true
+  field_internal_reference: true
+  field_tag_combined: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

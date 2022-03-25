@@ -1,0 +1,41 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.wissenskarte.comment_node_wissenskarte
+    - field.field.node.wissenskarte.field_beschreibung
+    - field.field.node.wissenskarte.field_internal_reference
+    - field.field.node.wissenskarte.field_markierte_bereiche
+    - field.field.node.wissenskarte.field_tag_combined
+    - field.field.node.wissenskarte.field_wk_bild
+    - node.type.wissenskarte
+  module:
+    - text
+    - user
+id: node.wissenskarte.search_result
+targetEntityType: node
+bundle: wissenskarte
+mode: search_result
+content:
+  field_beschreibung:
+    label: hidden
+    weight: 3
+    type: text_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_wissenskarte: true
+  field_internal_reference: true
+  field_markierte_bereiche: true
+  field_tag_combined: true
+  field_wk_bild: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conceptmap_relationships
+    - node.type.concept_map
+    - node.type.relationship
+id: node.concept_map.field_conceptmap_relationships
+field_name: field_conceptmap_relationships
+entity_type: node
+bundle: concept_map
+label: Relationships
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      relationship: relationship
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

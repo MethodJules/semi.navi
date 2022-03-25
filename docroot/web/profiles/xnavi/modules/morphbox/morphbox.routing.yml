@@ -1,0 +1,14 @@
+morphbox.form:
+    path: '/morphbox/form'
+    defaults:
+        _form: 'Drupal\morphbox\Form\MorphboxForm'
+    requirements:
+        _permission: 'access content'
+
+morphbox.data:
+    path: '/morphbox/data'
+    defaults:
+        _controller: '\Drupal\morphbox\Controller\MorphboxController::getData'
+    methods: [POST]
+    requirements:
+        _permission: 'access content'

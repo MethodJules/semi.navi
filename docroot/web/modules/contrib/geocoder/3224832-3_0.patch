@@ -1,0 +1,45 @@
+From 1943bdd65fa15d549abf1cfc104f66d4475330f9 Mon Sep 17 00:00:00 2001
+From: Gordon Heydon <gordon@heydon.com.au>
+Date: Thu, 22 Jul 2021 16:23:11 +1000
+Subject: [PATCH] Issue #3224832: Add COI integration
+
+---
+ src/Traits/ConfigurableProviderTrait.php | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/Traits/ConfigurableProviderTrait.php b/src/Traits/ConfigurableProviderTrait.php
+index bf738d4..e2664c8 100644
+--- a/src/Traits/ConfigurableProviderTrait.php
++++ b/src/Traits/ConfigurableProviderTrait.php
+@@ -38,6 +38,7 @@ trait ConfigurableProviderTrait {
+    * {@inheritdoc}
+    */
+   public function buildConfigurationForm(array $form, FormStateInterface $form_state): array {
++    $id = $form['id']['#default_value'];
+     try {
+       foreach ($this->getPluginArguments() as $argument => $argument_definition) {
+         switch ($argument_definition['type']) {
+@@ -70,6 +71,10 @@ trait ConfigurableProviderTrait {
+           '#description' => $argument_definition['description'] ?? '',
+           '#default_value' => $this->configuration[$argument] ?? $argument_definition['default_value'],
+           '#required' => empty($argument_definition['nullable']) || $argument_definition['nullable'] === FALSE,
++          '#config' => [
++            'key' => 'geocoder.geocoder_provider.' . $id . ':' . $argument,
++            'secret' => in_array($argument, ['accessToken', 'apiKey', 'clientId', 'privateKey']),
++          ],
+         ];
+       }
+     }
+@@ -96,6 +101,9 @@ trait ConfigurableProviderTrait {
+         '#description' => $option_definition['description'],
+         '#default_value' => $this->configuration['throttle'][$option] ?? $this->pluginDefinition['throttle'][$option] ?? NULL,
+         '#required' => FALSE,
++        '#config' => [
++          'key' => 'geocoder.geocoder_provider.' . $id . ':throttle.' . $option,
++        ],
+       ];
+       if (!empty($form['options']['throttle'][$option]['#default_value'])) {
+         $form['options']['throttle']['#open'] = TRUE;
+-- 
+2.23.0
+

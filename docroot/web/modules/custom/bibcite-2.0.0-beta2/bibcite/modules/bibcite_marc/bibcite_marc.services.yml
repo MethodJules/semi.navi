@@ -1,0 +1,16 @@
+services:
+  bibcite_marc.encoder.marc:
+    class: Drupal\bibcite_marc\Encoder\MarcEncoder
+    tags:
+      - { name: encoder, format: marc }
+  bibcite_marc.normalizer.reference:
+    class: Drupal\bibcite_marc\Normalizer\MarcReferenceNormalizer
+    tags:
+      - { name: normalizer, priority: 5 }
+    arguments: ['@entity_type.manager', '@config.factory', '@entity_type.repository', '@entity_field.manager']
+    calls:
+      - [setFormat, ['marc']]
+    properties:
+      defaultType: 'misc'
+      contributorKey: 'authors'
+      keywordKey: 'keywords'

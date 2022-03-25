@@ -1,0 +1,43 @@
+bibcite_entity.bibcite_reference_type.*:
+  type: config_entity
+  label: 'Reference type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    description:
+      type: string
+      label: 'Description'
+    new_revision:
+      type: boolean
+      label: 'Whether a new revision should be created by default'
+    override:
+      type: boolean
+      label: 'Override default properties'
+    preview_mode:
+      type: integer
+      label: 'Preview before submitting'
+    citekey_pattern:
+      type: string
+      label: 'Citation key pattern'
+    fields:
+      type: sequence
+      label: 'Fields'
+      sequence:
+        type: mapping
+        label: 'Field'
+        mapping:
+          required:
+            type: boolean
+            label: 'Required'
+          label:
+            type: label
+            label: 'Label'
+          hint:
+            type: text
+            label: 'Hint'
+    uuid:
+      type: string

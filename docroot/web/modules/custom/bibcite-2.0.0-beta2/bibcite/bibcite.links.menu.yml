@@ -1,0 +1,11 @@
+bibcite.settings:
+  title: 'Bibliography & Citation'
+  parent: system.admin_config
+  route_name: bibcite.settings
+  weight: 100
+
+bibcite.processing:
+  title: 'Processing'
+  parent: bibcite.settings
+  route_name: bibcite.settings
+  weight: 10

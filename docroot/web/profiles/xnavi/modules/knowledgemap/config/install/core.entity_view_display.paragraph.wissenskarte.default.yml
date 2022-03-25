@@ -1,0 +1,23 @@
+uuid: 86a4eaae-28ab-41ff-b249-eab8afbc2eee
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wissenskarte.field_wissenskarte
+    - paragraphs.paragraphs_type.wissenskarte
+id: paragraph.wissenskarte.default
+targetEntityType: paragraph
+bundle: wissenskarte
+mode: default
+content:
+  field_wissenskarte:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

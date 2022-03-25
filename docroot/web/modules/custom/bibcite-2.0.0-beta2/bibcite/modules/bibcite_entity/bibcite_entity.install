@@ -1,0 +1,1337 @@
+<?php
+
+/**
+ * @file
+ * Module installation hooks implementation.
+ */
+
+use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Symfony\Component\Yaml\Yaml;
+
+/**
+ * Rename database tables and configuration objects.
+ */
+function bibcite_entity_update_8001() {
+  $tables_name_mapping = [
+    'bibliography' => 'bibcite_reference',
+    'bibliography__author' => 'bibcite_reference__author',
+    'bibliography__keywords' => 'bibcite_reference__keywords',
+  ];
+  $database_schema = Database::getConnection()->schema();
+  foreach ($tables_name_mapping as $table => $new_name) {
+    $database_schema->renameTable($table, $new_name);
+  }
+
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('bibcite_entity.bibliography_type') as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    $config->setName("bibcite_entity.bibcite_reference_type.{$config->get('id')}");
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Add "uid" property to "bibcite_reference" table.
+ */
+function bibcite_entity_update_8002() {
+  $spec = [
+    'type' => 'int',
+    'description' => "User ID",
+    'length' => 10,
+    'not null' => TRUE,
+    'default' => 0,
+  ];
+  $schema = Database::getConnection()->schema();
+  $schema->addField('bibcite_reference', 'uid', $spec);
+}
+
+/**
+ * Install new optional configuration (administration views).
+ */
+function bibcite_entity_update_8003() {
+  /** @var \Drupal\Core\Config\ConfigInstallerInterface $installer */
+  $installer = \Drupal::service('config.installer');
+
+  $configs = [
+    'system.action.bibcite_contributor_delete',
+    'system.action.bibcite_contributor_save',
+    'system.action.bibcite_keyword_delete',
+    'system.action.bibcite_keyword_save',
+    'system.action.bibcite_reference_delete',
+    'system.action.bibcite_reference_save',
+  ];
+
+  $update_required = FALSE;
+  foreach ($configs as $config_name) {
+    $config = \Drupal::config($config_name);
+    if ($config->isNew()) {
+      $update_required = TRUE;
+      break;
+    }
+  }
+
+  if ($update_required) {
+    $installer->installDefaultConfig('module', 'bibcite_entity');
+  }
+
+  $path = drupal_get_path('module', 'bibcite_entity') . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+  $storage = new FileStorage($path);
+  $installer->installOptionalConfig($storage);
+}
+
+/**
+ * Enable "Override default properties" in reference types and enable UI
+ * overrides.
+ */
+function bibcite_entity_update_8004() {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('bibcite_entity.bibcite_reference_type') as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    $config->set('override', TRUE);
+    $config->save(TRUE);
+  }
+
+  $config = $config_factory->getEditable('bibcite_entity.reference.settings');
+  $config->set('ui_override.enable_form_override', TRUE);
+  $config->set('display_override.enable_display_override', TRUE);
+  $config->save();
+}
+
+/**
+ * Set default "description" property to "bibcite_reference_type".
+ */
+function bibcite_entity_update_8005() {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('bibcite_entity.bibcite_reference_type') as $config_name) {
+    $install_path = __DIR__ . '/config/install/';
+    $file_path = $install_path . $config_name . '.yml';
+    if (file_exists($file_path)) {
+      $config = $config_factory->getEditable($config_name);
+      $content = file_get_contents($file_path);
+      $yaml = Yaml::parse($content);
+      $value = $yaml['description'];
+
+      $config->set('description', $value);
+      $config->save(TRUE);
+    }
+  }
+}
+
+/**
+ * Set view modes to "bibcite_reference_type".
+ */
+function bibcite_entity_update_8006() {
+  $config_factory = \Drupal::configFactory();
+  $install_path = __DIR__ . '/config/install/';
+
+  // Add entity view modes.
+  $file_path = $install_path . 'core.entity_view_mode.bibcite_reference.table.yml';
+  if (file_exists($file_path)) {
+    $content = file_get_contents($file_path);
+    $yaml = Yaml::parse($content);
+    $config = $config_factory->getEditable('core.entity_view_mode.bibcite_reference.table');
+    if ($config->isNew()) {
+      foreach ($yaml as $key => $value) {
+        $config->set($key, $value);
+      }
+      $config->save(TRUE);
+    }
+  }
+
+  $file_path = $install_path . 'core.entity_view_mode.bibcite_reference.citation.yml';
+  if (file_exists($file_path)) {
+    $content = file_get_contents($file_path);
+    $yaml = Yaml::parse($content);
+    $config = $config_factory->getEditable('core.entity_view_mode.bibcite_reference.citation');
+    if ($config->isNew()) {
+      foreach ($yaml as $key => $value) {
+        $config->set($key, $value);
+      }
+      $config->save(TRUE);
+    }
+  }
+
+  // Force our entity citation view display config.
+  $install_path = __DIR__ . '/config/optional/';
+  $citation_file_list = glob($install_path . 'core.entity_view_display.bibcite_reference*citation*');
+  $config_list = array_map(function ($file) {
+    return basename($file, '.yml');
+  }, $citation_file_list);
+  foreach ($config_list as $id => $config_name) {
+    $file_path = $citation_file_list[$id];
+    if (file_exists($file_path)) {
+      $config = $config_factory->getEditable($config_name);
+      $content = file_get_contents($file_path);
+      $yaml = Yaml::parse($content);
+      foreach ($yaml as $key => $value) {
+        $config->set($key, $value);
+      }
+      $config->save(TRUE);
+    }
+  }
+
+  // Configure our entity view displays.
+  $config = $config_factory->getEditable('bibcite_entity.reference.settings');
+  $override = $config->get('display_override.enable_display_override');
+  if (!$override) {
+    // If user doesn't use table view mode just write config if doesn't exist.
+    $file_list = glob($install_path . 'core.entity_view_display.bibcite_reference*');
+    $file_list = array_diff($file_list, $citation_file_list);
+    $config_list = array_map(function ($file) {
+      return basename($file, '.yml');
+    }, $file_list);
+    foreach ($config_list as $id => $config_name) {
+      $file_path = $file_list[$id];
+      if (file_exists($file_path)) {
+        $config = $config_factory->getEditable($config_name);
+        if ($config->isNew()) {
+          $content = file_get_contents($file_path);
+          $yaml = Yaml::parse($content);
+          foreach ($yaml as $key => $value) {
+            $config->set($key, $value);
+          }
+          $config->save(TRUE);
+        }
+      }
+    }
+  }
+  else {
+    // If table view mode.
+    $config_list = $config_factory->listAll('core.entity_view_display.bibcite_reference');
+    $default_config_list = preg_grep('/^.*default$/', $config_list);
+    foreach ($default_config_list as $default_config_name) {
+      $table_config_name = str_replace('default', 'table', $default_config_list);
+      $default_config = $config_factory->getEditable($default_config_name);
+      $file_path = $install_path . $default_config_name . '.yml';
+      $content = file_get_contents($file_path);
+      $yaml = Yaml::parse($content);
+      if ($default_config->isNew()) {
+        // If user doesn't change default view mode set our config.
+        foreach ($yaml as $key => $value) {
+          $default_config->set($key, $value);
+        }
+        $default_config->save(TRUE);
+      }
+      else {
+        // If user change default view mode set it to table view mode.
+        $table_config = $config_factory->getEditable($table_config_name);
+        foreach ($yaml as $key => $value) {
+          $table_config->set($key, $default_config[$key]);
+        }
+        $table_config->save(TRUE);
+      }
+    }
+
+    // Write config for all not exist table view modes.
+    $table_config_list = preg_grep('/^.*table$/', $config_list);
+    foreach ($table_config_list as $table_config_name) {
+      $table_config = $config_factory->getEditable($table_config_name);
+      if ($table_config->isNew()) {
+        $file_path = $install_path . $table_config_name . '.yml';
+        $content = file_get_contents($file_path);
+        $yaml = Yaml::parse($content);
+        foreach ($yaml as $key => $value) {
+          $table_config->set($key, $value);
+        }
+        $table_config->save();
+      }
+    }
+  }
+
+  // Convert 'Display override' option to 'Reference view mode'.
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('bibcite_entity.reference.settings');
+  $override = $config->get('display_override.enable_display_override');
+  $config->clear('display_override.enable_display_override');
+  $config->set('display_override.reference_page_view_mode', $override ? 'table' : 'default');
+  $config->save(TRUE);
+}
+
+/**
+ * Fix missed bibcite reference view modes configurations.
+ */
+function bibcite_entity_update_8007() {
+  $config_factory = \Drupal::configFactory();
+  $install_path = __DIR__ . '/config/optional/';
+  $citation_file_list = glob($install_path . 'core.entity_view_display.bibcite_reference*');
+  $config_list = array_map(function ($file) {
+    return basename($file, '.yml');
+  }, $citation_file_list);
+  foreach ($config_list as $id => $config_name) {
+    $file_path = $citation_file_list[$id];
+    if (file_exists($file_path)) {
+      $config = $config_factory->getEditable($config_name);
+      // Save config if not exist.
+      if ($config->isNew()) {
+        $content = file_get_contents($file_path);
+        $yaml = Yaml::parse($content);
+        foreach ($yaml as $key => $value) {
+          $config->set($key, $value);
+        }
+        $config->save(TRUE);
+      }
+    }
+  }
+}
+
+/**
+ * Disable reference type field for all view modes.
+ */
+function bibcite_entity_update_8008() {
+  $config_factory = \Drupal::configFactory();
+
+  foreach ($config_factory->listAll('core.entity_view_display.bibcite_reference') as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    $content = $config->get('content');
+    unset($content['bibcite_type']);
+    $config->set('content', $content);
+    $hidden = $config->get('hidden');
+    $hidden['bibcite_type'] = TRUE;
+    $config->set('hidden', $hidden);
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Update user roles permissions.
+ */
+function bibcite_entity_update_8009() {
+  $permission_map = [
+    'administer bibcite_reference entities' => 'administer bibcite_reference',
+    'add bibcite_reference entities' => 'create bibcite_reference',
+    'delete own bibcite_reference entities' => 'delete own bibcite_reference',
+    'delete all bibcite_reference entities' => 'delete any bibcite_reference',
+    'edit own bibcite_reference entities' => 'edit own bibcite_reference',
+    'edit all bibcite_reference entities' => 'edit any bibcite_reference',
+    'view bibcite_reference entities' => 'view bibcite_reference',
+    'administer contributor entities' => 'administer bibcite_contributor',
+    'add contributor entities' => 'create bibcite_contributor',
+    'delete contributor entities' => 'delete bibcite_contributor',
+    'edit contributor entities' => 'edit bibcite_contributor',
+    'view contributor entities' => 'view bibcite_contributor',
+    'administer keyword entities' => 'administer bibcite_keyword',
+    'add keyword entities' => 'create bibcite_keyword',
+    'delete keyword entities' => 'delete bibcite_keyword',
+    'edit keyword entities' => 'edit bibcite_keyword',
+    'view keyword entities' => 'view bibcite_keyword',
+  ];
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('user.role') as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    $permissions = $config->get('permissions');
+    $role_id = $config->get('id');
+    $revoke = [];
+    $grant = [];
+    foreach ($permission_map as $old => $new) {
+      if (in_array($old, $permissions)) {
+        $revoke[] = $old;
+        $grant[] = $new;
+      }
+    }
+    user_role_revoke_permissions($role_id, $revoke);
+    user_role_grant_permissions($role_id, $grant);
+  }
+
+  $manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $manager->getEntityType('bibcite_contributor');
+  $entity_type->set('admin_permission', 'administer bibcite_contributor');
+  $manager->updateEntityType($entity_type);
+  $entity_type = $manager->getEntityType('bibcite_contributor_category');
+  $entity_type->set('admin_permission', 'administer bibcite_reference');
+  $manager->updateEntityType($entity_type);
+  $entity_type = $manager->getEntityType('bibcite_contributor_role');
+  $entity_type->set('admin_permission', 'administer bibcite_reference');
+  $manager->updateEntityType($entity_type);
+  $entity_type = $manager->getEntityType('bibcite_keyword');
+  $entity_type->set('admin_permission', 'administer bibcite_keyword');
+  $manager->updateEntityType($entity_type);
+  $entity_type = $manager->getEntityType('bibcite_reference_type');
+  $entity_type->set('admin_permission', 'administer bibcite_reference');
+  $manager->updateEntityType($entity_type);
+  $entity_type = $manager->getEntityType('bibcite_reference');
+  $entity_type->set('admin_permission', 'administer bibcite_reference');
+  $links = $entity_type->getLinkTemplates();
+  unset($links['add-form']);
+  $entity_type->set('links', $links);
+  $manager->updateEntityType($entity_type);
+}
+
+/**
+ * Update bibcite views permissions.
+ */
+function bibcite_entity_update_8010() {
+  $config_factory = \Drupal::configFactory();
+
+  // Update contributor admin view.
+  $config = $config_factory->getEditable('views.view.bibcite_contributor_admin');
+  if ($displays = $config->get('display')) {
+    foreach ($displays as $name => $display) {
+      if (isset($display['display_options']['access'])) {
+        $displays[$name]['display_options']['access']['type'] = 'perm';
+        $displays[$name]['display_options']['access']['options']['perm'] = 'administer bibcite_contributor';
+      }
+    }
+    $config->set('display', $displays);
+    $config->save(TRUE);
+  }
+
+  // Update keyword admin view.
+  $config = $config_factory->getEditable('views.view.bibcite_keyword_admin');
+  if ($displays = $config->get('display')) {
+    foreach ($displays as $name => $display) {
+      if (isset($display['display_options']['access'])) {
+        $displays[$name]['display_options']['access']['type'] = 'perm';
+        $displays[$name]['display_options']['access']['options']['perm'] = 'administer bibcite_keyword';
+      }
+    }
+    $config->set('display', $displays);
+    $config->save(TRUE);
+  }
+
+  // Update reference admin view.
+  $config = $config_factory->getEditable('views.view.bibcite_reference_admin');
+  if ($displays = $config->get('display')) {
+    foreach ($displays as $name => $display) {
+      if (isset($display['display_options']['access'])) {
+        $displays[$name]['display_options']['access']['type'] = 'perm';
+        $displays[$name]['display_options']['access']['options']['perm'] = 'administer bibcite_reference';
+      }
+    }
+    $config->set('display', $displays);
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Update contributor entity.
+ */
+function bibcite_entity_update_8011() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $leading_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Leading initial'))
+    ->setDefaultValue('');
+
+  $middle_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Middle name'))
+    ->setDefaultValue('');
+
+  $nickname_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Nickname'))
+    ->setDefaultValue('');
+
+  $definition_update_manager
+    ->installFieldStorageDefinition('leading_title', 'bibcite_contributor', 'bibcite_entity', $leading_definition);
+  $definition_update_manager
+    ->installFieldStorageDefinition('middle_name', 'bibcite_contributor', 'bibcite_entity', $middle_definition);
+  $definition_update_manager
+    ->installFieldStorageDefinition('nick', 'bibcite_contributor', 'bibcite_entity', $nickname_definition);
+}
+
+/**
+ * Update entity routes.
+ */
+function bibcite_entity_update_8012() {
+  \Drupal::service('router.builder')->rebuild();
+}
+
+/**
+ * Make Reference entity type revisionable. Enable Entity module.
+ */
+function bibcite_entity_update_8013() {
+  // Enable Entity module.
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install(['entity']);
+
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Add the published entity key and revisionable metadata fields to the
+  // my_entity entity type.
+  $entity_type = $definition_update_manager->getEntityType('bibcite_reference');
+  $entity_type_id = $entity_type->id();
+
+  $entity_keys = $entity_type->getKeys();
+  $entity_keys['published'] = 'status';
+  $entity_type->set('entity_keys', $entity_keys);
+
+  $revision_metadata_keys = [
+    'revision_user' => 'revision_user',
+    'revision_created' => 'revision_created',
+    'revision_log_message' => 'revision_log_message',
+  ];
+  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
+
+  $definition_update_manager->updateEntityType($entity_type);
+
+  // Add the status field.
+  $status = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Publishing status'))
+    ->setDescription(t('A boolean indicating the published state.'))
+    ->setRevisionable(TRUE)
+    ->setDefaultValue(TRUE);
+
+  $status->setInitialValue(TRUE);
+  $definition_update_manager->installFieldStorageDefinition('status', $entity_type_id, $entity_type_id, $status);
+
+  // Add the revision metadata fields.
+  $revision_created = BaseFieldDefinition::create('created')
+    ->setLabel(t('Revision create time'))
+    ->setDescription(t('The time that the current revision was created.'))
+    ->setRevisionable(TRUE);
+  $definition_update_manager->installFieldStorageDefinition('revision_created', $entity_type_id, $entity_type_id, $revision_created);
+
+  $revision_user = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Revision user'))
+    ->setDescription(t('The user ID of the author of the current revision.'))
+    ->setSetting('target_type', 'user')
+    ->setRevisionable(TRUE);
+  $definition_update_manager->installFieldStorageDefinition('revision_user', $entity_type_id, $entity_type_id, $revision_user);
+
+  $revision_log_message = BaseFieldDefinition::create('string_long')
+    ->setLabel(t('Revision log message'))
+    ->setDescription(t('Briefly describe the changes you have made.'))
+    ->setRevisionable(TRUE)
+    ->setDefaultValue('')
+    ->setDisplayOptions('form', [
+      'type' => 'string_textarea',
+      'weight' => 25,
+      'settings' => [
+        'rows' => 4,
+      ],
+    ]);
+  $definition_update_manager->installFieldStorageDefinition('revision_log_message', $entity_type_id, $entity_type_id, $revision_log_message);
+}
+
+/**
+ * Update existing reference entities data to be revisionable.
+ */
+function bibcite_entity_update_8014(&$sandbox) {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Mark various fields as revisionable.
+  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository */
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('bibcite_reference');
+  $fields_to_update = [
+    'uid',
+    'langcode',
+    'title',
+    'created',
+    'changed',
+    'keywords',
+    'author',
+    'status',
+    'bibcite_abst_e',
+    'bibcite_abst_f',
+    'bibcite_notes',
+    'bibcite_custom1',
+    'bibcite_custom2',
+    'bibcite_custom3',
+    'bibcite_custom4',
+    'bibcite_custom5',
+    'bibcite_custom6',
+    'bibcite_custom7',
+    'bibcite_auth_address',
+    'bibcite_year',
+    'bibcite_secondary_title',
+    'bibcite_volume',
+    'bibcite_edition',
+    'bibcite_section',
+    'bibcite_issue',
+    'bibcite_number_of_volumes',
+    'bibcite_number',
+    'bibcite_pages',
+    'bibcite_date',
+    'bibcite_type_of_work',
+    'bibcite_lang',
+    'bibcite_reprint_edition',
+    'bibcite_publisher',
+    'bibcite_place_published',
+    'bibcite_issn',
+    'bibcite_isbn',
+    'bibcite_accession_number',
+    'bibcite_call_number',
+    'bibcite_other_number',
+    'bibcite_citekey',
+    'bibcite_url',
+    'bibcite_doi',
+    'bibcite_research_notes',
+    'bibcite_tertiary_title',
+    'bibcite_short_title',
+    'bibcite_alternate_title',
+    'bibcite_translated_title',
+    'bibcite_original_publication',
+    'bibcite_other_author_affiliations',
+    'bibcite_remote_db_name',
+    'bibcite_remote_db_provider',
+    'bibcite_label',
+    'bibcite_access_date',
+    'bibcite_refereed',
+    'bibcite_pmid',
+  ];
+  foreach ($fields_to_update as $field_name) {
+    $field_storage_definitions[$field_name]->setRevisionable(TRUE);
+  }
+
+  $field_storage_definitions['revision_id'] = BaseFieldDefinition::create('integer')
+    ->setName('revision_id')
+    ->setTargetEntityTypeId('bibcite_reference')
+    ->setTargetBundle(NULL)
+    ->setLabel(t('Revision ID'))
+    ->setReadOnly(TRUE)
+    ->setSetting('unsigned', TRUE);
+
+  $field_storage_definitions['revision_default'] = BaseFieldDefinition::create('boolean')
+    ->setName('revision_default')
+    ->setTargetEntityTypeId('bibcite_reference')
+    ->setTargetBundle(NULL)
+    ->setLabel(t('Default revision'))
+    ->setDescription(t('A flag indicating whether this was a default revision when it was saved.'))
+    ->setStorageRequired(TRUE)
+    ->setInternal(TRUE)
+    ->setTranslatable(FALSE)
+    ->setRevisionable(TRUE);
+
+  $entity_type = $definition_update_manager->getEntityType('bibcite_reference');
+  $entity_keys = $entity_type->getKeys();
+  $entity_keys['revision'] = 'revision_id';
+  $entity_type->set('entity_keys', $entity_keys);
+
+  $revision_metadata_keys = [
+    'revision_default' => 'revision_default',
+    'revision_user' => 'revision_user',
+    'revision_created' => 'revision_created',
+    'revision_log_message' => 'revision_log_message',
+  ];
+  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
+  $entity_type->set('revision_table', 'bibcite_reference_revision');
+  $definition_update_manager->updateFieldableEntityType(
+    $entity_type,
+    $field_storage_definitions,
+    $sandbox
+  );
+}
+
+/**
+ * Fill Revision create time and Revision user fields, which are left empty
+ * after making Reference entity type revisionable, by values from Created
+ * and Authored by fields respectively.
+ */
+function bibcite_entity_update_8015(&$sandbox) {
+  $database = \Drupal::database();
+  $type_manager = \Drupal::entityTypeManager();
+  $table_name = $type_manager->getStorage('bibcite_reference')->getEntityType()->getRevisionTable();
+  if (!isset($sandbox['total'])) {
+    $sandbox['processed'] = 0;
+    $sandbox['current_id'] = 0;
+    $count_query = $database->select($table_name);
+    $count_condition = $count_query->orConditionGroup()
+      ->isNull('revision_created')
+      ->isNull('revision_user');
+    $count_query->condition($count_condition);
+    $count_query = $count_query->countQuery();
+    $sandbox['total'] = $count_query->execute()->fetchField();
+  }
+
+  $select_query = $database->select($table_name, 'brr');
+  $select_query->fields('brr', ['revision_id', 'created', 'uid', 'revision_created', 'revision_user']);
+  $select_condition = $select_query->orConditionGroup()
+    ->isNull('revision_created')
+    ->isNull('revision_user');
+  $select_query->condition($select_condition);
+  $select_query->condition('revision_id', $sandbox['current_id'], '>');
+  $select_query->orderBy('revision_id');
+  $select_query->range(0, 50);
+  $rows = $select_query->execute()->fetchAll();
+
+  if ($rows) {
+    foreach ($rows as $row) {
+      $revision_created = isset($row->revision_created) ? $row->revision_created : $row->created;
+      $revision_user = isset($row->revision_user) ? $row->revision_user : $row->uid;
+      $database->update($table_name)
+        ->fields(['revision_created' => $revision_created, 'revision_user' => $revision_user])
+        ->condition('revision_id', $row->revision_id)
+        ->execute();
+      $sandbox['current_id'] = $row->revision_id;
+    }
+    $sandbox['processed'] += count($rows);
+    $sandbox['#finished'] = $sandbox['processed'] / $sandbox['total'];
+  }
+  else {
+    $sandbox['#finished'] = 1;
+  }
+}
+
+/**
+ * Force Revision user field storage definition update to fix
+ * "The Revision user field needs to be updated" error on Status report, which
+ * means that entity and field definitions became mismatched for some reason
+ * after making Reference entity type revisionable.
+ */
+function bibcite_entity_update_8016() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType('bibcite_reference');
+  $entity_type_id = $entity_type->id();
+  $revision_user = BaseFieldDefinition::create('entity_reference')
+    ->setName('revision_user')
+    ->setTargetEntityTypeId($entity_type_id)
+    ->setTargetBundle(NULL)
+    ->setLabel(t('Revision user'))
+    ->setDescription(t('The user ID of the author of the current revision.'))
+    ->setSetting('target_type', 'user')
+    ->setRevisionable(TRUE);
+  $definition_update_manager->updateFieldStorageDefinition($revision_user);
+}
+
+/**
+ * Make Contributor entity type fieldable.
+ */
+function bibcite_entity_update_8017() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType('bibcite_contributor');
+  $entity_type->set('field_ui_base_route', 'bibcite_entity.contributor.settings');
+  $definition_update_manager->updateEntityType($entity_type);
+}
+
+/**
+ * Make Keyword entity type fieldable.
+ */
+function bibcite_entity_update_8018() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType('bibcite_keyword');
+  $entity_type->set('field_ui_base_route', 'bibcite_entity.keyword.settings');
+  $definition_update_manager->updateEntityType($entity_type);
+}
+
+/**
+ * Add new Keyword view which shows list of related reference entities on a
+ * keyword entity page.
+ */
+function bibcite_entity_update_8019() {
+  $config_name = 'views.view.bibcite_keyword';
+
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable($config_name);
+
+  // @todo Is there a better way to validate that config dependencies are met?
+  if (!\Drupal::moduleHandler()->moduleExists('views')) {
+    return t('%module_name module is not installed. No changes have been applied.', ['%module_name' => 'Views']);
+  }
+  elseif (!$config->isNew()) {
+    return t('View with %machine_name machine name already exists. No changes have been applied.', ['%machine_name' => 'bibcite_keyword']);
+  }
+
+  $module_path = \Drupal::moduleHandler()->getModule('bibcite_entity')->getPath();
+  $path = $module_path . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+  $file_storage = new FileStorage($path);
+  $data = ['uuid' => \Drupal::service('uuid')->generate()]
+    + $file_storage->read($config_name);
+  $config->setData($data);
+  $config->save(TRUE);
+
+  return t('%view_name view has been created.', ['%view_name' => 'Keyword']);
+}
+
+/**
+ * Add new Contributor view which shows list of related reference entities on a
+ * contributor entity page.
+ */
+function bibcite_entity_update_8020() {
+  $config_name = 'views.view.bibcite_contributor';
+
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable($config_name);
+
+  if (!\Drupal::moduleHandler()->moduleExists('views')) {
+    return t('%module_name module is not installed. No changes have been applied.', ['%module_name' => 'Views']);
+  }
+  elseif (!$config->isNew()) {
+    return t('View with %machine_name machine name already exists. No changes have been applied.', ['%machine_name' => 'bibcite_contributor']);
+  }
+
+  $module_path = \Drupal::moduleHandler()->getModule('bibcite_entity')->getPath();
+  $path = $module_path . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+  $file_storage = new FileStorage($path);
+  $data = ['uuid' => \Drupal::service('uuid')->generate()]
+    + $file_storage->read($config_name);
+  $config->setData($data);
+  $config->save(TRUE);
+
+  return t('%view_name view has been created.', ['%view_name' => 'Contributor']);
+}
+
+/**
+ * Reset admin views to default state on update due to recent updates in them.
+ */
+function bibcite_entity_update_8021() {
+  $config_names = [
+    'views.view.bibcite_reference_admin',
+    'views.view.bibcite_keyword_admin',
+    'views.view.bibcite_contributor_admin',
+  ];
+
+  $config_factory = \Drupal::configFactory();
+  $module_path = \Drupal::moduleHandler()->getModule('bibcite_entity')->getPath();
+  $path = $module_path . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+  $file_storage = new FileStorage($path);
+
+  foreach ($config_names as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+
+    if (!$config->isNew()) {
+      $data = ['uuid' => $config->get('uuid')]
+        + $file_storage->read($config_name);
+      $config->setData($data);
+      $config->save(TRUE);
+    }
+  }
+}
+
+/**
+ * Fix last installed schema differences between clean module installation and updated from previous releases version.
+ */
+function bibcite_entity_update_8022() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  // Make Contributor fields configurable.
+  $fields_to_update = [
+    'leading_title',
+    'prefix',
+    'first_name',
+    'middle_name',
+    'last_name',
+    'nick',
+    'suffix',
+  ];
+  foreach ($fields_to_update as $field_name) {
+    /** @var BaseFieldDefinition $field_storage_definition */
+    $field_storage_definition = $definition_update_manager->getFieldStorageDefinition($field_name, 'bibcite_contributor');
+    $field_storage_definition->setDisplayConfigurable('view', TRUE);
+    $field_storage_definition->setDisplayConfigurable('form', TRUE);
+    $definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
+  }
+
+  $contributor = $definition_update_manager->getEntityType('bibcite_contributor');
+  $contributor->set('fieldable', TRUE);
+  $definition_update_manager->updateEntityType($contributor);
+
+  // Make Keyword field configurable.
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('name', 'bibcite_keyword');
+  $field_storage_definition->setDisplayConfigurable('view', TRUE);
+  $field_storage_definition->setDisplayConfigurable('form', TRUE);
+  $field_storage_definition->setDisplayOptions('view', ['region' => 'hidden']);
+  $definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
+  $keyword = $definition_update_manager->getEntityType('bibcite_keyword');
+  $keyword->set('fieldable', TRUE);
+  $definition_update_manager->updateEntityType($keyword);
+
+  // Update Provider options for fields.
+  $reference = $definition_update_manager->getEntityType('bibcite_reference');
+  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository */
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('bibcite_reference');
+  $fields_to_update = [
+    'revision_id',
+    'revision_created',
+    'revision_user',
+    'revision_log_message',
+    'revision_default',
+    'status',
+  ];
+  foreach ($fields_to_update as $field_name) {
+    $field_storage_definitions[$field_name]->setProvider('bibcite_entity');
+  }
+  $definition_update_manager->updateFieldableEntityType(
+    $reference,
+    $field_storage_definitions,
+    $sandbox
+  );
+
+  // Update status field options.
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('status', 'bibcite_reference');
+  $field_storage_definition->setTranslatable(FALSE);
+  $field_storage_definition->setDisplayOptions('form', ['type' => 'boolean_checkbox', 'settings' => ['display_label' => TRUE], 'weight' => 120]);
+  $field_storage_definition->setDisplayConfigurable('form', TRUE);
+  $field_storage_definition->setInitialValue(NULL);
+  $definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
+
+  // Fix last installed Reference entity schema differences.
+  $reference = $definition_update_manager->getEntityType('bibcite_reference');
+  $reference->set('show_revision_ui', TRUE);
+  $reference->set('label_singular', t('Reference'));
+  $reference->set('label_plural', t('References'));
+  $entity_keys = $reference->getKeys();
+  $entity_keys['status'] = 'status';
+  $reference->set('entity_keys', $entity_keys);
+  $reference->setHandlerClass('storage_schema', 'Drupal\bibcite_entity\ReferenceStorageSchema');
+  $route_providers = $reference->getRouteProviderClasses();
+  $route_providers['revision'] = 'Drupal\entity\Routing\RevisionRouteProvider';
+  $reference->setHandlerClass('route_provider', $route_providers);
+  $reference->setHandlerClass('local_task_provider', ['default' => 'Drupal\entity\Menu\DefaultEntityLocalTaskProvider']);
+  $reference->setLinkTemplate('version-history', '/bibcite/reference/{bibcite_reference}/revisions');
+  $reference->setLinkTemplate('revision', '/bibcite/reference/{bibcite_reference}/revisions/{bibcite_reference_revision}/view');
+  $reference->setLinkTemplate('revision-revert-form', '/bibcite/reference/{bibcite_reference}/revisions/{bibcite_reference_revision}/revert');
+  $reference->setLinkTemplate('revision-delete-form', '/bibcite/reference/{bibcite_reference}/revisions/{bibcite_reference_revision}/delete');
+  $reference->set('permission_granularity', 'bundle');
+  $definition_update_manager->updateEntityType($reference);
+}
+
+/**
+ * Add "Name" field to the Contributor entity default form mode and use "Parse name" widget for it.
+ */
+function bibcite_entity_update_8023() {
+  $config_name = 'core.entity_form_display.bibcite_contributor.bibcite_contributor.default';
+
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable($config_name);
+
+  if (!$config->isNew()) {
+    $content = $config->get('content');
+    $content['name'] = ['type' => 'bibcite_parse_name', 'region' => 'content', 'weight' => -1, 'settings' => [], 'third_party_settings' => []];
+    $config->set('content', $content);
+    $hidden = $config->get('hidden');
+    unset($hidden['name']);
+    $config->set('hidden', $hidden);
+    $config->save();
+  }
+}
+
+/**
+ * Add custom storage for citation key and set custom entity storage for Reference entity type.
+ * Update Reference entity base fields definition to mark citation key as using custom storage.
+ * Migrate citation key data to new storage.
+ * Remove citation key field from default Reference entity storage.
+ * Add action to regenerate citekey.
+ * Enable token module.
+ */
+function bibcite_entity_update_8024() {
+  // Enable Token module.
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install(['token']);
+
+  // Add tables for citation key and update Reference storage.
+  /** @see \Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema::getDedicatedTableSchema */
+  $citekey_table = 'bibcite_reference__bibcite_citekey';
+  $citekey_revision_table = 'bibcite_reference_revision__bibcite_citekey';
+
+  $fields = [
+    'bundle' =>
+      [
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The field instance bundle to which this row belongs, used when deleting a field instance',
+      ],
+    'deleted' =>
+      [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'A boolean indicating whether this data item has been deleted',
+      ],
+    'entity_id' =>
+      [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The entity id this data is attached to',
+      ],
+    'revision_id' =>
+      [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The entity revision id this data is attached to',
+      ],
+    'langcode' =>
+      [
+        'type' => 'varchar_ascii',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The language code for this data item.',
+      ],
+    'delta' =>
+      [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The sequence number for this data item, used for multi-value fields',
+      ],
+    'bibcite_citekey_value' =>
+      [
+        'type' => 'varchar',
+        'length' => 255,
+        'binary' => FALSE,
+        'not null' => TRUE,
+      ],
+    /**
+     * Add bibcite_citekey field because of on update field process
+     * EntityTypeManager get storage handler from entity class annotation
+     * and entity updater try to read data from dedicated table but data is in old storage.
+     * @see \Drupal\Core\Field\FieldStorageDefinitionListener::onFieldStorageDefinitionCreate
+     */
+    'bibcite_citekey' =>
+      [
+        'type' => 'varchar',
+        'length' => 255,
+        'binary' => FALSE,
+        'not null' => TRUE,
+      ],
+  ];
+
+  $citekey_schema = [
+    'description' => 'Data storage for bibcite_reference field bibcite_citekey.',
+    'fields' => $fields,
+    'primary key' =>
+      [
+        'entity_id',
+        'deleted',
+        'delta',
+        'langcode',
+      ],
+    'indexes' =>
+      [
+        'bundle' => ['bundle'],
+        'revision_id' => ['revision_id'],
+        'value' => ['bibcite_citekey_value'],
+      ],
+  ];
+  $citekey_revision_schema = [
+    'description' => 'Revision archive storage for bibcite_reference field bibcite_citekey.',
+    'fields' => $fields,
+    'primary key' =>
+      [
+        'entity_id',
+        'revision_id',
+        'deleted',
+        'delta',
+        'langcode',
+      ],
+    'indexes' =>
+      [
+        'bundle' => ['bundle'],
+        'revision_id' => ['revision_id'],
+        'value' => ['bibcite_citekey_value'],
+      ],
+  ];
+  $schema = Database::getConnection()->schema();
+  $schema->createTable($citekey_table, $citekey_schema);
+  $schema->createTable($citekey_revision_table, $citekey_revision_schema);
+
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  // Mark citekey field to store in custom table.
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('bibcite_citekey', 'bibcite_reference');
+  $field_storage_definition->setCustomStorage(TRUE);
+  $definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
+
+  // Drop fields which needed only for update field definition.
+  $schema->dropField($citekey_table, 'bibcite_citekey');
+  $schema->dropField($citekey_revision_table, 'bibcite_citekey');
+
+  // Update entity type storage handler.
+  $entity_type = $definition_update_manager->getEntityType('bibcite_reference');
+  $handlers = $entity_type->get('handlers');
+  $handlers['storage'] = 'Drupal\bibcite_entity\ReferenceStorage';
+  $entity_type->set('handlers', $handlers);
+  $definition_update_manager->updateEntityType($entity_type);
+
+  $database = \Drupal::database();
+  $table_name = $entity_type->getBaseTable();
+
+  // Migrate citation key data.
+  $citekey_query = $database->select($table_name, 'br')
+    ->fields('br', [
+      'id',
+      'revision_id',
+      'langcode',
+      'type',
+      'bibcite_citekey',
+    ]);
+  $citekey_query->addExpression(':deleted', 'deleted', [':deleted' => 0]);
+  $citekey_query->addExpression(':delta', 'delta', [':delta' => 0]);
+  $citekey_query->condition('bibcite_citekey', NULL, 'IS NOT NULL');
+  $insert_query = $database->insert('bibcite_reference__bibcite_citekey')
+    ->fields([
+      'entity_id',
+      'revision_id',
+      'langcode',
+      'bundle',
+      'bibcite_citekey_value',
+      'deleted',
+      'delta',
+    ]);
+  $insert_query->from($citekey_query);
+  $insert_query->execute();
+
+  // Migrate citation key revisions data.
+  $revision_table_name = $entity_type->getRevisionTable();
+  $citekey_revision_query = $database->select($revision_table_name, 'brr')
+    ->fields('brr', [
+      'id',
+      'revision_id',
+      'langcode',
+      'bibcite_citekey',
+    ]);
+  $citekey_revision_query->join($table_name, 'br', 'br.id = brr.id');
+  $citekey_revision_query->fields('br', ['type']);
+  $citekey_revision_query->condition('brr.bibcite_citekey', NULL, 'IS NOT NULL');
+  $citekey_revision_query->addExpression(':deleted', 'deleted', [':deleted' => 0]);
+  $citekey_revision_query->addExpression(':delta', 'delta', [':delta' => 0]);
+  $insert_revision_query = $database->insert('bibcite_reference_revision__bibcite_citekey')
+    ->fields([
+      'entity_id',
+      'revision_id',
+      'langcode',
+      'bibcite_citekey_value',
+      'bundle',
+      'deleted',
+      'delta',
+    ]);
+  $insert_revision_query->from($citekey_revision_query);
+  $insert_revision_query->execute();
+
+  // Remove old field.
+  $schema = Database::getConnection()->schema();
+  $schema->dropField($table_name, 'bibcite_citekey');
+  $schema->dropField($revision_table_name, 'bibcite_citekey');
+
+  // Add action to regenerate citekey.
+  $config_name = 'system.action.bibcite_entity_reference_regenerate_citekey';
+  $config_factory = \Drupal::configFactory();
+  $module_path = \Drupal::moduleHandler()
+    ->getModule('bibcite_entity')
+    ->getPath();
+  $path = $module_path . '/' . InstallStorage::CONFIG_INSTALL_DIRECTORY;
+  $file_storage = new FileStorage($path);
+
+  $config = $config_factory->getEditable($config_name);
+  if ($config->isNew()) {
+    $data = $file_storage->read($config_name);
+    $config->setData($data);
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Update reference entity type display modes to reflect visibility settings.
+ * Remove module's custom visibility settings.
+ */
+function bibcite_entity_update_8025() {
+  /** @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display_repository */
+  $entity_display_repository = \Drupal::service('entity_display.repository');
+  $reference_type_storage = \Drupal::entityTypeManager()->getStorage('bibcite_reference_type');
+
+  $module_path = \Drupal::moduleHandler()->getModule('bibcite_entity')->getPath();
+  $path = $module_path . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+  $file_storage = new FileStorage($path);
+
+  $form_modes = array_keys($entity_display_repository->getFormModeOptions('bibcite_reference'));
+  $view_modes = array_keys($entity_display_repository->getViewModeOptions('bibcite_reference'));
+  /** @var \Drupal\bibcite_entity\Entity\ReferenceTypeInterface $reference_type */
+  foreach ($reference_type_storage->loadMultiple() as $reference_type) {
+    if ($reference_type->isRequiredOverride()) {
+      $bundle = $reference_type->id();
+      $fields = $reference_type->getFields();
+
+      // Update fields visibility in view modes according to visibility settings.
+      foreach ($view_modes as $view_mode) {
+        $view_display = $entity_display_repository
+          ->getViewDisplay('bibcite_reference', $bundle, $view_mode);
+        if (!$view_display->isNew()) {
+          foreach ($fields as $field_name => $field) {
+            // Move field to hidden in display mode if Visible checkbox was
+            // unchecked on the settings page.
+            if (!$field['visible']) {
+              $view_display->removeComponent($field_name);
+            }
+          }
+          $view_display->save();
+        }
+      }
+
+      // Update fields visibility in form modes according to visibility settings.
+      foreach ($form_modes as $form_mode) {
+        $form_display = $entity_display_repository
+          ->getFormDisplay('bibcite_reference', $bundle, $form_mode);
+        if (!$form_display->isNew()) {
+          foreach ($fields as $field_name => $field) {
+            // Move field to hidden in display mode if Visible checkbox was
+            // unchecked on the settings page.
+            if (!$field['visible']) {
+              $form_display->removeComponent($field_name);
+            }
+          }
+          $form_display->save();
+        }
+        // Create default form mode config from config file if it doesn't exist.
+        elseif ($form_mode === EntityDisplayRepositoryInterface::DEFAULT_DISPLAY_MODE) {
+          $config_factory = \Drupal::configFactory();
+          $config_name = "core.entity_form_display.bibcite_reference.{$bundle}.default";
+          $config = $config_factory->getEditable($config_name);
+          $data = ['uuid' => \Drupal::service('uuid')->generate()]
+            + $file_storage->read($config_name);
+          $config->setData($data);
+          $config->save(TRUE);
+        }
+      }
+    }
+  }
+
+  // Do cleanup of reference type configurations to remove obsolete "visible" setting.
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('bibcite_entity.bibcite_reference_type.') as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    $fields = $config->get('fields');
+    if ($fields) {
+      foreach ($fields as $field_name => $field) {
+        unset($fields[$field_name]['visible']);
+      }
+      $config->set('fields', $fields);
+      $config->save(TRUE);
+    }
+  }
+}
+
+/**
+ * Add config_export property to config entities.
+ */
+function bibcite_entity_update_8026() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Update Reference Type entity.
+  $bibcite_reference_type = $definition_update_manager->getEntityType('bibcite_reference_type');
+  $bibcite_reference_type->set('config_export', [
+    'id',
+    'label',
+    'description',
+    'new_revision',
+  ]);
+  $definition_update_manager->updateEntityType($bibcite_reference_type);
+
+  // Update Contributor Role entity.
+  $bibcite_contributor_role = $definition_update_manager->getEntityType('bibcite_contributor_role');
+  $bibcite_contributor_role->set('config_export', [
+    'id',
+    'label',
+    'weight',
+  ]);
+  $definition_update_manager->updateEntityType($bibcite_contributor_role);
+
+  // Update Contributor Category entity.
+  $bibcite_contributor_category = $definition_update_manager->getEntityType('bibcite_contributor_category');
+  $bibcite_contributor_category->set('config_export', [
+    'id',
+    'label',
+    'weight',
+  ]);
+  $definition_update_manager->updateEntityType($bibcite_contributor_category);
+}
+
+/**
+ * Update Keyword field settings.
+ */
+function bibcite_entity_update_8027(&$sandbox) {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+
+  $bibcite_reference = $definition_update_manager->getEntityType('bibcite_reference');
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('bibcite_reference');
+  /** @var BaseFieldDefinition $keywords */
+  $keywords = $field_storage_definitions['keywords'];
+  $keywords_settings = $keywords->getSettings();
+  $keywords_settings += [
+    'target_bundles' => ['bibcite_keyword'],
+    'auto_create' => TRUE,
+  ];
+  $keywords->setSettings($keywords_settings);
+  $field_storage_definitions['keywords'] = $keywords;
+  $definition_update_manager->updateFieldableEntityType(
+    $bibcite_reference,
+    $field_storage_definitions,
+    $sandbox
+  );
+}
+
+/**
+ * Converts bibcite_abst_e and bibcite_abst_f fields Text (long) to Text
+ * (formatted, long).
+ */
+function bibcite_entity_update_8028() {
+  $bundle_of = 'bibcite_reference';
+
+  $database = \Drupal::database();
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType($bundle_of);
+  $table_name = $entity_type->getBaseTable();
+  $revision_table_name = $entity_type->getRevisionTable();
+
+  // Create a new field definition.
+  $text_long = function ($label, $hint = '') {
+    return BaseFieldDefinition::create('text_long')
+      ->setLabel($label)
+      ->setDescription($hint)
+      ->setRevisionable(TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'text_default',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'text_textarea',
+        'settings' => [
+          'rows' => 4,
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  };
+
+  // Add the definition for temporary storage.
+  $definition_update_manager->installFieldStorageDefinition('temp_bibcite_abst_e', $bundle_of, $bundle_of, $text_long(t('Abstract')));
+  $definition_update_manager->installFieldStorageDefinition('temp_bibcite_abst_f', $bundle_of, $bundle_of, $text_long(t('French Abstract')));
+
+  // Migrate Abstract fields data.
+  $database->update($table_name)
+    ->expression('temp_bibcite_abst_e__value', 'bibcite_abst_e')
+    ->expression('temp_bibcite_abst_f__value', 'bibcite_abst_f')
+    ->execute();
+
+  $database->update($revision_table_name)
+    ->expression('temp_bibcite_abst_e__value', 'bibcite_abst_e')
+    ->expression('temp_bibcite_abst_f__value', 'bibcite_abst_f')
+    ->execute();
+
+  // Uninstall the field.
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('bibcite_abst_e', $bundle_of);
+  $definition_update_manager->uninstallFieldStorageDefinition($field_storage_definition);
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('bibcite_abst_f', $bundle_of);
+  $definition_update_manager->uninstallFieldStorageDefinition($field_storage_definition);
+
+  // Install the new definition.
+  $definition_update_manager->installFieldStorageDefinition('bibcite_abst_e', $bundle_of, $bundle_of, $text_long(t('Abstract')));
+  $definition_update_manager->installFieldStorageDefinition('bibcite_abst_f', $bundle_of, $bundle_of, $text_long(t('French Abstract')));
+
+  // Migrate abstract field data.
+  $database->update($table_name)
+    ->expression('bibcite_abst_e__value', 'temp_bibcite_abst_e__value')
+    ->expression('bibcite_abst_f__value', 'temp_bibcite_abst_f__value')
+    ->fields(['bibcite_abst_e__format' => 'basic_html', 'bibcite_abst_f__format' => 'basic_html'])
+    ->execute();
+
+  $database->update($revision_table_name)
+    ->expression('bibcite_abst_e__value', 'temp_bibcite_abst_e__value')
+    ->expression('bibcite_abst_f__value', 'temp_bibcite_abst_f__value')
+    ->fields(['bibcite_abst_e__format' => 'basic_html', 'bibcite_abst_f__format' => 'basic_html'])
+    ->execute();
+
+  // Uninstall temp fields.
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('temp_bibcite_abst_e', $bundle_of);
+  $definition_update_manager->uninstallFieldStorageDefinition($field_storage_definition);
+  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('temp_bibcite_abst_f', $bundle_of);
+  $definition_update_manager->uninstallFieldStorageDefinition($field_storage_definition);
+}

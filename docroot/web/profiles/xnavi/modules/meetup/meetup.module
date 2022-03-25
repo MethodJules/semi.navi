@@ -1,0 +1,123 @@
+<?php
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function meetup_node_view_alter(&$build, $entity, $display) {
+  if($entity->bundle() == 'event') {
+      //Get the node object from the URL
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if(!is_null($node)) {
+          //Get the nid
+
+          $nid = $node->id();
+          $uid = 0;
+          if (\Drupal::currentUser()->isAuthenticated()) {
+            $uid = \Drupal::currentUser()->id();
+          }
+
+
+        $database = \Drupal::database();
+        $query = $database->select('meetup', 'meetup');
+        $query->fields('meetup', ['uid', 'nid', 'participation', 'interest']);
+        $query->condition('meetup.uid', $uid);
+        $query->condition('meetup.nid', $nid);
+        $result = $query->execute()->fetchAll();
+
+        //ksm($query->__toString());
+        //$result = $query->execute();
+
+        //ksm(empty($result));
+
+        $options = ['attributes' => ['class' => 'meetup-link']];
+
+        if(empty($result) || $uid === 0) {
+            //ksm('Keine Daten in der DB!');
+            $link_participation = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich nehme teil'), 'meetup.participation', ['nid' => $nid], $options));
+            $link_interest = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich bin interessiert'), 'meetup.interest', ['nid' => $nid], $options));
+        } else {
+            foreach($result as $record) {
+                //ksm($record);
+                if($record->participation == 1) {
+                    $link_participation = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich nehme nicht mehr teil'), 'meetup.no_participation', ['nid' => $nid], $options));
+                } else {
+                    $link_participation = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich nehme teil'), 'meetup.participation_update', ['nid' => $nid], $options));
+                }
+
+                if($record->interest == 1) {
+                    $link_interest = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich bin nicht mehr interessiert'), 'meetup.no_interest', ['nid' => $nid], $options));
+                } else {
+                    $link_interest = \Drupal::service('link_generator')->generateFromLink(Link::createFromRoute(t('Ich bin interessiert'), 'meetup.interest_update', ['nid' => $nid], $options));
+                }
+            }
+        }
+
+        //ksm($link_participation);
+
+          $links = [
+              '#theme' => 'item_list',
+              '#list_type' => 'ul',
+              '#title' => '',
+              '#items' => [
+                  $link_participation,
+                  $link_interest,
+              ],
+              '#attributes' => [
+                  'id' => ['meetup-links']
+              ],
+              '#attached' => [
+                'library' => [
+                  'meetup/meetup'
+                ],
+              ],
+              '#cache' => array('max-age' => 0),
+            ];
+
+
+        //Count participations and interests
+        $query = $database->select('meetup', 'meetup');
+        $query->fields('meetup', ['participation']);
+        $query->condition('meetup.nid', $nid);
+        $query->condition('meetup.participation', 1, '>=');
+        $num_partcipation = array_sum($query->execute()->fetchCol());
+
+        $query = $database->select('meetup', 'meetup');
+        $query->fields('meetup', ['interest']);
+        $query->condition('meetup.nid', $nid);
+        $query->condition('meetup.interest', 1, '>=');
+        $num_interest = array_sum($query->execute()->fetchCol());
+
+        $build['meetup']['links'] = $links;
+
+        $build['meetup']['counts'] = [
+          '#theme' => 'meetup_status',
+          '#num_partcipation' => $num_partcipation,
+          '#num_interest' => $num_interest,
+          '#cache' => array('max-age' => 0)
+        ];
+
+        if(\Drupal::currentUser()->isAnonymous()) {
+          $build['#cache']['max-age'] = 0;
+          \Drupal::service('page_cache_kill_switch')->trigger();
+        }
+      }
+
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function meetup_theme($existing, $type, $theme, $path) {
+  return [
+    'meetup_status' => [
+      'variables' => [
+        'num_partcipation' => NULL,
+        'num_interest' => NULL,
+      ],
+    ]
+  ];
+}
+

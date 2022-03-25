@@ -1,0 +1,24 @@
+services:
+  bibcite_endnote.encoder.endnote7:
+    class: Drupal\bibcite_endnote\Encoder\EndnoteEncoder
+    tags:
+      - { name: encoder, format: 'endnote7' }
+  bibcite_endnote.encoder.endnote8:
+    class: Drupal\bibcite_endnote\Encoder\EndnoteEncoder
+    tags:
+      - { name: encoder, format: 'endnote8' }
+  bibcite_endnote.encoder.endnote_tagged:
+    class: Drupal\bibcite_endnote\Encoder\EndnoteEncoder
+    tags:
+      - { name: encoder, format: 'tagged' }
+  bibcite_endnote.normalizer.reference:
+    class: Drupal\bibcite_endnote\Normalizer\EndnoteReferenceNormalizer
+    tags:
+      - { name: normalizer, priority: 5 }
+    arguments: ['@entity_type.manager', '@config.factory', '@entity_type.repository', '@entity_field.manager']
+    calls:
+      - [setFormat, [['endnote7','endnote8','tagged']]]
+    properties:
+      defaultType: 'Generic'
+      contributorKey: 'authors'
+      keywordKey: 'keywords'

@@ -1,0 +1,13 @@
+xnavi_network.content:
+    path: '/network/content'
+    defaults:
+        _controller: 'Drupal\xnavi_network\Controller\XNaviNetworkController::content'
+    requirements:
+        _access: 'TRUE'
+
+xnavi_network.data:
+    path: '/network/data/{term}'
+    defaults:
+        _controller: 'Drupal\xnavi_network\Controller\XNaviNetworkController::getNetworkData'
+    requirements:
+        _access: 'TRUE'

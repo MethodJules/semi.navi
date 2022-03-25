@@ -1,0 +1,13 @@
+<?php
+
+ /**
+ * Implements hook_theme().
+ */
+function morphbox_theme($existing, $type, $theme, $path) {
+  return [
+      'morphboxform' => [
+          'template' => 'morphbox',
+          'render element' => 'form',
+      ]
+    ];
+}

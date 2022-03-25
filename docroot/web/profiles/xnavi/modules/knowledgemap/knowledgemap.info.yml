@@ -1,0 +1,8 @@
+name: 'Knowledge Map'
+type: module
+description: 'Create, edit and view knowledge maps in Drupal'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'x.Navi Optional'
+dependencies:
+  - image

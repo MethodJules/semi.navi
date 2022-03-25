@@ -1,0 +1,11 @@
+bibcite_import.settings:
+  route_name: bibcite_import.settings
+  title: 'Import'
+  base_route: bibcite.settings
+  weight: 40
+
+bibcite_import.import:
+  route_name: bibcite_import.import
+  parent_id: entity.bibcite_reference.admin
+  title: Import
+  weight: 50

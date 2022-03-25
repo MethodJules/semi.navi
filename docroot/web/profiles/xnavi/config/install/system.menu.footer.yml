@@ -1,0 +1,7 @@
+langcode: de
+status: true
+dependencies: {  }
+id: footer
+label: Fußzeile
+description: 'Links zu Website-Informationen'
+locked: true

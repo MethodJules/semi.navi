@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Contains knowledgemap.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function knowledgemap_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the knowledgemap module.
+    case 'help.page.knowledgemap':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Create, edit and view knowledge maps in Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function knowledgemap_theme() {
+  return [
+    'knowledgemap' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Adds necessary libraries to display knowledge maps.
+ */
+function knowledgemap_preprocess_node__wissenskarte(&$variables) {
+  $variables['#attached']['library'][] = 'knowledgemap/knowledgemap-base';
+  $variables['#attached']['library'][] = 'knowledgemap/knowledgemap-view';
+
+  // Try to get user settings, otherwise use default values.
+  $settings = array(
+    'jq_maphilight' => array(
+      'fill' => \Drupal::state()->get('jq_maphilight_fill', 'true'),
+      'fillColor' => \Drupal::state()->get('jq_maphilight_fillcolor', '000000'),
+      'fillOpacity' => \Drupal::state()->get('jq_maphilight_fillopacity', 2) / 10,
+      'stroke' => \Drupal::state()->get('jq_maphilight_stroke', 'true'),
+      'strokeColor' => \Drupal::state()->get('jq_maphilight_strokecolor', '0099be'),
+      'strokeOpacity' => \Drupal::state()->get('jq_maphilight_strokeopacity', 10) / 10,
+      'strokeWidth' => \Drupal::state()->get('jq_maphilight_strokewidth', 2),
+      'fade' => \Drupal::state()->get('jq_maphilight_fade', 'false'),
+      'alwaysOn' => \Drupal::state()->get('jq_maphilight_alwayson', 'false'),
+      'neverOn' => \Drupal::state()->get('jq_maphilight_neveron', 'false'),
+      'groupBy' => \Drupal::state()->get('jq_maphilight_groupby', 'false'),
+      'allMapsEnabled' => \Drupal::state()->get('jq_maphilight_all_maps_enabled', 'true'),
+      'mouseover' => \Drupal::state()->get('jq_maphilight_mouseover', 'false'),
+      'fillOpacityMouseover' => \Drupal::state()->get('jq_maphilight_fillopacitymouseover', 2) / 10,
+      'strokeOpacityMouseover' => \Drupal::state()->get('jq_maphilight_strokeopacitymouseover', 10) / 10,
+      'stringAreaHide' => 'Show areas',
+      'stringAreaShow' => 'Hide areas'
+    )
+  );
+
+  $variables['#attached']['drupalSettings'] = $settings;
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function knowledgemap_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  if ($display->getTargetBundle() === 'wissenskarte') {
+
+
+    // TODO: add image map highlighting library
+  }
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function knowledgemap_form_node_wissenskarte_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //$form['#attached']['library'][] = 'knowledgemap/knowledgemap-base';
+  $form['#attached']['library'][] = 'knowledgemap/knowledgemap-edit';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function knowledgemap_form_node_wissenskarte_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //$form['#attached']['library'][] = 'knowledgemap/knowledgemap-base';
+  $form['#attached']['library'][] = 'knowledgemap/knowledgemap-add';
+}
+

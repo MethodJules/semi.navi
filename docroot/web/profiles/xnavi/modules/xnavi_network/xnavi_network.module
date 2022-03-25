@@ -1,0 +1,84 @@
+<?php
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*/
+
+function xnavi_network_form_node_xnavi_network_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+
+        // Modification for the form with the given form ID goes here. For example, if
+        // FORM_ID is "user_register_form" this code would run only on the user
+        // registration form.
+
+        // Add a checkbox to registration form about agreeing to terms of use.
+        /*
+        $form['terms_of_use'] = [
+            '#type' => 'checkbox',
+            '#title' => t("I agree with the website's terms and conditions."),
+            '#required' => TRUE,
+        ];
+        */
+
+        /*
+
+        $form['network_container'] = [
+            '#markup' => '<div id="network_container"></div>',
+            '#weight' => 200,
+        ];
+        */
+
+}
+
+/**
+* Implements hook_ENTITY_TYPE_view_alter().
+*/
+
+function xnavi_network_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+
+    /*
+        if ($build['#view_mode'] == 'full' && isset($build['an_additional_field'])) {
+            // Change its weight.
+            $build['an_additional_field']['#weight'] = -10;
+
+            // Add a #post_render callback to act on the rendered HTML of the entity.
+            $build['#post_render'][] = 'my_module_node_post_render';
+        }
+    */
+
+
+    if($entity->bundle() === 'xnavi_network') {
+        global $base_url;
+        $nId = $entity->id();
+        $term = $entity->field_network_begriff->value;
+        if (isset($term)) {
+          $build['xnavi_network']['network_graph'] = [
+            '#markup' => '<div id="network_container_' . $nId . '"></div>',
+            '#weight' => 900,
+          ];
+          $build['#attached']['library'][] = 'xnavi_network/xnavi-network';
+          $build['#attached']['drupalSettings']['term'][$nId] = $term;
+          $build['#attached']['drupalSettings']['base_url'] = $base_url;
+        }
+    }
+}
+
+/**
+* Implements hook_page_attachments().
+*/
+
+function xnavi_network_page_attachments(array &$attachments) {
+
+    /*
+        // Unconditionally attach an asset to the page.
+        $attachments['#attached']['library'][] = 'core/drupalSettings';
+
+        // Conditionally attach an asset to the page.
+        if (!\Drupal::currentUser()->hasPermission('may pet kittens')) {
+            $attachments['#attached']['library'][] = 'core/jquery';
+        }
+    */
+
+    //$attachments['#attached']['library'][] = 'xnavi_network/xnavi-network';
+
+}

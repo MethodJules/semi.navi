@@ -1,0 +1,10 @@
+// Override bootstrap framework variables.
+// Full list of variables in [path to themes/contrib]/bootstrap4/dist/bootstrap/4.4.1/scss/_variables.scss
+// or [path to themes/contrib]/bootstrap4/scss/_theme_variables.scss.
+$blue:    #0099be !default;
+$navbar-light-color: #0099be !default;
+$button-text-color: #fff;
+$button-hover-color: #007A98;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.9;

@@ -1,0 +1,4 @@
+services:
+    xnavi_news_mail.mail:
+        class: Drupal\news\Services\NewsMail
+        arguments: ['@plugin.manager.mail', '@current_user']

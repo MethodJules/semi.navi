@@ -1,0 +1,6 @@
+bibcite import:
+  title: 'Access to import form'
+  restrict access: true
+bibcite populate:
+  title: 'Access to populate form'
+  restrict access: true

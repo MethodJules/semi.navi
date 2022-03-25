@@ -1,0 +1,33 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+    - user
+  theme:
+    - zfdw_b4
+id: zfdw_b4_werkzeuge
+theme: zfdw_b4
+region: sidebar_first
+weight: 2
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Werkzeuge
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      portalprojekt: portalprojekt
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

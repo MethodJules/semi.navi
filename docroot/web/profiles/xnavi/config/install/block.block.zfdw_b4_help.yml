@@ -1,0 +1,19 @@
+langcode: de
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - zfdw_b4
+id: zfdw_b4_help
+theme: zfdw_b4
+region: content
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Hilfe
+  provider: help
+  label_display: '0'
+visibility: {  }

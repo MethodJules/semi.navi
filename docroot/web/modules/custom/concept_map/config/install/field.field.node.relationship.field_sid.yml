@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sid
+    - node.type.relationship
+id: node.relationship.field_sid
+field_name: field_sid
+entity_type: node
+bundle: relationship
+label: SID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

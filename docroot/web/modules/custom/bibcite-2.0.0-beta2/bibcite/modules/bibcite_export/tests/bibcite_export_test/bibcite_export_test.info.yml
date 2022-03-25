@@ -1,0 +1,16 @@
+name: 'Bibliography & Citation - Export - Test'
+type: module
+package: Bibliography & Citation
+dependencies:
+  - bibcite_entity_test
+  - bibcite_export
+  - bibcite_bibtex
+  - text
+core: 8.x
+core_version_requirement: ^8 || ^9
+hidden: true
+
+# Information added by Drupal.org packaging script on 2022-01-13
+version: '2.0.0-beta2'
+project: 'bibcite'
+datestamp: 1642044061

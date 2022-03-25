@@ -1,0 +1,44 @@
+knowledgemap-base:
+  version: 1.x
+  js:
+    js/imageMapResizer.min.js: {}
+    js/imgmap.js: {}
+    js/morphmapping.js: {}
+    js/lang_de.js: {}
+    js/lang_en.js: {}
+  css:
+    layout:
+      css/morphmapping.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+
+knowledgemap-view:
+  version: 1.x
+  js:
+    js/popper.min.js: {}
+    js/tippy-bundle.umd.min.js: {}
+    js/morphmapping_view.js: {}
+    js/jq_maphilight_settings.js: {}
+    js/jquery.maphilight.js: {}
+
+knowledgemap-view-search-block:
+  version: 1.x
+  js:
+    js/morphmapping_view_disable_search_block.js: {}
+
+knowledgemap-add:
+  version: 1.x
+  js:
+    js/morphmapping_add.js: {}
+  dependencies:
+    - knowledgemap/knowledgemap-base
+
+knowledgemap-edit:
+  version: 1.x
+  js:
+    js/morphmapping_edit.js: {}
+  dependencies:
+    - knowledgemap/knowledgemap-base

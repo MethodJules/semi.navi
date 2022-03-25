@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: fce17ad-ce6c-44df-8fd8-79151da5a9ec
+  bundle: event
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Urban Garden - Beetebau und Permakultur'
+  created:
+    -
+      value: 1620393601
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Liebe Gärtner,\r\nder Frühling ist da und die Gartensaison eröffnet.\r\nDraußen kreucht und fleucht es schon fleißig und so wird es auch für uns wieder Zeit die kuschelige Wohnung zu verlassen und den Garten auf Vordermann zu bringen!\r\n*********************************************\r\nWir starten in eine nächste Runde - ein neues Gärtner*innen-Wochenende steht an!\r\nAm Donnerstag den 16.05. UND am 18./19.05 sind wir wieder ab 10 Uhr im Garten.\r\nNachdem wir ausgemistet, abgerissen, neue Elemente integriert haben (Gartenschlauch, Schuppen,...) und eine ganze Reihe an neuen Beeten gebaut haben, geht es jetzt daran weiter neue Beete zu bauen und diese zu platzieren. Also komm vorbei um dein eigenes Beet auf die Beine zu stellen!\r\nFachlich werden wir weiter von Kai Lindenblatt begleitet!\r\nWir freuen uns auf ein sonniges Gartenwochenende mit euch!\r\n🌱🌸🌞\r\n********************************************\r\nDas haben wir bereits geschafft:\r\n- Der Garten wurde komplett \"ausgemistet\"\r\n- Was noch zu Gebrauchen ist haben wir in unserem \"Ressource\r\nCenter\" sortiert\r\n- Der Schuppen ist in den Endzügen\r\n- Wir haben einen Großteil der Gartenschlauchverlängerung gelegt\r\n- Alte Beet und morsche Sitzgelegenheiten wurden abgerissen und recycelt\r\n- Wir haben Lagerungsmöglichkeiten für Holz und Steine geschaffen\r\n- Die „Unterstellbox“ für unsere Geräte ist fast fertig\r\n- Wir haben klare Grenzen für unsere nutzbare Fläche abgesteckt!\r\n-Die ersten Wicking Hochbeete wurden vorbereitet.\r\n- Die ersten Beete stehen und manche davon sind schon startklar für Setzlinge\r\n*******************************************\r\nFür den gesamten Prozess haben wir Unterstützung durch Permakultur-Designer Kai Lindenblatt.\r\nJeder ist herzlich eingeladen dabei mitzuwirken oder sich um sein eigenes Beet zu kümmern.\r\nIn diesem Sinne,\r\nab ins Beet!\r\nWir freuen uns auf euch!"
+      format: plain_text
+      summary: ''
+  field_zeit:
+    -
+      value: '2021-05-19T08:00:00'

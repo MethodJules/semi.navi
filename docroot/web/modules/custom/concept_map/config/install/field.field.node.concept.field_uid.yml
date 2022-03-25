@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uid
+    - node.type.concept
+id: node.concept.field_uid
+field_name: field_uid
+entity_type: node
+bundle: concept
+label: uid
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

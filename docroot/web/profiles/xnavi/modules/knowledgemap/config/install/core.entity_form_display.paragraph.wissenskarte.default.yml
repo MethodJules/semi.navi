@@ -1,0 +1,24 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wissenskarte.field_wissenskarte
+    - paragraphs.paragraphs_type.wissenskarte
+id: paragraph.wissenskarte.default
+targetEntityType: paragraph
+bundle: wissenskarte
+mode: default
+content:
+  field_wissenskarte:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

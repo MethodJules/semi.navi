@@ -1,0 +1,21 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'card'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content.field_image }}
+      <div class="card-body">
+        <h5 class="card-title">{{ content.field_title }}</h5>
+        <p class="card-text">{{ content.field_description }}</p>
+        {{ content|without('field_title', 'field_description', 'field_image') }}
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

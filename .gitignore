@@ -1,0 +1,4 @@
+# Ignore files
+docroot/web/sites/default/files
+#Ignore database
+database

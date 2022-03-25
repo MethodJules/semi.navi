@@ -1,0 +1,148 @@
+news.content:
+    path: '/news/content'
+    defaults:
+        _controller: 'Drupal\news\Controller\NewsController::content'
+    requirements:
+        _permission: 'access content'
+
+news.newsletter_preview:
+    path: '/news/newsletter/preview'
+    defaults:
+        _controller: 'Drupal\news\Controller\NewsController::previewNewsletter'
+    requirements:
+        #_permission: 'access content'
+        _role: 'portalprojekt+administrator'
+        
+news.activities:
+    path: '/news/activities'
+    defaults:
+        _controller: 'Drupal\news\Controller\NewsController::activityStream'
+    requirements:
+        _permission: 'access content'
+
+news.mail:
+    path: '/news/send_test_mail'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::sendTestMail'
+      _title: 'Test mail page, refresh to try again'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      #_permission: 'access content'
+      _role: 'portalprojekt+administrator'
+
+news.newsletter_order:
+    path: '/news/newsletter/order'
+    defaults:
+      _form: '\Drupal\news\Form\NewsletterOrderForm'
+      _title: 'Newsletter bestellen'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+news.newsletter_order_confirmation_mail:
+    path: '/news/newsletter/order/mail/confirmation/{email}/{salutation}/{firstname}/{surname}'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::sendConfirmationMail'
+      _title: 'Newsletter Bestätigung versendet'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+
+news.newsletter_send_newsletter_mail:
+    path: '/news/newsletter/mail/send/newsletter'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::sendNewsletter'
+      _title: 'Newsletter senden'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+news.newsletter_send_newsletter_test_mail_form:
+    path: '/news/newsletter/mail/send/test/newsletter/form'
+    defaults:
+      _form: '\Drupal\news\Form\NewsletterSendTestMailForm'
+      _title: 'Test Newsletter senden'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+news.newsletter_send_newsletter_administration_form:
+    path: '/news/newsletter/administration/form'
+    defaults:
+      _form: '\Drupal\news\Form\NewsletterAdministrationForm'
+      _title: 'Newsletter Administration'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      #_permission: 'access content'
+      _role: 'portalprojekt+administrator' 
+
+news.newsletter_send_newsletter_test_mail:
+    path: '/news/newsletter/mail/send/test/newsletter/{email}'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::sendTestNewsletter'
+      _title: 'Test Newsletter senden'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+
+news.newsletter_send_newsletter_mail_administration:
+    path: '/news/newsletter/mail/send/newsletter/administration'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::sendNewsletterAdministration'
+      _title: 'Newsletter administrieren'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+      
+
+news.newsletter_order_recieve_confirmation:
+    path: '/news/newsletter/order/confirmation/{token}'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::recieveConfirmation'
+      _title: 'Newsletter abonniert'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+
+news.newsletter_unsubscribe_confirmation:
+    path: '/news/newsletter/order/unsubscribe/confirmation/{token}'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::unsubsribeNewsletter'
+      _title: 'Newsletter abmelden'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+news.newsletter_unsubscribe_confirmation_form:
+    path: '/news/newsletter/order/unsubscribe/confirmation/form'
+    defaults:
+      _form: '\Drupal\news\Form\NewsletterUnsubscribeForm'
+      _title: 'Newsletter abmelden'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      _permission: 'access content'
+
+news.newsletter_dashboard:
+    path: '/news/newsletter/dashboard'
+    defaults:
+      _controller: '\Drupal\news\Controller\NewsController::dashboard'
+      _title: 'Newsletter Dashboard'
+    options:
+      no_cache: 'TRUE'
+    requirements:
+      #_permission: 'access content'
+      _role: 'portalprojekt+administrator'

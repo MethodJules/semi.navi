@@ -1,0 +1,6 @@
+name: BI
+description: Das BI-Modul ermöglicht interaktive quantitative Analysen über die eingepflegten Daten und dessen Kategorien.
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: x.Navi Optional

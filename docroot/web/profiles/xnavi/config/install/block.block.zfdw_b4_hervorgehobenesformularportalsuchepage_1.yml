@@ -1,0 +1,22 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - views.view.portalsuche
+  module:
+    - views
+  theme:
+    - zfdw_b4
+id: zfdw_b4_hervorgehobenesformularportalsuchepage_1
+theme: zfdw_b4
+region: sidebar_first
+weight: -12
+provider: null
+plugin: 'views_exposed_filter_block:portalsuche-page_1'
+settings:
+  id: 'views_exposed_filter_block:portalsuche-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: Portalsuche
+visibility: {  }

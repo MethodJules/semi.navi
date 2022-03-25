@@ -1,0 +1,19 @@
+langcode: de
+status: true
+dependencies:
+  theme:
+    - zfdw_b4
+id: zfdw_b4_local_tasks
+theme: zfdw_b4
+region: content
+weight: -12
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Reiter
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

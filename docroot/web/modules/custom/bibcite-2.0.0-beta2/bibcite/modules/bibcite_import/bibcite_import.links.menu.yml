@@ -1,0 +1,16 @@
+bibcite_import.populate:
+  title: 'Populate Reference'
+  parent: entity.bibcite_reference.collection
+  route_name: bibcite_import.populate
+  weight: 40
+bibcite_import.import:
+  title: 'Import'
+  description: 'Import reference data'
+  parent: entity.bibcite_reference.collection
+  route_name: bibcite_import.import
+  weight: 50
+bibcite_import.settings:
+  title: 'Import'
+  parent: bibcite.settings
+  route_name: bibcite_import.settings
+  weight: 50

@@ -1,0 +1,28 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_projectdescription
+    - node.type.project
+  module:
+    - entity_reference_revisions
+id: node.project.field_projectdescription
+field_name: field_projectdescription
+entity_type: node
+bundle: project
+label: Projektbeschreibung
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      wissenskarte:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

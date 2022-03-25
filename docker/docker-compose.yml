@@ -1,0 +1,34 @@
+version: '3'
+services:
+  xnavi_d9_db:
+    image: mariadb:10.5
+    container_name: "${PROJECT_NAME}_mariadb"
+    #command: --max_allowed_packet=32505856 #Set max_allowed_packet to 256M
+    environment:
+      MYSQL_DATABASE: xnavi_d9
+      MYSQL_ROOT_PASSWORD: xnavi_d9
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../database:/var/lib/mysql
+    restart: always
+  xnavi_d9_drupal:
+    depends_on:
+      - xnavi_d9_db
+    build: .
+    container_name: "${PROJECT_NAME}_drupal"
+    ports:
+      - "8080:80"
+    volumes:
+      - ../docroot:/app
+    restart: always
+  xnavi_d9_solr:
+    image: solr:7.5
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr_xnavi_config:/opt/solr/solr_xnavi_config
+      - xnavi_d9_core:/opt/solr/server/solr/core
+volumes:
+  #xnavi_d9_db_data:
+  xnavi_d9_core:

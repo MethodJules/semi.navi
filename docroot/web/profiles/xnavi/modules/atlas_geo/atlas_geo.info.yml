@@ -1,0 +1,14 @@
+name: Atlas Geo
+description: Das Modul stellt geographische Informationen dar
+core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
+package: x.Navi Optional
+dependencies:
+  - address:address
+  - geocoder:geocoder
+  - geocoder:geocoder_address
+  - geocoder_field:geocoder_field
+  - geocoder_geofield:geocoder_geofield
+  - geofield:geofield
+  - leaflet:leaflet

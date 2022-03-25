@@ -1,0 +1,37 @@
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wk_bild
+    - node.type.wissenskarte
+  module:
+    - knowledgemap
+id: node.wissenskarte.field_wk_bild
+field_name: field_wk_bild
+entity_type: node
+bundle: wissenskarte
+label: Bild
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: 0
+  alt_field_required: 0
+  title_field: 0
+  title_field_required: 0
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: knowledgemap_field_type

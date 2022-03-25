@@ -1,0 +1,307 @@
+.img_area {
+    display: block;
+    vertical-align: middle;
+    line-height: 25px;
+    //height: 20px;
+}
+
+.img_id{
+    font-weight: bold;
+    width: 25px;
+    padding: 0px 3px;
+    text-align: right;
+    border: none!important;
+    background: none;
+}
+
+.img_label{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 0.2em;
+}
+
+.addAreaButton {
+    background: url("images/add.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    border: 0px;
+    width: 20px;
+    height: 15px;
+    margin: 10px;
+    padding: 0px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    float: left;
+}
+
+.removeAreaButton {
+    background: url("images/delete.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    border: 0px;
+    width: 20px;
+    height: 15px;
+    margin-left: 10px;
+    padding: 0px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    display: inline-block;
+}
+
+.addAreaError{
+    border-color: red!important;
+    border-width: 2px!important;
+    border-style: solid!important;
+}
+
+.canvasError {
+    border-color: red!important;
+    background-color: rgba(255, 0, 0, 0.50)!important;
+    border-width: 3px!important;
+}
+
+.labelAreaErrorText{
+    padding-top: 8px;
+    color: red;
+}
+
+.field--name-field-markierte-bereiche, #edit-field-markierte-bereiche,
+.field--name-field-tag-combined, #edit-field-internal-reference-wrapper,
+#edit-field-internal-reference-0-target-id,
+#edit-field-wk-bild-0--label {
+    display: none;
+}
+
+/* Hide areas button inline */
+#edit-field-wk-bild .inline-block > * {
+    display: inline-block;
+}
+
+/* element to show / hide areas on click [ID 103] */
+#button_hightlight,
+#button-hide {
+    background-color: #0099be;
+    padding: 0.3em;
+    color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#button_hightlight:hover,
+#button-hide:hover {
+    background-color: #666;
+    cursor: pointer;
+}
+#button-hide {
+    margin-left: 3em;
+}
+
+/* Area title width */
+.img_alt {
+    width: 70%!important;
+    display: unset!important;
+}
+
+/*
+ * Hide tags on knowledge map.
+ */
+#edit-field-tag-combined {
+    display: none;
+}
+
+/* Bring selected area to top (knowledge map create/edit mode) */
+.canvas-top {
+    z-index: 100 !important; /* has priority over canvas-hidden */
+}
+
+/* Hide drawn areas behind the knowledge map image (knowledge map create/edit mode)*/
+.canvas-hidden {
+    z-index: -1;
+}
+
+/* Border around image during knowledge map create/edit */
+.pic_container img {
+    border: 1px solid #ccc;
+}
+
+/* Prevent text select on knowledge map elements */
+.pic_container * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Internal link spacing (knowledgemap morphsearch block) */
+#edit-field-internal-reference .form-item > * {
+    display: none;
+}
+
+#edit-field-internal-reference .ervw-add-items {
+    margin: 0;
+    float: right;
+}
+
+.block.knowledgemap {
+    z-index: 99 !important;
+}
+
+/* Internal link modal windows spacing */
+#modal-content .form-item-items-per-page label {
+    width: unset;
+    float: unset;
+}
+
+#modal-content .views-exposed-form .form-select {
+    margin: unset;
+    padding: unset;
+    line-height: unset;
+}
+
+#modal-content .widget-checkbox,
+#modal-content .widget-type {
+    width: 1em;
+}
+
+/* =============================================================================
+    Content type Wissenskarte
+   ========================================================================== */
+
+/* Shape selector width */
+.img_shape {
+  width: 120px!important;
+  display: unset!important;
+}
+
+/* Prevent knowledge map from being selectable and draggable to prevent input accidents */
+.unselectable {
+  /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+  /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+  -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none; /* From IE10 only */
+  user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+  -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+  user-drag: none;
+}
+
+/* Backup hide in case module fails */
+.node-wissenskarte .field-name-field-markierte-bereiche,
+#edit-field-markierte-bereiche, #edit-field-tag-combined {
+  display: none;
+}
+
+#node-wissenskarte-edit-form #edit-preview {
+  display: none;
+}
+
+#node-wissenskarte-form .image-widget-data > .file--image,
+#node-wissenskarte-form .image-widget-data button[name=field_wk_bild_0_remove_button] {
+  display: none;
+}
+
+
+/* =============================================================================
+    Knowledgemap Search Results Block
+   ========================================================================== */
+/* Hide the exposed AJAX widget */
+#views-exposed-form-searchresults-block {
+  display: none;
+}
+
+/*
+ * Truncate long labels in knowledge map search result block
+ */
+#block-views-searchresults-block .views-field-label,
+#block-views-searchresults-block .block-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fixed height of content region, title fixed */
+#block-views-searchresults-block .block-content {
+  overflow-y: auto;
+  height: 45vh;
+}
+
+/* =============================================================================
+    Knowledgemap Block (Morphsearch Block conversion)
+   ========================================================================== */
+/* Display block vertically centered on viewport while creating or editing knowledge maps*/
+.block.knowledgemap {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  max-height: 70%;
+  width: 20%;
+  max-width: 320px;
+  z-index: 9000;
+  overflow: auto;
+  padding: 15px;
+}
+
+.block.knowledgemap #edit-submit-portalsuche {
+  display: none;
+}
+/* overflow scrollbar does not reduce block content width*/
+.block.knowledgemap .block-inner {
+  width: 224px;
+}
+
+/* Highlight block after drawing is finsihed */
+.block.knowledgemap.drawfinished {
+  outline-color: #0099be !important;
+  outline: 3px;
+  outline-style: solid;
+}
+
+/* Fix non-transparent knowledge map shapes in edit mode */
+.pic_container > canvas {
+  background-color: rgba(255,255,255,0.5)!important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.img_id {
+  display: none;
+}
+
+
+/* =============================================================================
+    Knowledgemap search results block
+   ========================================================================== */
+
+/* Hide default view control elements */
+.view-knowledgemap-search-results .view-filters {
+  display: none;
+}
+
+.view-knowledgemap-search-results {
+  overflow-y: auto;
+  max-height: 45vh;
+  min-height: 15vh;
+}
+
+.view-knowledgemap-search-results.view-content {
+  display: block;
+}
+
+/* Display one row per search result, shortened by dots */
+.view-knowledgemap-search-results .views-row {
+  overflow: hidden;
+  /*white-space: nowrap;*/
+}
+
+.view-knowledgemap-search-results .views-field-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#edit-bef-sort-options {
+  display: none;
+}
+
+#edit-submit-search {
+  display: none;
+}

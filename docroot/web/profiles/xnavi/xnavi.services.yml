@@ -1,0 +1,5 @@
+services:
+  xnavi.breadcrumb.default:
+    class: Drupal\xnavi\Breadcrumb\XNaviNodeEditBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 100}

@@ -1,0 +1,9 @@
+entity.bibcite_reference.edit_form:
+  route_name: entity.bibcite_reference.edit_form
+  group: bibcite_reference
+  title: Edit
+
+entity.bibcite_reference.delete_form:
+  route_name: entity.bibcite_reference.delete_form
+  group: bibcite_reference
+  title: Delete

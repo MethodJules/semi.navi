@@ -1,0 +1,8 @@
+name: 'Concept Map'
+type: module
+description: 'Adds concept mapping capabilities. (Just adds concept map structure at the moment.)'
+package: Custom
+core: 8.x
+core_version_requirement: '^8 || ^9'
+dependencies:
+  - menu_ui

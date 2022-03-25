@@ -1,0 +1,22 @@
+widget:
+  css:
+    theme:
+      css/widget.css: {}
+
+reference.admin:
+  css:
+    theme:
+      css/reference.admin.css: {}
+
+reference.preview:
+  css:
+    theme:
+      css/reference.preview.css: {}
+  js:
+    js/reference.preview.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.dialog
+    - core/drupal.form

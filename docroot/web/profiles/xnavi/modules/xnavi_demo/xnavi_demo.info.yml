@@ -1,0 +1,13 @@
+name: xNavi Demo
+description: Das Demo Modul demonstriert  
+core: 8.x
+type: module
+core_version_requirement: ^8 || ^9
+package: x.Navi Optional
+dependencies:
+  - drupal:tour
+  - drupal:help
+  - default_content:default_content
+default_content:
+  node:
+    - 5083e1d7-4eac-4092-bd5d-3227e99f29e2

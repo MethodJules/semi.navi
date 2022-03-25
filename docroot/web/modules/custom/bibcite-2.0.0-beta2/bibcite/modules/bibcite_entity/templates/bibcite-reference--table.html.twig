@@ -1,0 +1,43 @@
+{#
+/**
+ * @file bibcite-reference-table.html.twig
+ * Theme implementation to present Reference data in table.
+ *
+ * Available variables:
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - content: All reference items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the container element.
+ * - bibcite_reference: The bibcite_reference entity with limited access to object properties and methods.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - rows: Data rows.
+ *
+ * @see template_preprocess_bibcite_reference_table()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <table>
+    {% if rows %}
+      <tbody>
+      {% for row in rows %}
+        {% set row_classes = [
+          not no_striping ? cycle(['odd', 'even'], loop.index0),
+        ] %}
+        <tr{{ row.attributes.addClass(row_classes) }}>
+          <td>{{- row.title -}}</td>
+          <td>{{- row.element -}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    {% endif %}
+  </table>
+</div>

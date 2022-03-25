@@ -1,0 +1,29 @@
+{
+  "name": "drupal/bibcite",
+  "type": "drupal-module",
+  "description": "Working with bibliographic data",
+  "keywords": ["Drupal", "Bibliography"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/bibcite",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bibcite",
+    "source": "https://git.drupalcode.org/project/bibcite"
+  },
+  "require": {
+    "academicpuma/citeproc-php": "~1.0",
+    "adci/full-name-parser": "^0.2.4",
+    "technosophos/libris": "~2.0",
+    "audiolabs/bibtexparser": "^1.0",
+    "caseyamcl/php-marc21": "~1.0",
+    "drupal/entity": "^1.0",
+    "drupal/token": "^1.0"
+  },
+  "suggest": {
+    "drupal/bibcite_migrate": "Migrate your bibliographic data from the Bibliography (biblio) module",
+    "drupal/bibcite_crossref": "Provides DOI lookup functionality",
+    "drupal/bibcite_pubmed": "Provides PubMed import and lookup functionality",
+    "drupal/bibcite_altmetric": "Adds Altmetric badges to BibCite reference entities",
+    "drupal/metatag_google_scholar": "Provides number of meta tags to help with indexing of scholarly content/articles in Google Scholar"
+  }
+}

@@ -1,0 +1,5 @@
+bibcite_export.export_all:
+  route_name: bibcite_export.export_all
+  parent_id: entity.bibcite_reference.admin
+  title: Export
+  weight: 60
